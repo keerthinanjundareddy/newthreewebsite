@@ -34,7 +34,7 @@ class Section extends Component {
                     <div className="home-content">
                       <p className="mb-0">Digital Marketing</p>
                       <img src={HomeUrl} height="15" alt="" />
-                      <h1 className="home-title mt-4">Grow Your <br /> Business Google Ads & Instagram Ads</h1>
+                      <h1 className="home-title mt-4">Grow Your <br /> Business </h1>
                       <p className="text-muted mt-4 f-20">Vestibulum egestas magna ut aliquet sodales nunc
                       fermentum ligula
                                     quis tidunt vitae massa.</p>
