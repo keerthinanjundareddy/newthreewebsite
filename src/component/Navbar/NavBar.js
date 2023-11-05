@@ -43,6 +43,7 @@ class NavbarPage extends Component {
           fixed={this.props.top === true ? "top" : ""}
           className={this.props.navClass + " navbar-custom sticky sticky-dark"}
           id="navbar"
+          style={{justifyContent:"space-between"}}
         >
         
           {/* LOGO */}
