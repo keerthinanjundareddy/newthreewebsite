@@ -46,13 +46,13 @@ class NavbarPage extends Component {
         >
         
           {/* LOGO */}
-          <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
+          <Nav className="navbar-brand logo text-uppercase" href="/">
               {this.props.imglight === true ? (
                 <img src={logolight} alt="" height="22" />
               ) : (
                   <img src={logodark} alt="" height="22" />
                 )}
-            </NavbarBrand>
+            </Nav>
             <NavbarToggler onClick={this.toggle}>
               <i className="mdi mdi-menu"></i>
             </NavbarToggler>
