@@ -35,8 +35,7 @@ class Section extends Component {
                       <p className="mb-0">Digital Marketing</p>
                       <img src={HomeUrl} height="15" alt="" />
                       <h1 className="home-title mt-4">Grow  <br />  </h1>
-                      <p className="text-muted mt-4 f-20">Vestibulum egestas magna ut aliquet sodales nunc
-                      fermentum ligula
+                      <p className="text-muted mt-4 f-20">
                                     quis tidunt vitae massa.</p>
                       <div className="mt-4 pt-2">
                         <Link to="#" className="btn btn-primary mr-3">Contact </Link>{" "}
