@@ -45,7 +45,7 @@ class NavbarPage extends Component {
         >
           <Container>
           {/* LOGO */}
-          <Nav className="navbar-nav ml-auto navbar-center" >
+          <Nav className="" >
               {this.props.imglight === true ? (
                 <img src={logolight} alt="" height="22" />
               ) : (
