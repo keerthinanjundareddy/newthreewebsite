@@ -33,7 +33,7 @@ const Section = () => {
 // }, [])
  
 
-const baseUrl = 'http://localhost:1337/api'
+const baseUrl = 'http://localhost:1337'
 useEffect(() => {
   axios.get('http://localhost:1337/api/website-homes?[populate][medialist][fields]=url&&[populate][medialist][fields]=alternativetext')
       .then((response) => {

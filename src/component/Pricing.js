@@ -98,7 +98,7 @@ export default class Pricing extends Component {
             <Row>
               <Col lg={12}>
                 <div className="title-box text-center">
-                  <h3 className="title-heading mt-4">Best Pricing Package </h3>
+                  <h3 className="title-heading mt-4">hi </h3>
                   <p className="text-muted f-17 mt-3">Vivamus ac nulla ultrices laoreet neque mollis mi morbi
                   elementum mauris
                             sit amet arcu <br /> fringilla auctor In eleifend maximus nisi sed vulputate.</p>
