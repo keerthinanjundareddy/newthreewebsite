@@ -65,7 +65,7 @@ useEffect(() => {
                   <div className="home-content">
                     <p className="mb-0">{itemstwo.attributes.heading}</p>
                     <img src={HomeUrl} height="15" alt="" />
-                    <h1 className="home-title mt-4">{itemstwo.attributes.heading} <br />{itemstwo.attributes.heading}   </h1>
+                    <h1 className="home-title mt-4">{itemstwo.attributes.subheadingone} <br />{itemstwo.attributes.subheadingtwo}   </h1>
                     <p className="text-muted mt-4 f-20">
                     {itemstwo.attributes.description}
                     </p>
