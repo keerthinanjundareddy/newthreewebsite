@@ -69,7 +69,7 @@ useEffect(() => {
                     <p className="text-muted mt-4 f-20">
                     {itemstwo.attributes.description}
                     </p>
-                    <div className="mt-4 pt-2">
+                    <div className="mt-2 pt-2">
                       <Link to="#" className="btn btn-primary mr-3"> {itemstwo.attributes.contactbutton}</Link>{" "}
                       <Link to="#" className="video-play-icon text-dark" onClick={openModal}>
                         <i className="mdi mdi-play-circle-outline text-dark mr-2"></i>Watch Intro Video
