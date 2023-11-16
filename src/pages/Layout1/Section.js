@@ -18,20 +18,7 @@ const Section = () => {
     setIsOpen(true);
   }
 
-//   const baseUrl = 'http://localhost:1337/api'
-//   useEffect(() => {
-//     axios.get('http://localhost:1337/api/website-homes?[populate][medialist][fields]=url&&[populate][medialist][fields]=alternativetext')
-//         .then((response) => {
-//             console.log("response",response.data.data[0])
-//             console.log("second responses",response.data.data[0].attributes.title)
-//             setAboutApiData(response.data.data)
-//             // setDescription(response.data.data[0].attributes.description)
-//             console.log("apidata",aboutapiData)
-//             // console.log("description here",description)
-//             // console.log("image",response.data.data[0].attributes.media.data[0].attributes)
-//         })
-// }, [])
- 
+
 
 const baseUrl = 'http://localhost:1337'
 useEffect(() => {
@@ -42,6 +29,7 @@ useEffect(() => {
           sethomeApiData(response.data.data)
           // setDescription(response.data.data[0].attributes.description)
           console.log("apidata",homeapiData)
+          console.log("sbout-section-image",response.data.data[0].attributes.medialist?.data?.[0]?.attributes.url)
           // console.log("description here",description)
           // console.log("image",response.data.data[0].attributes.media_list.data[0].attributes)
       })
@@ -54,6 +42,7 @@ useEffect(() => {
       <section className="bg-home bg-light" id="home">
       {
   homeapiData.length > 0  && homeapiData.map((itemstwo)=>{
+    
     const imageUrltwo = baseUrl + (itemstwo.attributes.medialist?.data?.[0]?.attributes.url || '');
     return(
       <div  key={itemstwo.id}>
@@ -91,7 +80,7 @@ useEffect(() => {
           <ModalVideo
             channel="vimeo"
             isOpen={isOpen}
-            videoId="99025203"
+            videoId={itemstwo.attributes.videoId}
             onClose={() => setIsOpen(false)}
           />
         </div>

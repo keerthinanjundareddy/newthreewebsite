@@ -13,36 +13,7 @@ import Img3 from '../assets/images/users/img-3.png';
 import Img4 from '../assets/images/users/img-4.png';
 
 const Contact = () => {
-  // const [teams, setTeams] = useState([
-  //   {
-  //     id: 1,
-  //     img: Img1,
-  //     name: 'Calvin Hubbard',
-  //     nickname: '#Calvin',
-  //     description: 'Anterdum maleada fames Integer molestie ante primis nulla facibus felis ulputate platea elit.'
-  //   },
-  //   {
-  //     id: 2,
-  //     img: Img2,
-  //     name: 'Jeremiah Eskew',
-  //     nickname: '#Jeremiah',
-  //     description: 'Anterdum maleada fames Integer molestie ante primis nulla facibus felis ulputate platea elit.'
-  //   },
-  //   {
-  //     id: 3,
-  //     img: Img3,
-  //     name: 'Zachary Tevis',
-  //     nickname: '#Zachary',
-  //     description: 'Anterdum maleada fames Integer molestie ante primis nulla facibus felis ulputate platea elit.'
-  //   },
-  //   {
-  //     id: 4,
-  //     img: Img4,
-  //     name: 'William Alderman',
-  //     nickname: '#William',
-  //     description: 'Anterdum maleada fames Integer molestie ante primis nulla facibus felis ulputate platea elit.'
-  //   },
-  // ]);
+ 
 const[teamData,seteamData]=useState([])
 
 const baseUrl = 'http://localhost:1337'
@@ -70,7 +41,7 @@ useEffect(() => {
     speed: 300,
     infinite: false,
     arrows: false,
-    slidesToShow: 2,
+    slidesToShow: window.innerWidth < 768 ? 1 : 2,
     slidesToScroll: 1,
   };
 
