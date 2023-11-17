@@ -61,17 +61,21 @@ useEffect(() => {
               <p className="team-badge bg-primary text-white rounded f-14 mt-2">{team.attributes.sub_heading}</p>
               <p className="text-muted mt-3">{team.attributes.description}</p>
               <div className="team-social mt-4 pt-2">
-                <ul className="list-inline mb-0">
-                  {team.medialist?.data?.map((socialMedia, socialMediaIndex) => (
-                    <li className="list-inline-item" key={socialMediaIndex}>
-                      <Link to={socialMedia.attributes.url} className="text-reset">
-                        hi
-                        {/* <i className={`mdi mdi-${getSocialMediaIcon(socialMedia.attributes.url)}`}></i> */}
-                      </Link>
+                  <ul className="list-inline mb-0">
+                    <li className="list-inline-item">
+                      <Link to="#" className="text-reset"><i className="mdi mdi-facebook"></i></Link>
                     </li>
-                  ))}
-                </ul>
-              </div>
+                    <li className="list-inline-item">
+                      <Link to="#" className="text-reset"><i className="mdi mdi-twitter"></i></Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link to="#" className="text-reset"><i className="mdi mdi-google"></i></Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link to="#" className="text-reset"><i className="mdi mdi-pinterest"></i></Link>
+                    </li>
+                  </ul>
+                </div>
             </div>
           </Col>
           <Col lg={6}>

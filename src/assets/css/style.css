@@ -25,6 +25,8 @@ body {
   font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   color: #1e3547;
+  /* overflow-x: hidden !important; */
+
   
 }
 
