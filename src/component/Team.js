@@ -12,28 +12,29 @@ import Img2 from '../assets/images/users/img-2.png';
 import Img3 from '../assets/images/users/img-3.png';
 import Img4 from '../assets/images/users/img-4.png';
 
+
+
 const Contact = () => {
- 
-const[teamData,seteamData]=useState([])
+  const [teamData, setTeamData] = useState([]);
 
-const baseUrl = 'http://localhost:1337'
-useEffect(() => {
-  axios.get(`${baseUrl}/api/website-teams?populate[website_cards][populate][medialist][fields]=url&populate[website_cards][populate][medialist][fields]=alternativeText`)
-    .then((response) => {
-      console.log("clientdata",response)
-      console.log("clientresponse",response.data.data)
-      console.log("response", response.data.data[0]);
-      console.log("responsetwo",response.data.data[0].attributes.description_1)
-      // console.log("card title",response.data.data.attributes.description_1)
-      seteamData(response.data.data);
-      console.log("teamDataa",teamData[0])
-      // console.log("card title",response.data.data[0].attributes.website_cards.data.attributes.media_list?.data?.[0]?.attributes?.title)
-    })
-    .catch((error) => {
-      console.error("Error fetching API data:", error);
-    });
-}, []);
-
+  const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
+  useEffect(() => {
+    axios
+      .get(`${baseUrl}/api/websiteteam?locale=undefined&draft=false&depth=2`)
+      .then((response) => {
+        console.log("payclientdata", response);
+        console.log("payteamData", response.data);
+        console.log("payresponse", response.data.docs);
+        console.log("paayheding",response.data.docs[0].Heading)
+        console.log("payresponsetwo", response.data.docs.Description);
+        setTeamData(response.data.docs);
+        console.log("payteamDataa", response.data.docs.websiteTeamCard);
+        console.log("headingpay",)
+      })
+      .catch((error) => {
+        console.error("Error fetching API data:", error);
+      });
+  }, []);
 
   const temsettings = {
     autoplay: true,
@@ -45,95 +46,98 @@ useEffect(() => {
     slidesToScroll: 1,
   };
 
-  const teamslides = teamData[0]?.attributes?.website_cards?.data?.map((team, teamindex) => {
-    const imageUrl = baseUrl + (team.attributes.medialist?.data?.[0]?.attributes?.url || '');
-    if (!team) {
-      // Handle the case where 'team' is undefined
-      return null;
+  const handleCardClick = (url) => {
+    if (url) {
+   
+      window.open(url, '_blank');  // Use window.location.href to navigate to the URL
     }
-  
-    return (
-      <div className="team-box p-3" key={teamindex}>
-        <Row className="align-items-center">
-          <Col lg={6}>
-            <div className="mt-4">
-              <h5 className="mt-2">{team.attributes.heading}</h5>
-              <p className="team-badge bg-primary text-white rounded f-14 mt-2">{team.attributes.sub_heading}</p>
-              <p className="text-muted mt-3">{team.attributes.description}</p>
-              <div className="team-social mt-4 pt-2">
-                  <ul className="list-inline mb-0">
-                    <li className="list-inline-item">
-                      <Link to="#" className="text-reset"><i className="mdi mdi-facebook"></i></Link>
-                    </li>
-                    <li className="list-inline-item">
-                      <Link to="#" className="text-reset"><i className="mdi mdi-twitter"></i></Link>
-                    </li>
-                    <li className="list-inline-item">
-                      <Link to="#" className="text-reset"><i className="mdi mdi-google"></i></Link>
-                    </li>
-                    <li className="list-inline-item">
-                      <Link to="#" className="text-reset"><i className="mdi mdi-pinterest"></i></Link>
-                    </li>
-                  </ul>
-                </div>
-            </div>
-          </Col>
-          <Col lg={6}>
-              <div className="mt-4">
-              
-                <img src={imageUrl} alt="" className="img-fluid rounded" />
+};
+
+
+// Other code...
+
+// Other code...
+const teamSlides = (teamData && teamData[0]?.websiteTeamCard) ? teamData[0].websiteTeamCard.map((team, teamindex) => {
+  // const imageUrl = baseUrl + (team.attributes.medialist?.data?.[0]?.attributes?.url || '');
+  // const socialMediaIcons = team.attributes.medialistwo?.data;
+  // if (!team) {
+  //   // Handle the case where 'team' is undefined
+  //   return null;
+  // }
+
+  return (
+    <div className="team-box p-3" key={teamindex}>
+      <Row className="align-items-center">
+        <Col lg={6}>
+          <div className="mt-4">
+            <h5 className="mt-2">{team.Heading}</h5>
+            <p className="team-badge bg-primary text-white rounded f-14 mt-2">{team.Designation}</p>
+            {/* <p className="text-muted mt-3">{team.attributes.description}</p> */}
+           
+
+            {team.socilMediaImages && (
+                  <div className="team-social mt-4 pt-2">
+                    <ul className="list-inline mb-0">
+                      { team.socilMediaImages && team.socilMediaImages.map((socialMedia, index) => (
+                        <li className="list-inline-item" key={index}>
+                          <Link to={socialMedia.socialMediaLink || "#"} className="text-reset">
+                            <img
+                              src={socialMedia.socialMediaImage && socialMedia.socialMediaImage.url}
+                              alt={ socialMedia.socialMediaImage && socialMedia.socialMediaImage.alternativeText}
+                              style={{ width: "30px", height: "30px" }}
+                              // Assuming you have a function handleCardClick to handle clicks
+                              onClick={() => handleCardClick(socialMedia.socialMediaLink)}
+                            />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </Col>
-        </Row>
-      </div>
-    );
-  });
-  
-  // Rest of your code...
-  
+            <Col lg={6}>
+            <div className="mt-4">
+            
+              <img src={team.teamImage && team.teamImage.url} alt="" className="img-fluid rounded" />
+            </div>
+          </Col>
+      </Row>
+    </div>
+  );
+}) : null;
+
+// Other code...
+
+
+// Other code...
+
+
   return (
     <React.Fragment>
       <section className="section pt-0" id="team">
         <Container>
           <Row>
             <Col lg="12">
+            {teamData.length > 0 && (
               <div className="title-box text-center">
-                <h3 className="title-heading mt-4">{teamData[0]?.attributes?.heading}</h3>
-                <p className="text-muted f-17 mt-3">{teamData[0]?.attributes?.description}</p>
+                <h3 className="title-heading mt-4">{teamData[0].Heading}</h3>
+                <p className="text-muted f-17 mt-3">{teamData[0].Description}</p>
                 <img src={HomeUrl} height="15" className="mt-3" alt="" />
               </div>
+            )}
             </Col>
           </Row>
           <Row className="mt-5 pt-4">
             <Col lg="12">
               <div className="team-carousel">
-                <Slider {...temsettings}>
-                  {teamslides}
-                </Slider>
+                <Slider {...temsettings}>{teamSlides}</Slider>
               </div>
             </Col>
           </Row>
         </Container>
       </section>
-      <section className="section bg-light bg-cta">
-        <Container>
-          <Row className="justify-content-center">
-            <Col lg={9}>
-              <div className="text-center">
-                <h2>Get Started With <span className="text-primary">Thamza</span></h2>
-                <p className="text-muted mt-3">Quisque iaculis urna eu magna semper quis ultrices lectus efficitur
-                Praesent convallis
-                velit urna, vitae tristique tellus feugiat a maecenas diam metus convallis id cursus vel
-                          tellus.<br /> Curabitur ullamcorper feugiat convallis.</p>
-                <div className="mt-4 pt-2">
-                  <Link to="#" className="btn btn-soft-primary btn-round mr-3 btn-rounded">Request a demo</Link>
-                  <Link to="#" className="btn btn-primary btn-round btn-rounded">Get Started Now</Link>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      {/* The rest of your code */}
     </React.Fragment>
   );
 };

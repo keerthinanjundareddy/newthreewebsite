@@ -30,6 +30,11 @@ body {
   
 }
 
+
+
+
+
+
 h1,
 h2,
 h3,
@@ -995,11 +1000,23 @@ p {
   vertical-align: middle;
 }
 
-.bg-home {
+ .bg-home {
   position: relative;
   padding: 240px 0px 240px 0px;
   border-radius: 0px 0px 0px 450px;
-}
+} 
+
+
+
+.bg-homes {
+  position: relative !important;
+  padding: 240px 0px 240px 0px !important;
+  border-radius: 0px 0px 0px 450px !important;
+} 
+
+
+
+
 
 .home-badge p {
   background-color: #f0f9fa;
@@ -1290,6 +1307,7 @@ p {
   -webkit-box-shadow: 0px 5px 30px -10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 5px 30px -10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  
 }
 
 .services-box .services-icon {

@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-
-// Importing Section
-import Navbar from "../../component/Navbar/NavBar";
-
+import NavbarPage from "../../component/Navbar/NavBar";
 import Section from "./Section";
 import Services from "../../component/Services";
 import Pricing from "../../component/Pricing";
@@ -15,22 +12,28 @@ class Layout1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      navItems: [
-        { id: 1, idnm: "home", navheading: "Home" },
-        { id: 3, idnm: "services", navheading: "Services" },
-        { id: 4, idnm: "pricing", navheading: "Pricing" },
-        { id: 5, idnm: "team", navheading: "Team" },
-        { id: 6, idnm: "clients", navheading: "Clients" },
-        { id: 7, idnm: "contact", navheading: "Contact" },
-      ],
+      navItems: [],
       pos: document.documentElement.scrollTop,
       imglight: false,
       navClass: "",
-      fixTop : true
+      fixTop: true,
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    try {
+      const response = await fetch("http://localhost:4000/api/navbar?locale=undefined&draft=false&depth=1");
+      
+      const data = await response.json();
+      console.log("navbaresponse",data.docs)
+
+      if (data.docs) {
+        this.setState({ navItems: data.docs.reverse() });
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+
     window.addEventListener("scroll", this.scrollNavigation, true);
   }
 
@@ -50,36 +53,36 @@ class Layout1 extends Component {
   render() {
     return (
       <React.Fragment>
-          {/* Importing Navbar */}
-          <Navbar
-            navItems={this.state.navItems}
-            navClass={this.state.navClass}
-            imglight={this.state.imglight}
-            top={this.state.fixTop}
-          />
+        <NavbarPage
+          navItems={this.state.navItems}
+          navClass={this.state.navClass}
+          imglight={this.state.imglight}
+          top={this.state.fixTop}
+        />
 
-          {/* Importing Section */}
-          <Section />
+        {/* Importing Section */}
+        <Section />
 
-           {/* Importing Service */}
-           <Services />
+        {/* Importing Service */}
+        <Services />
 
-          {/* Importing Pricing */}
-          <Pricing />
+        {/* Importing Pricing */}
+        <Pricing />
 
-          {/* Importing Team */}
-          <Team />
+        {/* Importing Team */}
+        <Team />
 
-          {/* Importing Clients */}
-          <Clients />
+        {/* Importing Clients */}
+        <Clients />
 
-          {/* Importing Contact Us */}
-          <Contact />
+        {/* Importing Contact Us */}
+        <Contact />
 
-          {/* Importing Footer */}
-          <Footer />
+        {/* Importing Footer */}
+        <Footer />
       </React.Fragment>
     );
   }
 }
+
 export default Layout1;

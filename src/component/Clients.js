@@ -2,36 +2,31 @@ import React,{useState,useEffect}from "react";
 import axios from "axios";
 import { Col, Container, Row } from "reactstrap";
 import Slider from "react-slick";
-import Img1 from '../assets/images/testi-img/img-1.png';
-import Img2 from '../assets/images/testi-img/img-2.png';
-import Img3 from '../assets/images/testi-img/img-3.png';
-import Img4 from '../assets/images/testi-img/img-4.png';
 import HomeUrl from '../assets/images/home-border.png';
-import Client1 from '../assets/images/clients/1.png';
-import Client2 from '../assets/images/clients/2.png';
-import Client3 from '../assets/images/clients/3.png';
-import Client4 from '../assets/images/clients/4.png';
+// import Img1 from '../assets/images/testi-img/img-1.png';
+// import Img2 from '../assets/images/testi-img/img-2.png';
+// import Img3 from '../assets/images/testi-img/img-3.png';
+// import Img4 from '../assets/images/testi-img/img-4.png';
+// import HomeUrl from '../assets/images/home-border.png';
+// import Client1 from '../assets/images/clients/1.png';
+// import Client2 from '../assets/images/clients/2.png';
+// import Client3 from '../assets/images/clients/3.png';
+// import Client4 from '../assets/images/clients/4.png';
 
 const Clients = () => {
 
   const[clientData,setClientData]=useState([])
-  const baseUrl = 'http://localhost:1337'
-useEffect(() => {
-  axios.get(`${baseUrl}/api/website-brands?/api/website-brands?populate[medialist][fields]=url&populate[medialist][fields]=alternative_text&populate[website_cards][populate][medialist][fields]=url&populate[website_cards][populate][medialist][fields]=alternativeText`)
-    .then((response) => {
-      console.log("clientdata",response)
-      console.log("clientresponse",response.data.data)
-      console.log("response", response.data.data[0]);
-      console.log("responsetwo",response.data.data[0].attributes.description_1)
-      // console.log("card title",response.data.data.attributes.description_1)
-      setClientData(response.data.data);
-      console.log("clientDataa",clientData[0])
-      // console.log("card title",response.data.data[0].attributes.website_cards.data.attributes.media_list?.data?.[0]?.attributes?.title)
-    })
-    .catch((error) => {
+  const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
+
+  useEffect(() => {
+    axios.get(`${baseUrl}/api/websiteclient`).then((response) => {
+      setClientData(response.data.docs[0]);
+      console.log("clientData", response.data.docs[0]);
+    }).catch((error) => {
       console.error("Error fetching API data:", error);
     });
-}, []);
+  }, []);
+  
 
 
   // const slidesettings = {
@@ -105,21 +100,28 @@ useEffect(() => {
           <Row>
             <Col lg={12}>
               <div className="title-box text-center">
-                <h3 className="title-heading mt-4">{clientData[0]?.attributes?.heading || 'All  Brands'}</h3>
-                <p className="text-muted f-17 mt-3">{clientData[0]?.attributes?.description || ''}</p>
+                <h3 className="title-heading mt-4">{ clientData && clientData.Heading }</h3>
+                <p className="text-muted f-17 mt-3">{clientData && clientData.Description }</p>
                 <img src={HomeUrl} height="15" className="mt-3" alt="" />
               </div>
             </Col>
           </Row>
           <Row className="mt-10 pt-4 pl-20 pr-20">
-            {clientData[0]?.attributes?.website_cards?.data?.map((card) => (
-              <Col lg={3} key={card.id}>
-                <div className="client-images mt-4 pt-50">
-                  <img src={baseUrl + card?.attributes?.medialist?.data?.[0]?.attributes?.url} alt="logo-img" className="img-fluid d-block" style={{paddingLeft:"40px",paddingRight:"40px",paddingTop:"30px",paddingBottom:"30px"}} />
-                </div>
-              </Col>
-            ))}
-          </Row>
+  {clientData && clientData.images && clientData.images.length > 0 && clientData.images.map((image, index) => (
+    <Col lg={3} key={index}>
+      <div className="client-images mt-4 pt-50" style={{ width: "170px", height: "200px" }}>
+        {image.clientLogos && image.clientLogos.url && (
+          <img
+            src={image.clientLogos.url}
+            alt="logo-img"
+            className="img-fluid d-block"
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          />
+        )}
+      </div>
+    </Col>
+  ))}
+</Row>
         </Container>
       </section>
     </>

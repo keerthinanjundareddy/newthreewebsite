@@ -66,7 +66,7 @@ export default class Pricing extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="section bg-light bg-features">
+        {/* <section className="section bg-light bg-features" >
           <Container>
             <Row className="align-items-center">
               <Col lg={5}>
@@ -92,13 +92,13 @@ export default class Pricing extends Component {
               </Col>
             </Row>
           </Container>
-        </section>
-        <section className="section" id="pricing">
+        </section> */}
+        <section className="section bg-light" id="pricing">
           <Container>
             <Row>
               <Col lg={12}>
                 <div className="title-box text-center">
-                  <h3 className="title-heading mt-4">hi </h3>
+                  <h3 className="title-heading mt-4">PRICING</h3>
                   <p className="text-muted f-17 mt-3">Vivamus ac nulla ultrices laoreet neque mollis mi morbi
                   elementum mauris
                             sit amet arcu <br /> fringilla auctor In eleifend maximus nisi sed vulputate.</p>
@@ -107,7 +107,7 @@ export default class Pricing extends Component {
               </Col>
             </Row>
             <Row className="mt-5 pt-4">
-              {/* Render Pricing items */}
+            
               {this.state.pricing.map((item, key) => (
                 <Col lg="4" key={key}>
                   <div className="pricing-box mt-4">

@@ -1,30 +1,22 @@
-import React, { Component } from "react";
-import routes from "../src/routes";
-import {
-  withRouter,
-  Route,
-  Switch,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import routes from '../src/routes';
 
-import "./assets/css/materialdesignicons.min.css";
+import './assets/css/materialdesignicons.min.css';
+import './assets/scss/themes.scss';
 
-import "./assets/scss/themes.scss";
+const App = () => {
+  return (
+    <React.Fragment>
+      <Router>
+        <Routes>
+          {routes.map((route, idx) => (
+            <Route path={route.path} element={<route.component />} key={idx} />
+          ))}
+        </Routes>
+      </Router>
+    </React.Fragment>
+  );
+};
 
-class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Router>
-          <Switch>
-            {routes.map((route, idx) => (
-              <Route path={route.path} component={route.component} key={idx} />
-            ))}
-          </Switch>
-        </Router>
-      </React.Fragment>
-    );
-  }
-}
-
-export default withRouter(App);
+export default App;

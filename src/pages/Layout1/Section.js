@@ -1,96 +1,92 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
-
-// Modal Video
-import ModalVideo from "react-modal-video";
-import "../../../node_modules/react-modal-video/scss/modal-video.scss";
-
+import axios from 'axios';
+import '../../assets/css/Own.css'
 import HomeUrl from '../../assets/images/home-border.png';
-import Img from '../../assets/images/features/img-2.png';
-import axios from 'axios'
 
 const Section = () => {
-  const [homeapiData, sethomeApiData] = useState([])
-  const [isOpen, setIsOpen] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [homeData, setHomeData] = useState([]);
 
-  const openModal = () => {
-    setIsOpen(true);
-  }
+  const openVideo = () => {
+    setIsVideoOpen(true);
+  };
 
+  const closeVideo = () => {
+    setIsVideoOpen(false);
+  };
 
+  const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
 
-const baseUrl = 'http://localhost:1337'
-useEffect(() => {
-  axios.get('http://localhost:1337/api/website-homes?[populate][medialist][fields]=url&&[populate][medialist][fields]=alternativetext')
-      .then((response) => {
-          console.log("response",response.data.data[0])
-          console.log("second responses",response.data.data[0].attributes.title)
-          sethomeApiData(response.data.data)
-          // setDescription(response.data.data[0].attributes.description)
-          console.log("apidata",homeapiData)
-          console.log("sbout-section-image",response.data.data[0].attributes.medialist?.data?.[0]?.attributes.url)
-          // console.log("description here",description)
-          // console.log("image",response.data.data[0].attributes.media_list.data[0].attributes)
-      })
-}, [])
+  useEffect(() => {
+    axios.get(`${baseUrl}/api/websitehome`).then((response) => {
+      console.log("homedata",response.data.docs)
+      setHomeData(response.data.docs);
+    }).catch((error) => {
+      console.error("Error fetching API data:", error);
+    });
+  }, []);
 
-    // const imageUrl = baseUrl + (item.attributes.media_list?.data?.[0]?.attributes?.url || '');
   return (
     <React.Fragment>
-
-      <section className="bg-home bg-light" id="home">
-      {
-  homeapiData.length > 0  && homeapiData.map((itemstwo)=>{
     
-    const imageUrltwo = baseUrl + (itemstwo.attributes.medialist?.data?.[0]?.attributes.url || '');
-    return(
-      <div  key={itemstwo.id}>
+      <section className="bg-home bg-light" id="home" style={{position:"relative",paddingTop:"100px",paddingBottom:"100px"}} >
         <div className="home-center">
           <div className="home-desc-center">
             <Container>
-              <Row className="align-items-center">
-                <Col lg={6}>
-                  <div className="home-content">
-                    <p className="mb-0">{itemstwo.attributes.heading}</p>
-                    <img src={HomeUrl} height="15" alt="" />
-                    <h1 className="home-title mt-4">{itemstwo.attributes.subheadingone} <br />{itemstwo.attributes.subheadingtwo}   </h1>
-                    <p className="text-muted mt-4 f-20">
-                    {itemstwo.attributes.description}
-                    </p>
-                    <div className="mt-2 pt-2">
-                      <Link to="#" className="btn btn-primary mr-3"> {itemstwo.attributes.contactbutton}</Link>{" "}
-                      <Link to="#" className="video-play-icon text-dark" onClick={openModal}>
-                        <i className="mdi mdi-play-circle-outline text-dark mr-2"></i>Watch Intro Video
-                      </Link>
+            {homeData && homeData.map((item) => (
+                <Row key={item.id} className="align-items-center">
+                  <Col lg={6}>
+                    <div className="home-content">
+                      <p className="mb-0">{item.heading}</p>
+                      <img src={HomeUrl} height="15" alt="" />
+                      <h1 className="home-title mt-4">{item.subheadingone}<br />{item.subheadingtwo}</h1>
+                      <p className="text-muted mt-4 f-20">{item.description}</p>
+                      {item.watchvideotext && (
+                        <div className="mt-4 pt-2">
+                          <button className="video-play-icon text-dark watch-intro" onClick={openVideo}>
+                            <i className="mdi mdi-play-circle-outline text-dark mr-2 " ></i>{item.watchvideotext}
+                          </button>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="home-img">
-                    <div className="animation-1"></div>
-                    <div className ="animation-2"></div>
-                    <div className="animation-3"></div>
-                    <img src={imageUrltwo}className="img-fluid" alt="" />
-                  </div>
-                </Col>
-              </Row>
+                  </Col>
+                  <Col lg={6}>
+                    <div className="home-img">
+                    {item.imagesection && (
+      <img src={item.imagesection && baseUrl + item.imagesection.url} className="img-fluid" alt="" />
+    )}
+                    </div>
+                  </Col>
+                </Row>
+            ))}
+            
             </Container>
           </div>
-          <ModalVideo
-            channel="vimeo"
-            isOpen={isOpen}
-            videoId={itemstwo.attributes.videoId}
-            onClose={() => setIsOpen(false)}
-          />
+          {isVideoOpen && (
+            <div className="video-modal">
+              <div className="video-overlay" onClick={closeVideo}></div>
+              <div className="video-content">
+              {homeData[0]?.videosection?.url && (
+                <div>
+                <button className="close-video-btn" onClick={closeVideo}>
+                  <i className="mdi mdi-close"></i>
+                </button>
+               
+                <video controls width="100%" height="100%" onClick={closeVideo}>
+                  <source src={homeData[0]?.videosection?.url} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
-        </div>
-          )
-    })
-    }
       </section>
+       
     </React.Fragment>
   );
-}
+};
 
 export default Section;
