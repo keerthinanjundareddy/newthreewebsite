@@ -26,17 +26,24 @@ const Services = () => {
               <Row>
                 <Col lg="12">
                   <div className="title-box text-center">
-                    <h3 className="title-heading mt-4">{offer.Heading}</h3>
-                    <p className="text-muted f-17 mt-3">{offer.Description}</p>
+                    <h3 className="title-heading mt-4">{offer.Heading && offer.Heading}</h3>
+                    <p className="text-muted f-17 mt-3">{offer.Description && offer.Description}</p>
                   </div>
                 </Col>
               </Row>
               <Row >
                 {offer.websiteOfferCard && offer.websiteOfferCard.map((card) => (
                   <Col lg={4} key={card.id} style={{display:"flex",flexWrap:"wrap"}}>
-                    <div className="services-box p-4 mt-4" style={{ minHeight: "20px",}}>
+                    
+                    <div className="services-box p-4 mt-4" style={{ minHeight: "20px",minWidth: "100px", width: "100%" }}>
                       <div className="services-icon bg-soft-primary">
-                        <img src={card.Icon && card.Icon.url} alt={card.AlternativeTextOfIcon} style={{ width: "100%", height: "100%",objectFit:"contain",padding:"10px" }} />
+                    
+                      {card.Icon && 
+                      <div style={{ width: "100%", height: "100%"}}>
+                      <img src={`${baseUrl}${card.Icon.url}`} alt={card.AlternativeTextOfIcon} style={{ width:"100%",height:"100%",objectFit:"contain",padding:"10px" }} />
+                      </div>
+                      }
+
                       </div>
                       <h5 className="mt-4">{card.Heading}</h5>
                       <p className="text-muted mt-3">{card.Description}</p>

@@ -111,13 +111,13 @@ const Clients = () => {
           <Row className="mt-10 pt-4 pl-20 pr-20">
           {clientData && clientData.images && clientData.images.length > 0 && clientData.images.map((image, index) => (
   <Col lg={3} key={index}>
-    <div className="client-images mt-4 pt-50" style={{ width: "170px", height: "200px" }}>
+    <div className="client-images mt-4 pt-50 text-center" style={{textAlign:"center",justifyContent:"center",alignItems:"Center" }}>
       {image.clientLogos && (
         <img
           src={`${baseUrl}${image.clientLogos.url}`} 
           alt="logo-img"
-          className="img-fluid d-block"
-          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          className="img-fluid d-block mx-auto"
+          style={{  width: "170px", height: "200px",objectFit: "contain" }}
         />
       )}
     </div>
