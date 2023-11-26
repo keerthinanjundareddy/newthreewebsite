@@ -22,10 +22,12 @@ const Clients = () => {
     axios.get(`${baseUrl}/api/websiteclient`).then((response) => {
       setClientData(response.data.docs[0]);
       console.log("clientData", response.data.docs[0]);
+      console.log("clientimage",response.data.docs[0].images.clientLogos)
     }).catch((error) => {
       console.error("Error fetching API data:", error);
     });
   }, []);
+  console.log("clientImages", clientData && clientData.images);
   
 
 
@@ -107,20 +109,22 @@ const Clients = () => {
             </Col>
           </Row>
           <Row className="mt-10 pt-4 pl-20 pr-20">
-  {clientData && clientData.images && clientData.images.length > 0 && clientData.images.map((image, index) => (
-    <Col lg={3} key={index}>
-      <div className="client-images mt-4 pt-50" style={{ width: "170px", height: "200px" }}>
-        {image.clientLogos && image.clientLogos.url && (
-          <img
-            src={image.clientLogos.url}
-            alt="logo-img"
-            className="img-fluid d-block"
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        )}
-      </div>
-    </Col>
-  ))}
+          {clientData && clientData.images && clientData.images.length > 0 && clientData.images.map((image, index) => (
+  <Col lg={3} key={index}>
+    <div className="client-images mt-4 pt-50" style={{ width: "170px", height: "200px" }}>
+      {image.clientLogos && (
+        <img
+          src={`${baseUrl}${image.clientLogos.url}`} 
+          alt="logo-img"
+          className="img-fluid d-block"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
+      )}
+    </div>
+  </Col>
+))}
+
+
 </Row>
         </Container>
       </section>

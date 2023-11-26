@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavbarPage from "../../component/Navbar/NavBar";
+import Navbar from "../../component/Navbar/NavBar";
 import Section from "./Section";
 import Services from "../../component/Services";
 import Pricing from "../../component/Pricing";
@@ -16,30 +16,31 @@ class Layout1 extends Component {
       pos: document.documentElement.scrollTop,
       imglight: false,
       navClass: "",
-      fixTop: true,
+      fixTop: true
     };
   }
 
-  async componentDidMount() {
-    try {
-      const response = await fetch("http://localhost:4000/api/navbar?locale=undefined&draft=false&depth=1");
-      
-      const data = await response.json();
-      console.log("navbaresponse",data.docs)
-
-      if (data.docs) {
-        this.setState({ navItems: data.docs.reverse() });
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-
+  componentDidMount() {
+    this.fetchNavItems();
     window.addEventListener("scroll", this.scrollNavigation, true);
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.scrollNavigation, true);
   }
+
+  fetchNavItems = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:4000/api/navbar?locale=undefined&draft=false&depth=1"
+      );
+      const data = await response.json();
+      console.log("nvbardata",data)
+      this.setState({ navItems: data.docs.reverse() });
+    } catch (error) {
+      console.error("Error fetching navigation items:", error);
+    }
+  };
 
   scrollNavigation = () => {
     var scrollup = document.documentElement.scrollTop;
@@ -53,32 +54,19 @@ class Layout1 extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavbarPage
+        <Navbar
           navItems={this.state.navItems}
           navClass={this.state.navClass}
           imglight={this.state.imglight}
           top={this.state.fixTop}
         />
 
-        {/* Importing Section */}
         <Section />
-
-        {/* Importing Service */}
         <Services />
-
-        {/* Importing Pricing */}
         <Pricing />
-
-        {/* Importing Team */}
         <Team />
-
-        {/* Importing Clients */}
         <Clients />
-
-        {/* Importing Contact Us */}
         <Contact />
-
-        {/* Importing Footer */}
         <Footer />
       </React.Fragment>
     );

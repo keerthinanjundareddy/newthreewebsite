@@ -47,6 +47,7 @@ const Contact = () => {
   };
 
   const handleCardClick = (url) => {
+  
     if (url) {
    
       window.open(url, '_blank');  // Use window.location.href to navigate to the URL
@@ -70,8 +71,8 @@ const teamSlides = (teamData && teamData[0]?.websiteTeamCard) ? teamData[0].webs
       <Row className="align-items-center">
         <Col lg={6}>
           <div className="mt-4">
-            <h5 className="mt-2">{team.Heading}</h5>
-            <p className="team-badge bg-primary text-white rounded f-14 mt-2">{team.Designation}</p>
+            <h5 className="mt-2">{team.Heading && team.Heading}</h5>
+            <p className="team-badge bg-primary text-white rounded f-14 mt-2">{team.Designation && team.Designation}</p>
             {/* <p className="text-muted mt-3">{team.attributes.description}</p> */}
            
 
@@ -80,15 +81,18 @@ const teamSlides = (teamData && teamData[0]?.websiteTeamCard) ? teamData[0].webs
                     <ul className="list-inline mb-0">
                       { team.socilMediaImages && team.socilMediaImages.map((socialMedia, index) => (
                         <li className="list-inline-item" key={index}>
-                          <Link to={socialMedia.socialMediaLink || "#"} className="text-reset">
+                          {/* <Link to={socialMedia.socialMediaLink || "#"} className="text-reset"> */}
+                          {socialMedia.socialMediaImage && socialMedia.socialMediaImage.url && (
                             <img
-                              src={socialMedia.socialMediaImage && socialMedia.socialMediaImage.url}
-                              alt={ socialMedia.socialMediaImage && socialMedia.socialMediaImage.alternativeText}
+                            
+                            src={`${baseUrl}${socialMedia.socialMediaImage.url}`}
+                              alt={ `${baseUrl}${socialMedia.socialMediaUrl}`}
                               style={{ width: "30px", height: "30px" }}
                               // Assuming you have a function handleCardClick to handle clicks
                               onClick={() => handleCardClick(socialMedia.socialMediaLink)}
                             />
-                          </Link>
+                          )}
+                          {/* </Link> */}
                         </li>
                       ))}
                     </ul>
@@ -99,7 +103,7 @@ const teamSlides = (teamData && teamData[0]?.websiteTeamCard) ? teamData[0].webs
             <Col lg={6}>
             <div className="mt-4">
             
-              <img src={team.teamImage && team.teamImage.url} alt="" className="img-fluid rounded" />
+              <img src={`${baseUrl}${team.teamImage && team.teamImage.url}`}      alt="" className="img-fluid rounded" />
             </div>
           </Col>
       </Row>
