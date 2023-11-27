@@ -30,7 +30,7 @@ const Section = () => {
   return (
     <React.Fragment>
     
-      <section className="bg-home bg-light" id="home" style={{position:"relative",paddingTop:"100px",paddingBottom:"100px"}} >
+      <section className="bg-home bg-light" id="home" style={{position:"relative",paddingTop:"125px",paddingBottom:"100px"}} >
         <div className="home-center">
           <div className="home-desc-center">
             <Container>
