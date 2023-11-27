@@ -1313,10 +1313,19 @@ p {
 .services-box .services-icon {
   width: 55px;
   height: 55px;
-  line-height: 60px;
+  line-height: 60px ;
   text-align: center;
   border-radius: 10px;
   display: inline-block;
+}
+.services-icon{
+  width: 55px;
+  height: 55px;
+  line-height: 60px ;
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+
 }
 
 .services-box .services-icon i {
