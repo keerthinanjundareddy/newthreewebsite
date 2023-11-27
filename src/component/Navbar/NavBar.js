@@ -47,9 +47,13 @@ class NavbarPage extends Component {
           {/* LOGO */}
           <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
               {this.props.imglight === true ? (
-                <img src={logolight} alt="" height="80" width="120" />
+                <div style={{width:"200px",height:"100px"}}>
+                <img src={logolight} alt=""  style={{width:"100%",height:"100%",objectFit:"contain"}} />
+                </div>
               ) : (
-                  <img src={logodark} alt="" height="80" width="120" />
+                <div  style={{width:"200px",height:"100px"}}>
+                  <img src={logodark} alt=""  style={{width:"100%",height:"100%",objectFit:"contain"}} />
+                  </div>
                 )}
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle}>
