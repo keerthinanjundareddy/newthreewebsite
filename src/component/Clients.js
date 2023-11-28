@@ -16,10 +16,10 @@ import HomeUrl from '../assets/images/home-border.png';
 const Clients = () => {
 
   const[clientData,setClientData]=useState([])
-  const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
-
+  // const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
+  const baseUrltwo='http://localhost:4000'
   useEffect(() => {
-    axios.get(`${baseUrl}/api/websiteclient`).then((response) => {
+    axios.get(`${baseUrltwo}/api/websiteClient`).then((response) => {
       setClientData(response.data.docs[0]);
       console.log("clientData", response.data.docs[0]);
       console.log("clientimage",response.data.docs[0].images.clientLogos)
@@ -111,14 +111,18 @@ const Clients = () => {
           <Row className="mt-10 pt-4 pl-20 pr-20">
           {clientData && clientData.images && clientData.images.length > 0 && clientData.images.map((image, index) => (
   <Col lg={3} key={index}>
-    <div className="client-images mt-4 pt-50 text-center" style={{textAlign:"center",justifyContent:"center",alignItems:"Center" }}>
+    <div className="client-images mt-4 pt-50 text-center" style={{textAlign:"center",justifyContent:"center",alignItems:"Center",boder:"1px solid black" }}>
       {image.clientLogos && (
+       
         <img
-          src={`${baseUrl}${image.clientLogos.url}`} 
+          // src={`${baseUrltwo}${image.clientLogos.url}`} 
+          src={image.clientLogos.url}
           alt="logo-img"
           className="img-fluid d-block mx-auto"
-          style={{  width: "170px", height: "200px",objectFit: "contain" }}
+          style={{  width: "170px", height: "200px",objectFit:"contain"}}
+         
         />
+       
       )}
     </div>
   </Col>

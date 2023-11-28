@@ -18,9 +18,10 @@ const Contact = () => {
   const [teamData, setTeamData] = useState([]);
 
   const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
+  const baseUrltwo='http://localhost:4000';
   useEffect(() => {
     axios
-      .get(`${baseUrl}/api/websiteteam?locale=undefined&draft=false&depth=2`)
+      .get(`${baseUrltwo}/api/websiteteam?locale=undefined&draft=false&depth=2`)
       .then((response) => {
         console.log("payclientdata", response);
         console.log("payteamData", response.data);
@@ -84,9 +85,10 @@ const teamSlides = (teamData && teamData[0]?.websiteTeamCard) ? teamData[0].webs
                           {/* <Link to={socialMedia.socialMediaLink || "#"} className="text-reset"> */}
                           {socialMedia.socialMediaImage && socialMedia.socialMediaImage.url && (
                             <img
-                            
-                            src={`${baseUrl}${socialMedia.socialMediaImage.url}`}
-                              alt={ `${baseUrl}${socialMedia.socialMediaUrl}`}
+                            src={socialMedia.socialMediaImage.url}
+                            alt=""
+                            // src={`${baseUrl}${socialMedia.socialMediaImage.url}`}
+                              // alt={ `${baseUrl}${socialMedia.socialMediaUrl}`}
                               style={{ width: "30px", height: "30px" }}
                               // Assuming you have a function handleCardClick to handle clicks
                               onClick={() => handleCardClick(socialMedia.socialMediaLink)}
@@ -103,7 +105,8 @@ const teamSlides = (teamData && teamData[0]?.websiteTeamCard) ? teamData[0].webs
             <Col lg={6}>
             <div className="mt-4">
             
-              <img src={`${baseUrl}${team.teamImage && team.teamImage.url}`}      alt="" className="img-fluid rounded" />
+              {/* <img src={`${baseUrl}${team.teamImage && team.teamImage.url}`}      alt="" className="img-fluid rounded" /> */}
+              <img src={team.teamImage && team.teamImage.url} alt="" className="img-fluid rounded" />
             </div>
           </Col>
       </Row>

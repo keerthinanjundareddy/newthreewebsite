@@ -27,11 +27,31 @@ class NavbarPage extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
+  
+  componentDidMount() {
+    // Make an API request to fetch logo data
+    // Example using fetch API, replace with your actual API call
+    fetch("http://localhost:4000/api/websitenavbarlogo")
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the state with the fetched logo data
+        this.setState({ logoData: data.docs[0].navbarLogo });
+      })
+      .catch((error) => console.error("Error fetching logo:", error));
+  }
+
   toggle = () => {
     this.setState({ isOpenMenu: !this.state.isOpenMenu });
   };
 
   render() {
+    const { logoData } = this.state;
+
+    // Determine the logo image source based on imglight prop and fetched data
+    const logoSrc = this.props.imglight
+      ? logoData?.url || logolight
+      : logoData?.url || logodark;
+      
     let targetId = this.props.navItems.map((item) => {
       return item.idnm;
     });
@@ -46,15 +66,9 @@ class NavbarPage extends Component {
           <Container>
           {/* LOGO */}
           <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
-              {this.props.imglight === true ? (
-                <div style={{width:"200px",height:"100px"}}>
-                <img src={logolight} alt=""  style={{width:"100%",height:"100%",objectFit:"contain"}} />
-                </div>
-              ) : (
-                <div  style={{width:"200px",height:"100px"}}>
-                  <img src={logodark} alt=""  style={{width:"100%",height:"100%",objectFit:"contain"}} />
-                  </div>
-                )}
+            <div style={{width:"200px",height:"100px"}}>
+          <img src={logoSrc} alt="logo"  style={{width:"100%",height:"100%",objectFit:"contain"}} />
+          </div>
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle}>
               <i className="mdi mdi-menu"></i>

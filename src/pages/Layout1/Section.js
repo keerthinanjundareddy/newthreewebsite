@@ -16,12 +16,14 @@ const Section = () => {
     setIsVideoOpen(false);
   };
 
-  const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
+  const baseUrl = 'https://ayathanapayload.payloadcms.app';
+  // const baseUrltwo='http://localhost:4000'
 
   useEffect(() => {
     axios.get(`${baseUrl}/api/websitehome`).then((response) => {
-      console.log("homedata",response.data.docs)
+      console.log("homedata",response.data)
       setHomeData(response.data.docs);
+      console.log()
     }).catch((error) => {
       console.error("Error fetching API data:", error);
     });
@@ -38,10 +40,10 @@ const Section = () => {
                 <Row key={item.id} className="align-items-center">
                   <Col lg={6}>
                     <div className="home-content">
-                      <p className="mb-0">{item.heading}</p>
+                      <p className="mb-0">{item.Heading}</p>
                       <img src={HomeUrl} height="15" alt="" />
-                      <h1 className="home-title mt-4">{item.subheadingone}<br />{item.subheadingtwo}</h1>
-                      <p className="text-muted mt-4 f-20">{item.description}</p>
+                      <h1 className="home-title mt-4">{item.subHeadingOne}<br />{item.subHeadingTwo}</h1>
+                      <p className="text-muted mt-4 f-20">{item.Description}</p>
                       {item.watchvideotext && (
                         <div className="mt-4 pt-2">
                           <button className="video-play-icon text-dark watch-intro" onClick={openVideo}>
@@ -53,8 +55,8 @@ const Section = () => {
                   </Col>
                   <Col lg={6}>
                     <div className="home-img">
-                    {item.imagesection && (
-      <img src={item.imagesection && baseUrl + item.imagesection.url} className="img-fluid" alt="" />
+                    {item.imageSection && (
+      <img src={item.imageSection && baseUrl + item.imageSection.url} className="img-fluid" alt={item.imageSection.url} />
     )}
                     </div>
                   </Col>
