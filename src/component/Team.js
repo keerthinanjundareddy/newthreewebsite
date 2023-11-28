@@ -17,13 +17,15 @@ import Img4 from '../assets/images/users/img-4.png';
 const Contact = () => {
   const [teamData, setTeamData] = useState([]);
 
+
+
   const baseUrl = 'https://ayathanapayload.payloadcms.app';
   // const baseUrltwo='http://localhost:4000';
   useEffect(() => {
     axios
-      .get(`${baseUrl}/api/websiteteam?locale=undefined&draft=false&depth=2`)
+      .get(`https://ayathanapayload.payloadcms.app/api/websiteTeam?locale=undefined&draft=false&depth=2`)
       .then((response) => {
-        console.log("payclientdata", response);
+        console.log("Teamdata", response);
         console.log("payteamData", response.data);
         console.log("payresponse", response.data.docs);
         console.log("paayheding",response.data.docs[0].Heading)
@@ -33,7 +35,7 @@ const Contact = () => {
         console.log("headingpay",)
       })
       .catch((error) => {
-        console.error("Error fetching API data:", error);
+        console.error("Error fetching", error);
       });
   }, []);
 
