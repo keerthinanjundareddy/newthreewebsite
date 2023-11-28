@@ -61,7 +61,7 @@ const Contact = () => {
 // Other code...
 
 // Other code...
-const teamSlides = (teamData && teamData[0]?.websiteTeamCard) ? teamData[0].websiteTeamCard.map((team, teamindex) => {
+const teamSlides = teamData && teamData[0]?.websiteTeamCard && teamData[0].websiteTeamCard.map((team, teamindex) => {
   // const imageUrl = baseUrl + (team.attributes.medialist?.data?.[0]?.attributes?.url || '');
   // const socialMediaIcons = team.attributes.medialistwo?.data;
   // if (!team) {
@@ -114,7 +114,7 @@ const teamSlides = (teamData && teamData[0]?.websiteTeamCard) ? teamData[0].webs
       </Row>
     </div>
   );
-}) : null;
+}) 
 
 // Other code...
 
