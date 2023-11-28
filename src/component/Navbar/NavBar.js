@@ -80,7 +80,7 @@ class NavbarPage extends Component {
     const logoSource = `https://ayathanapayload.payloadcms.app${url}`;
     return (
       <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
-        <div style={{width:"100px",height:"100px"}}>
+        <div style={{width:"200px",height:"100px"}}>
       <img src={logoSource} alt={filename} style={{width:"100%",height:"100%",objectFit:"contain"}} />
       </div>
     </NavbarBrand>
@@ -135,7 +135,7 @@ class NavbarPage extends Component {
                   ))}
                 </Nav>
               </ScrollspyNav>
-              <ul className="navbar-nav navbar-center">
+              {/* <ul className="navbar-nav navbar-center">
                 <li className="nav-item">
                   <Link to="/Login" className="nav-link">
                     Log In
@@ -154,7 +154,7 @@ class NavbarPage extends Component {
                 >
                   Sign Up
                 </Link>
-              </div>
+              </div> */}
             </Collapse>
           </Container>
         </Navbar>

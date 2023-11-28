@@ -16,10 +16,10 @@ import HomeUrl from '../assets/images/home-border.png';
 const Clients = () => {
 
   const[clientData,setClientData]=useState([])
-  // const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
-  const baseUrltwo='http://localhost:4000'
+   const baseUrl = 'https://ayathanapayload.payloadcms.app';
+  // const baseUrltwo='http://localhost:4000'
   useEffect(() => {
-    axios.get(`${baseUrltwo}/api/websiteClient`).then((response) => {
+    axios.get(`${baseUrl}/api/websiteClient`).then((response) => {
       setClientData(response.data.docs[0]);
       console.log("clientData", response.data.docs[0]);
       console.log("clientimage",response.data.docs[0].images.clientLogos)
@@ -115,9 +115,9 @@ const Clients = () => {
       {image.clientLogos && (
        
         <img
-          // src={`${baseUrltwo}${image.clientLogos.url}`} 
-          src={image.clientLogos.url}
-          alt="logo-img"
+          src={`${baseUrl}${image.clientLogos.url}`} 
+          // src={image.clientLogos.url}
+          alt={image.alternativeText}
           className="img-fluid d-block mx-auto"
           style={{  width: "170px", height: "200px",objectFit:"contain"}}
          
