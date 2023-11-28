@@ -20,9 +20,31 @@ class NavbarPage extends Component {
     super(props);
     this.state = {
       isOpenMenu: false,
+      // Add a state variable for the logo data
+      logoData: null,
     };
   }
 
+  fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://ayathanapayload.payloadcms.app/api/websiteNavbarLogo?locale=undefined&draft=false&depth=1"
+      );
+      const data = await response.json();
+
+      // Update state with logo data
+      this.setState({ logoData: data.docs[0].navbarLogo });
+    } catch (error) {
+      console.error("Error fetching logo data:", error);
+    }
+  };
+
+  componentDidMount() {
+    // Fetch logo data when the component mounts
+    this.fetchData();
+  }
+
+  
   toggle = () => {
     this.setState({ isOpenMenu: !this.state.isOpenMenu });
   };
@@ -47,10 +69,21 @@ class NavbarPage extends Component {
 
   renderLogo = () => {
     const { imglight } = this.props;
+    const { logoData } = this.state;
+
+    if (!logoData) {
+      // Render a placeholder or loading state if logo data is not available
+      return <div></div>;
+    }
+
+    const { filename, url } = logoData;
+    const logoSource = `https://ayathanapayload.payloadcms.app${url}`;
     return (
       <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
-        <img src={imglight ? logolight : logodark} alt="" height="22" />
-      </NavbarBrand>
+        <div style={{width:"100px",height:"100px"}}>
+      <img src={logoSource} alt={filename} style={{width:"100%",height:"100%",objectFit:"contain"}} />
+      </div>
+    </NavbarBrand>
     );
   };
 
