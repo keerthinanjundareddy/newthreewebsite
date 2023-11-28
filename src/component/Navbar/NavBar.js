@@ -10,73 +10,73 @@ import {
   Collapse,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-
-// Import Logo
-import logodark from "../../assets/images/isibisi-removebg-preview.png";
-import logolight from "../../assets/images/isibisi-removebg-preview.png";
-
 import ScrollspyNav from "./Scrollspy";
 
+import logodark from "../../assets/images/logo-dark.png";
+import logolight from "../../assets/images/logo-light.png";
+
 class NavbarPage extends Component {
-  // render() {
   constructor(props) {
     super(props);
     this.state = {
       isOpenMenu: false,
     };
-    this.toggle = this.toggle.bind(this);
-  }
-
-  
-  componentDidMount() {
-    // Make an API request to fetch logo data
-    // Example using fetch API, replace with your actual API call
-    fetch("http://localhost:4000/api/websitenavbarlogo")
-      .then((response) => response.json())
-      .then((data) => {
-        // Update the state with the fetched logo data
-        this.setState({ logoData: data.docs[0].navbarLogo });
-      })
-      .catch((error) => console.error("Error fetching logo:", error));
   }
 
   toggle = () => {
     this.setState({ isOpenMenu: !this.state.isOpenMenu });
   };
 
-  render() {
-    const { logoData } = this.state;
+  handleNavLinkClick = (event, sectionID) => {
+    event.preventDefault();
 
-    // Determine the logo image source based on imglight prop and fetched data
-    const logoSrc = this.props.imglight
-      ? logoData?.url || logolight
-      : logoData?.url || logodark;
-      
-    let targetId = this.props.navItems.map((item) => {
-      return item.idnm;
+    // Additional logic if needed
+    // For example, you can manually scroll to the section here
+
+    // Example: Scroll to the section manually
+    const scrollTargetPosition =
+      document.getElementById(sectionID).offsetTop -
+      (this.props.headerBackground
+        ? document.querySelector("div[data-nav='list']").scrollHeight
+        : 0);
+    window.scrollTo({
+      top: scrollTargetPosition,
+      behavior: "smooth",
     });
+  };
+
+  renderLogo = () => {
+    const { imglight } = this.props;
+    return (
+      <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
+        <img src={imglight ? logolight : logodark} alt="" height="22" />
+      </NavbarBrand>
+    );
+  };
+
+  render() {
+    const { isOpenMenu } = this.state;
+    const { top, navClass, imglight, navItems } = this.props;
+
+    let targetId = navItems.map((item) => item.idnm);
+
     return (
       <React.Fragment>
         <Navbar
           expand="lg"
-          fixed={this.props.top === true ? "top" : ""}
-          className={this.props.navClass + " navbar-custom sticky sticky-dark"}
+          fixed={top ? "top" : ""}
+          className={`${navClass} navbar-custom sticky sticky-dark`}
           id="navbar"
         >
           <Container>
-          {/* LOGO */}
-          <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
-            <div style={{width:"200px",height:"100px"}}>
-          <img src={logoSrc} alt="logo"  style={{width:"100%",height:"100%",objectFit:"contain"}} />
-          </div>
-            </NavbarBrand>
+            {this.renderLogo()}
             <NavbarToggler onClick={this.toggle}>
               <i className="mdi mdi-menu"></i>
             </NavbarToggler>
             <Collapse
               id="navbarCollapse"
-              isOpen={this.state.isOpenMenu}
-              className=" navbar-collapse"
+              isOpen={isOpenMenu}
+              className="navbar-collapse"
             >
               <ScrollspyNav
                 scrollTargetIds={targetId}
@@ -86,33 +86,42 @@ class NavbarPage extends Component {
                 className="navbar-collapse"
               >
                 <Nav className="navbar-nav ml-auto navbar-center" id="navbar-navlist">
-                  {this.props.navItems.map((item, key) => (
+                  {navItems.map((item, key) => (
                     <NavItem
                       key={key}
                       className={item.navheading === "Home" ? "active" : ""}
                     >
                       <NavLink
                         className={item.navheading === "Home" ? "active" : ""}
-                        href={"#" + item.idnm}
+                        href={`#${item.idnm}`}
+                        onClick={(e) => this.handleNavLinkClick(e, item.idnm)}
                       >
                         {item.navheading}
                       </NavLink>
                     </NavItem>
                   ))}
                 </Nav>
-                
               </ScrollspyNav>
-              {/* <ul className="navbar-nav navbar-center">
-                  <li className="nav-item">
-                    <Link to="/Login" className="nav-link">Log In</Link>
-                  </li>
-                  <li className="nav-item d-inline-block d-lg-none">
-                    <Link to="/SignUp" className="nav-link">Sign Up</Link>
-                  </li>
-                </ul>
-                <div className="navbar-button d-none d-lg-inline-block">
-                  <Link to="/SignUp" className="btn btn-sm btn-soft-primary btn-round">Sign Up</Link>
-                </div> */}
+              <ul className="navbar-nav navbar-center">
+                <li className="nav-item">
+                  <Link to="/Login" className="nav-link">
+                    Log In
+                  </Link>
+                </li>
+                <li className="nav-item d-inline-block d-lg-none">
+                  <Link to="/SignUp" className="nav-link">
+                    Sign Up
+                  </Link>
+                </li>
+              </ul>
+              <div className="navbar-button d-none d-lg-inline-block">
+                <Link
+                  to="/SignUp"
+                  className="btn btn-sm btn-soft-primary btn-round"
+                >
+                  Sign Up
+                </Link>
+              </div>
             </Collapse>
           </Container>
         </Navbar>
@@ -120,5 +129,5 @@ class NavbarPage extends Component {
     );
   }
 }
-// }
+
 export default NavbarPage;

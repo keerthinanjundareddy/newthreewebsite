@@ -32,7 +32,7 @@ class Layout1 extends Component {
   fetchNavItems = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/api/navbar?locale=undefined&draft=false&depth=1"
+        "https://ayathanapayload.payloadcms.app/api/WebsiteNavbar?locale=undefined&draft=false&depth=1"
       );
       const data = await response.json();
       console.log("nvbardata",data)
