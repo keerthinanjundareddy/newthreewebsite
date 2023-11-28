@@ -32,7 +32,7 @@ const Section = () => {
   return (
     <React.Fragment>
     
-      <section className="bg-home bg-light" id="home" style={{position:"relative",paddingTop:"110px",paddingBottom:"100px"}} >
+      <section className="bg-home bg-light" id="home" style={{position:"relative",paddingTop:"150px",paddingBottom:"100px"}} >
         <div className="home-center">
           <div className="home-desc-center">
             <Container>
@@ -69,14 +69,14 @@ const Section = () => {
             <div className="video-modal">
               <div className="video-overlay" onClick={closeVideo}></div>
               <div className="video-content">
-              {homeData[0]?.videosection?.url && (
+              {homeData[0]?.videoSection?.url && (
                 <div>
                 <button className="close-video-btn" onClick={closeVideo}>
                   <i className="mdi mdi-close"></i>
                 </button>
                
                 <video controls width="100%" height="100%" onClick={closeVideo}>
-                  <source src={homeData[0]?.videosection?.url} type="video/mp4" />
+                  <source src={ baseUrl + homeData[0]?.videoSection?.url} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 </div>
