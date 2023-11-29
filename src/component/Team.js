@@ -9,6 +9,8 @@ const handleSocialMediaClick = (link) => {
     window.open(link, '_blank');
   }
 };
+
+const baseUrl = 'https://ayathanapayload.payloadcms.app';
 // ... (import your images)
 const TeamMemberCard = ({ data, index, setHoveredCard }) => (
   
@@ -19,7 +21,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
     onMouseLeave={() => setHoveredCard(null)}
   >
     <div className="imge-sections">
-      {data.teamImage && <img src={data.teamImage.url} alt="" className="imge-section-two" />}
+      {data.teamImage && <img src={`${baseUrl}${data.teamImage.url}`} alt="" className="imge-section-two" />}
     </div>
     <div
       className="heading-sections"
@@ -40,7 +42,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
     >
       {data.socilMediaImages.map((socialMediaImage, idx) => (
         <div className="inst-image" key={idx}  >
-          {socialMediaImage.socialMediaImage && <img src={socialMediaImage.socialMediaImage.url} className="inst-image-two" alt="" onClick={() => handleSocialMediaClick(socialMediaImage.socialMediaLink)} />}
+          {socialMediaImage.socialMediaImage && <img src={`${baseUrl}${socialMediaImage.socialMediaImage.url}`} className="inst-image-two" alt="" onClick={() => handleSocialMediaClick(socialMediaImage.socialMediaLink)} />}
         </div>
       ))}
     </div>
@@ -71,7 +73,8 @@ const Team = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/websiteteam?locale=undefined&draft=false&depth=3');
+     
+        const response = await axios.get(`${baseUrl}/api/websiteTeam?locale=undefined&draft=false&depth=3`);
         console.log("teamdata",response)
         const { docs } = response.data;
     
