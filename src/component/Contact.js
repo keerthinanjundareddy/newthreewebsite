@@ -9,11 +9,11 @@ export default class Contact extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="section" id="contact">
+        <section className="section bg-light" id="contact">
           <Container>
             <Row>
               <Col lg={12}>
-                <div className="title-box text-center">
+                <div className="title-box text-center   ">
                   <h3 className="title-heading mt-4">Let's talk about everything!</h3>
                   {/* <p className="text-muted f-17 mt-3">Vivamus ac nulla ultrices laoreet neque mollis mi morbi
                   elementum mauris

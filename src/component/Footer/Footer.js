@@ -38,7 +38,7 @@ class Footer extends Component {
       <React.Fragment>
         {/* Footer Start */}
         <footer
-          className="section bg-light bg-footer pb-5"
+          className="section bg-footer pb-5"
         >
           <Container>
             <Row>

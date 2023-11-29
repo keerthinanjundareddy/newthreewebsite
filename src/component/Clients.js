@@ -97,7 +97,7 @@ const Clients = () => {
           </Row> */}
         {/* </Container> */}
       {/* </section> */}
-      <section className="section bg-light "   id="clients">
+      <section className="section  "   id="clients">
         <Container>
           <Row>
             <Col lg={12}>

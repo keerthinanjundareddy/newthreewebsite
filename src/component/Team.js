@@ -1,154 +1,119 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../assets/css/Own.css'
 
-import { Col, Container, Row } from "reactstrap";
-import Slider from "react-slick";
+// ... (import your images)
 
-import HomeUrl from '../assets/images/home-border.png';
-
-import Img1 from '../assets/images/users/img-1.png';
-import Img2 from '../assets/images/users/img-2.png';
-import Img3 from '../assets/images/users/img-3.png';
-import Img4 from '../assets/images/users/img-4.png';
-
-
-
-const Contact = () => {
-  const [teamData, setTeamData] = useState([]);
-
-
-
-  const baseUrl = 'https://ayathanapayload.payloadcms.app';
-  // const baseUrltwo='http://localhost:4000';
-  useEffect(() => {
-    axios
-      .get(`https://ayathanapayload.payloadcms.app/api/websiteTeam?locale=undefined&draft=false&depth=2`)
-      .then((response) => {
-        console.log("Teamdata", response);
-        console.log("payteamData", response.data);
-        console.log("payresponse", response.data.docs);
-        console.log("paayheding",response.data.docs[0].Heading)
-        console.log("payresponsetwo", response.data.docs.Description);
-        setTeamData(response.data.docs);
-        console.log("payteamDataa", response.data.docs.websiteTeamCard);
-        console.log("headingpay",)
-      })
-      .catch((error) => {
-        console.error("Error fetching", error);
-      });
-  }, []);
-
-  const temsettings = {
-    autoplay: true,
-    dots: true,
-    speed: 300,
-    infinite: false,
-    arrows: false,
-    slidesToShow: window.innerWidth < 768 ? 1 : 2,
-    slidesToScroll: 1,
-  };
-
-  const handleCardClick = (url) => {
-  
-    if (url) {
-   
-      window.open(url, '_blank');  // Use window.location.href to navigate to the URL
-    }
-};
-
-
-// Other code...
-
-// Other code...
-const teamSlides = teamData && teamData[0]?.websiteTeamCard && teamData[0].websiteTeamCard.map((team, teamindex) => {
-  // const imageUrl = baseUrl + (team.attributes.medialist?.data?.[0]?.attributes?.url || '');
-  // const socialMediaIcons = team.attributes.medialistwo?.data;
-  // if (!team) {
-  //   // Handle the case where 'team' is undefined
-  //   return null;
-  // }
-
-  return (
-    <div className="team-box p-3" key={teamindex}>
-      <Row className="align-items-center">
-        <Col lg={6}>
-          <div className="mt-4">
-            <h5 className="mt-2">{team.Heading && team.Heading}</h5>
-            <p className="team-badge bg-primary text-white rounded f-14 mt-2">{team.Designation && team.Designation}</p>
-            {/* <p className="text-muted mt-3">{team.attributes.description}</p> */}
-           
-
-            {team.socilMediaImages && (
-                  <div className="team-social mt-4 pt-2">
-                    <ul className="list-inline mb-0">
-                      { team.socilMediaImages && team.socilMediaImages.map((socialMedia, index) => (
-                        <li className="list-inline-item" key={index}>
-                          {/* <Link to={socialMedia.socialMediaLink || "#"} className="text-reset"> */}
-                          {socialMedia.socialMediaImage && socialMedia.socialMediaImage.url && (
-                            <img
-                            // src={socialMedia.socialMediaImage.url}
-                            // alt=""
-                            src={`${baseUrl}${socialMedia.socialMediaImage.url}`}
-                              alt={ `${baseUrl}${socialMedia.socialMediaUrl}`}
-                              style={{ width: "30px", height: "30px" }}
-                              // Assuming you have a function handleCardClick to handle clicks
-                              onClick={() => handleCardClick(socialMedia.socialMediaLink)}
-                            />
-                          )}
-                          {/* </Link> */}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </Col>
-            <Col lg={6}>
-            <div className="mt-4">
-            
-              <img src={`${baseUrl}${team.teamImage && team.teamImage.url}`}      alt="" className="img-fluid rounded" />
-              {/* <img src={team.teamImage && team.teamImage.url} alt="" className="img-fluid rounded" /> */}
-            </div>
-          </Col>
-      </Row>
+const TeamMemberCard = ({ data, index, setHoveredCard }) => (
+ 
+  <div
+    key={index}
+    className="card"
+    onMouseEnter={() => setHoveredCard(index)}
+    onMouseLeave={() => setHoveredCard(null)}
+  >
+    <div className="imge-sections">
+      <img src={data.teamImage && data.teamImage.url} alt="imgone" className="imge-section-two" />
     </div>
-  );
-}) 
+    <div
+      className="heading-sections"
+      style={{ textTransform: 'uppercase', marginTop: '160px', textAlign: 'center' }}
+    >
+      {data.Heading}
+    </div>
+    <div style={{ textAlign: 'center', marginTop: '10px' }}>{data.Designation}</div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        gap: '10px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '15px',
+      }}
+    >
+      {data.socilMediaImages.map((socialMediaImage, idx) => (
+        <div className="inst-image" key={idx}>
+          <img src={socialMediaImage.socialMediaImage && socialMediaImage.socialMediaImage.url} className="inst-image-two" alt=""/>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
-// Other code...
+const TeamSection = ({ teamData, setHoveredCard }) => (
+  <div className="card-container">
+    {teamData.map((member, index) => (
+      <TeamMemberCard key={index} data={member} index={index} setHoveredCard={setHoveredCard} />
+    ))}
+  </div>
+);
+// ... (import statements)
 
+const Team = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [teamData, setTeamData] = useState({
+    foundingTeam: [],
+    advisoryBoard: [],
+    titles: {
+      team: "",
+      foundingTeam: "",
+      advisoryBoard: "",
+    },
+  });
 
-// Other code...
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/api/websiteteam?locale=undefined&draft=false&depth=3');
+        const { docs } = response.data;
+    
+        // Assuming the first object in the array contains the team information
+        const teamInfo = docs[0];
+    
+        const foundingTeam = teamInfo.WebsiteFoundingTeamSection[0]?.WebsiteFoundingTeamCardSection || [];
+        const advisoryBoard = teamInfo.WebsiteAdvisoryBoardTeamSection[0]?.WebsiteAdvisoryTeamCardSection || [];
+    
+        setTeamData({
+          foundingTeam,
+          advisoryBoard,
+          titles: {
+            team: teamInfo.Heading || "",
+            foundingTeam: teamInfo.WebsiteFoundingTeamSection[0]?.Heading || "",
+            advisoryBoard: teamInfo.WebsiteAdvisoryBoardTeamSection[0]?.Heading || "",
+          },
+        });
+      } catch (error) {
+        console.error('Error fetching team data:', error);
+      }
+    };
+    
+    
 
+    fetchData();
+  }, []); // Empty dependency array to fetch data once when the component mounts
 
   return (
-    <React.Fragment>
-      <section className="section pt-0" id="team">
-        <Container>
-          <Row>
-            <Col lg="12">
-            {teamData.length > 0 && (
-              <div className="title-box text-center">
-                <h3 className="title-heading mt-4">{teamData[0].Heading}</h3>
-                <p className="text-muted f-17 mt-3">{teamData[0].Description}</p>
-                <img src={HomeUrl} height="15" className="mt-3" alt="" />
-              </div>
-            )}
-            </Col>
-          </Row>
-          <Row className="mt-5 pt-4">
-            <Col lg="12">
-              <div className="team-carousel">
-                <Slider {...temsettings}>{teamSlides}</Slider>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+    <>
+     <section className="section bg-light" id="team">
+      <div className="team-section">
+        <div style={{ textAlign: 'center' }}>{teamData.titles.team}</div>
+        <div className="heading-sections" style={{ textAlign: 'center', color: 'black', marginTop: '20px', fontSize: '20px' }}>
+          <b>{teamData.titles.foundingTeam}</b>
+        </div>
+        <TeamSection teamData={teamData.foundingTeam} setHoveredCard={setHoveredCard} />
+      </div>
+
+      <div className="team-section">
+        <div className="heading-sections" style={{ textAlign: 'center', color: 'black', marginTop: '20px', fontSize: '20px' }}>
+          <b>{teamData.titles.advisoryBoard}</b>
+        </div>
+        <TeamSection teamData={teamData.advisoryBoard} setHoveredCard={setHoveredCard} />
+      </div>
       </section>
-      {/* The rest of your code */}
-    </React.Fragment>
+    </>
   );
 };
 
-export default Contact;
+export default Team;
+

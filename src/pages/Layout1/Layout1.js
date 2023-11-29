@@ -63,7 +63,7 @@ class Layout1 extends Component {
 
         <Section />
         <Services />
-        <Pricing />
+        {/* <Pricing /> */}
         <Team />
         <Clients />
         <Contact />
