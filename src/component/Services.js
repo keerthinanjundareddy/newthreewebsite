@@ -100,7 +100,8 @@ const Services = () => {
                 {card.images && (
                     <div className="services-icons  bg-soft-primary" style={{ width: "100%", height: "200px" }}>
                   <div style={{ width: "100%", height: "100%", textAlign: "center" }}>
-                    <img src={card.images.url} alt={card.images.filename} style={{ width: "100%", height: "100%", objectFit: "contain", padding: "10px" }} />
+                 
+                    <img src={`${baseUrl}${card.images.url}`} alt={card.images.filename} style={{ width: "100%", height: "100%", objectFit: "contain", padding: "10px" }} />
                   </div>
                   </div>
                 )}
