@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 import axios from "axios";
+import HomeUrl from '../assets/images/home-border.png';
 
 const Services = () => {
   const [offers, setOffers] = useState([]);
@@ -43,6 +44,9 @@ const Services = () => {
                   <div className="title-box text-center">
                     <h3 className="title-heading mt-4">{offer.Heading && offer.Heading}</h3>
                     <p className="text-muted f-17 mt-3" style={{textTransform:"uppercase"}}>{offer.Description && offer.Description}</p>
+                    {offer.Description && (
+                    <img src={HomeUrl} height="15" className="mt-3" alt="" />
+                    )}
                   </div>
                 </Col>
               </Row>

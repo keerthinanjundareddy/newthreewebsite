@@ -41,7 +41,9 @@ const Section = () => {
                   <Col lg={6}>
                     <div className="home-content">
                       <p className="mb-0">{item.Heading}</p>
+                      {item.Heading && (
                       <img src={HomeUrl} height="15" alt="" />
+                      )}
                       <h1 className="home-title mt-4">{item.subHeadingOne}<br />{item.subHeadingTwo}</h1>
                       <p className="text-muted mt-4 f-20">{item.Description}</p>
                       {item.watchvideotext && (

@@ -2,10 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../assets/css/Own.css'
 
-// ... (import your images)
 
+
+const handleSocialMediaClick = (link) => {
+  if (link) {
+    window.open(link, '_blank');
+  }
+};
+// ... (import your images)
 const TeamMemberCard = ({ data, index, setHoveredCard }) => (
- 
+  
   <div
     key={index}
     className="card"
@@ -13,7 +19,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
     onMouseLeave={() => setHoveredCard(null)}
   >
     <div className="imge-sections">
-      <img src={data.teamImage && data.teamImage.url} alt="imgone" className="imge-section-two" />
+      {data.teamImage && <img src={data.teamImage.url} alt="" className="imge-section-two" />}
     </div>
     <div
       className="heading-sections"
@@ -33,8 +39,8 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
       }}
     >
       {data.socilMediaImages.map((socialMediaImage, idx) => (
-        <div className="inst-image" key={idx}>
-          <img src={socialMediaImage.socialMediaImage && socialMediaImage.socialMediaImage.url} className="inst-image-two" alt=""/>
+        <div className="inst-image" key={idx}  >
+          {socialMediaImage.socialMediaImage && <img src={socialMediaImage.socialMediaImage.url} className="inst-image-two" alt="" onClick={() => handleSocialMediaClick(socialMediaImage.socialMediaLink)} />}
         </div>
       ))}
     </div>
@@ -61,11 +67,12 @@ const Team = () => {
       advisoryBoard: "",
     },
   });
-
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:4000/api/websiteteam?locale=undefined&draft=false&depth=3');
+        console.log("teamdata",response)
         const { docs } = response.data;
     
         // Assuming the first object in the array contains the team information
@@ -92,7 +99,7 @@ const Team = () => {
 
     fetchData();
   }, []); // Empty dependency array to fetch data once when the component mounts
-
+  
   return (
     <>
      <section className="section bg-light" id="team">
