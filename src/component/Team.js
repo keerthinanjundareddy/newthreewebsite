@@ -29,7 +29,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
     >
       {data.Heading}
     </div>
-    <div style={{ textAlign: 'center', marginTop: '10px' }}>{data.Designation}</div>
+    <div style={{ textAlign: 'center', marginTop: '10px' }}>{data.Description}</div>
     <div
       style={{
         display: 'flex',
@@ -42,7 +42,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
     >
       {data.socilMediaImages.map((socialMediaImage, idx) => (
         <div className="inst-image" key={idx}  >
-          {socialMediaImage.socialMediaImage && <img src={`${baseUrl}${socialMediaImage.socialMediaImage.url}`} className="inst-image-two" alt="" onClick={() => handleSocialMediaClick(socialMediaImage.socialMediaLink)} />}
+          {socialMediaImage.socialMediaImage && <img src={`${baseUrl}${socialMediaImage.socialMediaImage.url}`} className="inst-image-two" alt="" onClick={() => handleSocialMediaClick(socialMediaImage.socialMediaLink)} style={{cursor:"pointer"}} />}
         </div>
       ))}
     </div>

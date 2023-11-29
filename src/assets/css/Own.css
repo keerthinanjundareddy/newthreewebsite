@@ -56,7 +56,7 @@
 .card {
   flex-basis: calc(25% - 20px); /* Adjust the width for 4 cards in a row */
   margin: 20px 10px 20px 10px; /* Adjust the margin for 4 cards in a row */
-  /* border: 1px solid blue !important; */
+  border: 1px solid blue !important;
   padding: 10px;
   box-sizing: border-box;
   padding-top: 20px;
@@ -98,7 +98,7 @@ transform: translateX(-50%);
   position: absolute;
   width:150px;
     height:150px;
-    /* border:1px solid green; */
+    /* border:1px solid grey; */
     border-radius:50%;
   
 }
@@ -129,7 +129,7 @@ transform: translateX(-50%);
   height:100%;
   padding: 4px;
   /* align-content: center; */
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .footersection{
