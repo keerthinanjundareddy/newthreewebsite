@@ -112,8 +112,8 @@ const Team = () => {
       <div className="team-section">
       <div className="title-box text-center">
         <h3 style={{ textAlign: 'center' }} className='title-heading mt-4'>{teamData.titles.team && teamData.titles.team}</h3>
-        <p style={{ textAlign: 'center' }} className='text-muted f-17 mt-3'>{teamData.titles.description && teamData.titles.description}</p>
-        {teamData.titles.description && (
+        {/* <div style={{ textAlign: 'center' }} className='text-muted f-17 mt-3'>{teamData.titles && teamData.titles.description}</div> */}
+        {teamData.titles.team && (
                 <img src={HomeUrl} height="15" className="mt-3" alt="" />
                 )}
         </div>
