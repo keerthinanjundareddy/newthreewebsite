@@ -6,20 +6,20 @@ const Services = () => {
   const [offers, setOffers] = useState([]);
   const [digitalMarketingOffers, setDigitalMarketingOffers] = useState([]);
 
-  const baseUrl = 'https://isibisi-0c069f8.payloadcms.app';
-  const baseUrltwo='http://localhost:4000'
+  const baseUrl = 'https://ayathanapayload.payloadcms.app';
+  // const baseUrltwo='http://localhost:4000'
   useEffect(() => {
     // Fetch data from the API
-    axios.get(`${baseUrltwo}/api/WebsiteofferBrandStrategy?locale=undefined&draft=false&depth=2`)
+    axios.get(`${baseUrl}/api/WebsiteoffersBrandStrategy?locale=undefined&draft=false&depth=2`)
       .then((response) => {
         console.log("websiteOffer",response)
         setOffers(response.data.docs);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        console.error("Error:", error);
       });
 
-      axios.get(`${baseUrltwo}/api/WebsiteoffersDigitalMarketing?locale=undefined&draft=false&depth=2`)
+      axios.get(`${baseUrl}/api/WebsiteoffersDigitalMarketing?locale=undefined&draft=false&depth=2`)
       .then((response) => {
         console.log("Marketingdataresponse",response.data.docs)
         setDigitalMarketingOffers(response.data.docs);
@@ -47,7 +47,7 @@ const Services = () => {
                 </Col>
               </Row>
               <Row >
-                {offer.WebsiteoffersBrandStrategycard && offer.WebsiteoffersBrandStrategycard.map((card) => (
+                {offer.WebsiteofferBrandStrategycard && offer.WebsiteofferBrandStrategycard.map((card) => (
                   <Col lg={4} key={card.id} style={{display:"flex",flexWrap:"wrap"}}>
                     
                     <div className="services-box p-4 mt-4" style={{ minHeight: "20px",minWidth: "100px", width: "100%" }}>
@@ -55,7 +55,8 @@ const Services = () => {
                     
                       {card.Icon && 
                       <div style={{ width: "100%", height: "100%",textAlign:"center"}}>
-                           <img src={card.Icon.url}  alt={card.AlternativeTextOfIcon || "Icon"} style={{ width:"100%",height:"100%",objectFit:"contain",padding:"10px",color:"white" }} />
+                        {/* src={`${baseUrl}${socialMedia.socialMediaImage.url}`} */}
+                           <img src={`${baseUrl}${card.Icon.url}`}  alt={card.AlternativeTextOfIcon || "Icon"} style={{ width:"100%",height:"100%",objectFit:"contain",padding:"10px",color:"white" }} />
                       {/* <img src={`${baseUrl}${card.Icon.url}`}  alt={card.AlternativeTextOfIcon || "Icon"} style={{ width:"100%",height:"100%",objectFit:"contain",padding:"10px",color:"white" }} /> */}
                      
                       </div>
