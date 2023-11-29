@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../assets/css/Own.css'
+import HomeUrl from '../assets/images/home-border.png';
 
 
 
@@ -25,11 +26,11 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
     </div>
     <div
       className="heading-sections"
-      style={{ textTransform: 'uppercase', marginTop: '160px', textAlign: 'center' }}
+      style={{ textTransform: 'uppercase', marginTop: '160px', textAlign: 'center',color:"Black" }}
     >
       {data.Heading}
     </div>
-    <div style={{ textAlign: 'center', marginTop: '10px' }}>{data.Description}</div>
+    <div style={{ textAlign: 'center', marginTop: '10px', color:"grey" }}>{data.Designation}</div>
     <div
       style={{
         display: 'flex',
@@ -38,6 +39,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: '15px',
+       
       }}
     >
       {data.socilMediaImages.map((socialMediaImage, idx) => (
@@ -89,6 +91,7 @@ const Team = () => {
           advisoryBoard,
           titles: {
             team: teamInfo.Heading || "",
+            description:teamInfo.Description || "",
             foundingTeam: teamInfo.WebsiteFoundingTeamSection[0]?.Heading || "",
             advisoryBoard: teamInfo.WebsiteAdvisoryBoardTeamSection[0]?.Heading || "",
           },
@@ -107,7 +110,14 @@ const Team = () => {
     <>
      <section className="section bg-light" id="team">
       <div className="team-section">
-        <div style={{ textAlign: 'center' }}>{teamData.titles.team}</div>
+      <div className="title-box text-center">
+        <h3 style={{ textAlign: 'center' }} className='title-heading mt-4'>{teamData.titles.team}</h3>
+        <p style={{ textAlign: 'center' }} className='text-muted f-17 mt-3'>{teamData.titles.description}</p>
+        {teamData.titles.description && (
+                <img src={HomeUrl} height="15" className="mt-3" alt="" />
+                )}
+        </div>
+        {/* <div style={{ textAlign: 'center' }}></div> */}
         <div className="heading-sections" style={{ textAlign: 'center', color: 'black', marginTop: '20px', fontSize: '20px' }}>
           <b>{teamData.titles.foundingTeam}</b>
         </div>
@@ -115,7 +125,7 @@ const Team = () => {
       </div>
 
       <div className="team-section">
-        <div className="heading-sections" style={{ textAlign: 'center', color: 'black', marginTop: '20px', fontSize: '20px' }}>
+        <div className="heading-sections" style={{ textAlign: 'center', color: 'black', marginTop: '30px', fontSize: '20px' }}>
           <b>{teamData.titles.advisoryBoard}</b>
         </div>
         <TeamSection teamData={teamData.advisoryBoard} setHoveredCard={setHoveredCard} />

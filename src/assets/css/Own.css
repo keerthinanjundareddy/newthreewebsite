@@ -56,12 +56,13 @@
 .card {
   flex-basis: calc(25% - 20px); /* Adjust the width for 4 cards in a row */
   margin: 20px 10px 20px 10px; /* Adjust the margin for 4 cards in a row */
-  border: 1px solid blue !important;
+  /* border: 1px solid red !important; */
   padding: 10px;
   box-sizing: border-box;
   padding-top: 20px;
   padding-bottom: 25px;
   background-color:transparent !important;
+  /* background-color: aqua !important; */
   /* background-color: #fff; */
   background-image: none;
   background-size: cover;
