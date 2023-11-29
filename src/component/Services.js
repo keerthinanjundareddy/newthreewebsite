@@ -98,11 +98,11 @@ const Services = () => {
             <div className="services-box p-4 mt-4" style={{ minHeight: "20px", minWidth: "100px", width: "100%" }}>
             
                 {card.images && (
-                    <div className="services-icons  bg-soft-primary" style={{ width: "100%", height: "200px" }}>
-                  <div style={{ width: "100%", height: "100%", textAlign: "center" }}>
+                    // <div className="services-icons  bg-soft-primary" style={{ width: "100%", height: "200px" }}>
+                  <div style={{ width: "100%", height:"200px", textAlign: "center" }}>
                  
                     <img src={`${baseUrl}${card.images.url}`} alt={card.images.filename} style={{ width: "100%", height: "100%", objectFit: "contain", padding: "10px" }} />
-                  </div>
+                  {/* </div> */}
                   </div>
                 )}
              
