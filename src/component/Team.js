@@ -90,8 +90,8 @@ const Team = () => {
           foundingTeam,
           advisoryBoard,
           titles: {
-            team: teamInfo.Heading || "",
-            description:teamInfo.Description || "",
+            team: teamInfo.Heading ,
+            description:teamInfo.Description ,
             foundingTeam: teamInfo.WebsiteFoundingTeamSection[0]?.Heading || "",
             advisoryBoard: teamInfo.WebsiteAdvisoryBoardTeamSection[0]?.Heading || "",
           },
@@ -111,8 +111,8 @@ const Team = () => {
      <section className="section bg-light" id="team">
       <div className="team-section">
       <div className="title-box text-center">
-        <h3 style={{ textAlign: 'center' }} className='title-heading mt-4'>{teamData.titles.team}</h3>
-        <p style={{ textAlign: 'center' }} className='text-muted f-17 mt-3'>{teamData.titles.description}</p>
+        <h3 style={{ textAlign: 'center' }} className='title-heading mt-4'>{teamData.titles.team && teamData.titles.team}</h3>
+        <p style={{ textAlign: 'center' }} className='text-muted f-17 mt-3'>{teamData.titles.description && teamData.titles.description}</p>
         {teamData.titles.description && (
                 <img src={HomeUrl} height="15" className="mt-3" alt="" />
                 )}
