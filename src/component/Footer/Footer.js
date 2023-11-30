@@ -20,9 +20,11 @@ function Footer() {
   }, []);
 
   const handleSocialMediaClick = (link) => {
-    window.open(link, '_blank');
+    if (link) {
+      window.open(link, '_blank');
+    }
   };
-
+  
   return (
     <>
       <footer className="footersectionbottom bg-footer ">
