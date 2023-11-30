@@ -35,7 +35,7 @@ const Services = () => {
 
   return (
     <React.Fragment>
-      <section className="section bg-services" id="services">
+      <section className="section bg-serv" id="services">
        
 
 
