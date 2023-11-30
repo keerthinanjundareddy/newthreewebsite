@@ -44,7 +44,7 @@ const Services = () => {
                   <div className="title-box text-center">
                     <h3 className="title-heading mt-4">{offer.Heading && offer.Heading}</h3>
                     <p className="text-muted f-17 mt-3" style={{textTransform:"uppercase"}}>{offer.Description && offer.Description}</p>
-                    {offer.Description && (
+                    {offer.Heading && (
                     <img src={HomeUrl} height="15" className="mt-3" alt="" />
                     )}
                   </div>
