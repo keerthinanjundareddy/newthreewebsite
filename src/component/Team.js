@@ -28,7 +28,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
       className="heading-sections"
       style={{ textTransform: 'uppercase', marginTop: '160px', textAlign: 'center',color:"Black" }}
     >
-      {data.Heading}
+     <b> {data.Heading} </b>
     </div>
     <div style={{ textAlign: 'center', marginTop: '10px', color:"grey" }}>{data.Designation}</div>
     <div
