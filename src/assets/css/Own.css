@@ -11,7 +11,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .video-content {
@@ -46,8 +46,8 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
-  /* justify-content: flex-start; */
+  /* justify-content:center; */
+  justify-content: flex-start;
   /* max-width: 600px; Adjust the width as needed */
   margin: 10px 40px;
 
