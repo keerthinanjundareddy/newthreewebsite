@@ -104,7 +104,7 @@ const Clients = () => {
               <div className="title-box text-center">
                 <h3 className="title-heading mt-4">{ clientData && clientData.Heading }</h3>
                 <p className="text-muted f-17 mt-3">{clientData && clientData.Description }</p>
-                {clientData.Description && (
+                {clientData.Heading  && (
                 <img src={HomeUrl} height="15" className="mt-3" alt="" />
                 )}
               </div>
