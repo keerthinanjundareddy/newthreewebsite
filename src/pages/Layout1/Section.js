@@ -46,13 +46,13 @@ const Section = () => {
                       )}
                       <h1 className="home-title mt-4">{item.subHeadingOne}<br />{item.subHeadingTwo}</h1>
                       <p className="text-muted mt-4 f-20">{item.Description}</p>
-                      {item.watchvideotext && (
+                      {/* {item.watchvideotext && (
                         <div className="mt-4 pt-2">
                           <button className="video-play-icon text-dark watch-intro" onClick={openVideo}>
                             <i className="mdi mdi-play-circle-outline text-dark mr-2 " ></i>{item.watchvideotext}
                           </button>
                         </div>
-                      )}
+                      )} */}
                     </div>
                   </Col>
                   <Col lg={6}>
