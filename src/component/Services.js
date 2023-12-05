@@ -65,7 +65,7 @@ const Services = () => {
                      
                     
                       {card.Icon && 
-                       <div className="services-icons bg-soft-primary" style={{width:"55px",height:"55px",textAlign:"center"}}>
+                       <div className="services-icons bg-soft-primary" style={{width:"80px",height:"80px",textAlign:"center"}}>
                       <div style={{ width: "100%", height: "100%",textAlign:"center"}}>
                         {/* src={`${baseUrl}${socialMedia.socialMediaImage.url}`} */}
                            <img src={`${baseUrl}${card.Icon.url}`}  alt={card.AlternativeTextOfIcon || "Icon"} style={{ width:"100%",height:"100%",objectFit:"contain",padding:"10px",color:"white" }} />

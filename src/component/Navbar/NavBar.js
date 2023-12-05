@@ -24,7 +24,7 @@ class NavbarPage extends Component {
       logoData: null,
     };
   }
-
+ 
   fetchData = async () => {
     try {
       const response = await fetch(
@@ -48,13 +48,12 @@ class NavbarPage extends Component {
   toggle = () => {
     this.setState({ isOpenMenu: !this.state.isOpenMenu });
   };
-
   handleNavLinkClick = (event, sectionID) => {
     event.preventDefault();
-
+  
     // Additional logic if needed
     // For example, you can manually scroll to the section here
-
+  
     // Example: Scroll to the section manually
     const scrollTargetPosition =
       document.getElementById(sectionID).offsetTop -
@@ -65,8 +64,11 @@ class NavbarPage extends Component {
       top: scrollTargetPosition,
       behavior: "smooth",
     });
+  
+    // Update the state with the active section
+    this.setState({ activeSection: sectionID });
   };
-
+  
   renderLogo = () => {
     const { imglight } = this.props;
     const { logoData } = this.state;
@@ -120,18 +122,17 @@ class NavbarPage extends Component {
               >
                 <Nav className="navbar-nav ml-auto navbar-center" id="navbar-navlist">
                   {navItems.map((item, key) => (
-                    <NavItem
-                      key={key}
-                      className={item.navheading === "Home" ? "active" : ""}
-                    >
-                      <NavLink
-                        className={item.navheading === "Home" ? "active" : ""}
-                        href={`#${item.idnm}`}
-                        onClick={(e) => this.handleNavLinkClick(e, item.idnm)}
-                      >
-                        {item.navheading}
-                      </NavLink>
-                    </NavItem>
+
+                  <NavItem key={key}>
+                  <NavLink
+                    className={this.state.activeSection === item.idnm ? "active" : ""}
+                    href={`#${item.idnm}`}
+                    onClick={(e) => this.handleNavLinkClick(e, item.idnm)}
+                  >
+                    {item.navheading}
+                  </NavLink>
+                </NavItem>
+                
                   ))}
                 </Nav>
               </ScrollspyNav>
