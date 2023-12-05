@@ -20,6 +20,7 @@ class NavbarPage extends Component {
     super(props);
     this.state = {
       isOpenMenu: false,
+      activeSection: "home",
       // Add a state variable for the logo data
       logoData: null,
     };
@@ -64,6 +65,9 @@ class NavbarPage extends Component {
       top: scrollTargetPosition,
       behavior: "smooth",
     });
+  
+    // Log information for debugging
+    console.log("Clicked NavLink for section:", sectionID);
   
     // Update the state with the active section
     this.setState({ activeSection: sectionID });
