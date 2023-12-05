@@ -30,20 +30,18 @@ const Contact = () => {
                 <div id="message"></div>
                 <Form method="post" name="contact-form" id="contact-form">
                   <Row>
-                    <Col lg={12}>
+                    <Col lg={6}>
                       <FormGroup className="mt-3">
-                        <Label className="contact-lable"> Name</Label>
+                        <Label className="contact-lable">First Name</Label>
                         <Input name="name" id="name" className="form-control" type="text" />
-                        
                       </FormGroup>
                     </Col>
-                    {/* <Col lg={6}>
+                    <Col lg={6}>
                       <FormGroup className="mt-3">
                         <Label className="contact-lable">Last Name</Label>
                         <Input name="name" id="lastname" className="form-control" type="text" />
-                     
                       </FormGroup>
-                    </Col> */}
+                    </Col>
                   </Row>
                   <Row>
                     <Col lg={12}>
@@ -53,19 +51,6 @@ const Contact = () => {
                       </FormGroup>
                     </Col>
                   </Row>
-
-{/* staart of me aadded thing start...added phone */}
-                  <Row>
-                    <Col lg={12}>
-                      <FormGroup className="mt-3">
-                        <Label className="contact-lable">Phone Number</Label>
-                        <Input name="text" id="phone" className="form-control" type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-
-{/* end of me added thing  */}
-
                   <Row>
                     <Col lg={12}>
                       <FormGroup className="mt-3">
