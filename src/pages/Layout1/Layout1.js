@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+
+// Importing Section
 import Navbar from "../../component/Navbar/NavBar";
+
 import Section from "./Section";
 import Services from "../../component/Services";
 import Pricing from "../../component/Pricing";
@@ -16,19 +19,9 @@ class Layout1 extends Component {
       pos: document.documentElement.scrollTop,
       imglight: false,
       navClass: "",
-      fixTop: true
+      fixTop : true
     };
   }
-
-  componentDidMount() {
-    this.fetchNavItems();
-    window.addEventListener("scroll", this.scrollNavigation, true);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.scrollNavigation, true);
-  }
-
   fetchNavItems = async () => {
     try {
       const response = await fetch(
@@ -42,6 +35,16 @@ class Layout1 extends Component {
     }
   };
 
+
+  componentDidMount() {
+    this.fetchNavItems();
+    window.addEventListener("scroll", this.scrollNavigation, true);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.scrollNavigation, true);
+  }
+
   scrollNavigation = () => {
     var scrollup = document.documentElement.scrollTop;
     if (scrollup > this.state.pos) {
@@ -54,23 +57,36 @@ class Layout1 extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar
-          navItems={this.state.navItems}
-          navClass={this.state.navClass}
-          imglight={this.state.imglight}
-          top={this.state.fixTop}
-        />
+          {/* Importing Navbar */}
+          <Navbar
+            navItems={this.state.navItems}
+            navClass={this.state.navClass}
+            imglight={this.state.imglight}
+            top={this.state.fixTop}
+          />
 
-        <Section />
-        <Services />
-        {/* <Pricing /> */}
-        <Team />
-        <Clients />
-        <Contact />
-        <Footer />
+          {/* Importing Section */}
+          <Section />
+
+           {/* Importing Service */}
+           <Services />
+
+          {/* Importing Pricing */}
+          {/* <Pricing /> */}
+
+          {/* Importing Team */}
+          <Team />
+
+          {/* Importing Clients */}
+          <Clients />
+
+          {/* Importing Contact Us */}
+          <Contact />
+
+          {/* Importing Footer */}
+          <Footer />
       </React.Fragment>
     );
   }
 }
-
 export default Layout1;
