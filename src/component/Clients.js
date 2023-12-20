@@ -16,7 +16,7 @@ import HomeUrl from '../assets/images/home-border.png';
 const Clients = () => {
 
   const[clientData,setClientData]=useState([])
-   const baseUrl = 'https://ayathanapayload.payloadcms.app';
+   const baseUrl = 'https://strapi.ayatana.world';
   // const baseUrltwo='http://localhost:4000'
   useEffect(() => {
     axios.get(`${baseUrl}/api/websiteClient`).then((response) => {
@@ -117,7 +117,7 @@ const Clients = () => {
       {image.clientLogos && (
        
         <img
-          src={`${baseUrl}${image.clientLogos.url}`} 
+          src={`${image.clientLogos.url}`} 
           // src={image.clientLogos.url}
           alt={image.alternativeText}
           className="img-fluid d-block mx-auto"
