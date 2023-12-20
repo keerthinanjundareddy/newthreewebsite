@@ -7,7 +7,7 @@ const Services = () => {
   const [offers, setOffers] = useState([]);
   const [digitalMarketingOffers, setDigitalMarketingOffers] = useState([]);
 
-  const baseUrl = 'https://ayathanapayload.payloadcms.app';
+  const baseUrl = 'https://strapi.ayatana.world';
   // const baseUrltwo='http://localhost:4000'
   useEffect(() => {
     // Fetch data from the API
@@ -68,7 +68,7 @@ const Services = () => {
                        <div className="services-icons bg-soft-primary" style={{width:"80px",height:"80px",textAlign:"center"}}>
                       <div style={{ width: "100%", height: "100%",textAlign:"center",objectFit:"contain"}}>
                         {/* src={`${baseUrl}${socialMedia.socialMediaImage.url}`} */}
-                           <img src={`${baseUrl}${card.Icon.url}`}  alt={card.AlternativeTextOfIcon || "Icon"} style={{ width:"100%",height:"100%",objectFit:"contain",padding:"10px",color:"white" }} />
+                           <img src={`${card.Icon.url}`}  alt={card.AlternativeTextOfIcon || "Icon"} style={{ width:"100%",height:"100%",objectFit:"contain",padding:"10px",color:"white" }} />
                       {/* <img src={`${baseUrl}${card.Icon.url}`}  alt={card.AlternativeTextOfIcon || "Icon"} style={{ width:"100%",height:"100%",objectFit:"contain",padding:"10px",color:"white" }} /> */}
                      
                       </div>

@@ -16,7 +16,7 @@ const Section = () => {
     setIsVideoOpen(false);
   };
 
-  const baseUrl = 'https://ayathanapayload.payloadcms.app';
+  const baseUrl = 'https://strapi.ayatana.world';
   // const baseUrltwo='http://localhost:4000'
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const Section = () => {
                   <Col lg={6}>
                     <div className="home-img">
                     {item.imageSection && (
-      <img src={item.imageSection && baseUrl + item.imageSection.url} className="img-fluid" alt={item.imageSection.url} />
+      <img src={item.imageSection &&  item.imageSection.url} className="img-fluid" alt={item.imageSection.url} />
     )}
                     </div>
                   </Col>
