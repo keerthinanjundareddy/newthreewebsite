@@ -11,7 +11,7 @@ const handleSocialMediaClick = (link) => {
   }
 };
 
-const baseUrl = 'https://ayathanapayload.payloadcms.app';
+const baseUrl = 'https://strapi.ayatana.world';
 // ... (import your images)
 const TeamMemberCard = ({ data, index, setHoveredCard }) => (
   
@@ -22,7 +22,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
     onMouseLeave={() => setHoveredCard(null)}
   >
     <div className="imge-sections">
-      {data.teamImage && <img src={`${baseUrl}${data.teamImage.url}`} alt="" className="imge-section-two" />}
+      {data.teamImage && <img src={`${data.teamImage.url}`} alt="" className="imge-section-two" />}
     </div>
     <div
       className="heading-sections"
@@ -44,7 +44,7 @@ const TeamMemberCard = ({ data, index, setHoveredCard }) => (
     >
       {data.socilMediaImages.map((socialMediaImage, idx) => (
         <div className="inst-image" key={idx}  >
-          {socialMediaImage.socialMediaImage && <img src={`${baseUrl}${socialMediaImage.socialMediaImage.url}`} className="inst-image-two" alt="" onClick={() => handleSocialMediaClick(socialMediaImage.socialMediaLink)} style={{cursor:"pointer"}} />}
+          {socialMediaImage.socialMediaImage && <img src={`${socialMediaImage.socialMediaImage.url}`} className="inst-image-two" alt="" onClick={() => handleSocialMediaClick(socialMediaImage.socialMediaLink)} style={{cursor:"pointer"}} />}
         </div>
       ))}
     </div>
