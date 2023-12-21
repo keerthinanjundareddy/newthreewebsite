@@ -4,7 +4,7 @@ import '../../assets/css/Own.css';
 
 function Footer() {
   const [footerData, setFooterData] = useState(null);
-  const baseUrl = 'https://ayathanapayload.payloadcms.app';
+  const baseUrl = 'https://strapi.ayatana.world';
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,7 +35,7 @@ function Footer() {
                 <div style={{width:"150px",height:"100px"}}>
                   {footerData.websitelogo && (
                 <img
-                  src={`${baseUrl}${footerData.websitelogo.url}`}
+                  src={`${footerData.websitelogo.url}`}
                   alt="Website Logo"
                  style={{width:"100%",height:"100%",objectFit:"contain"}}
                 />
@@ -49,7 +49,7 @@ function Footer() {
                    {icon.socialMediaIcon && (
                 <img
                   key={icon.id}
-                  src={`${baseUrl}${icon.socialMediaIcon.url}`}
+                  src={`${icon.socialMediaIcon.url}`}
                   alt="Social Media Icon"
                   style={{width:"100%",height:"100%",objectFit:"contain",cursor:"pointer"}}
                   onClick={() => handleSocialMediaClick(icon.socialMediaLink)}
