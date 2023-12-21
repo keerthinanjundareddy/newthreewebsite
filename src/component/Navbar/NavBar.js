@@ -29,7 +29,7 @@ class NavbarPage extends Component {
   fetchData = async () => {
     try {
       const response = await fetch(
-        "https://ayathanapayload.payloadcms.app/api/websiteNavbarLogo?locale=undefined&draft=false&depth=1"
+        "https://strapi.ayatana.world/api/websiteNavbarLogo?locale=undefined&draft=false&depth=1"
       );
       const data = await response.json();
 
@@ -83,7 +83,7 @@ class NavbarPage extends Component {
     }
 
     const { filename, url } = logoData;
-    const logoSource = `https://ayathanapayload.payloadcms.app${url}`;
+    const logoSource = `${url}`;
     return (
       <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
         <div style={{width:"200px",height:"100px"}}>
