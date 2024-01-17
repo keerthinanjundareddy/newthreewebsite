@@ -1,92 +1,80 @@
-import React, { Component } from "react";
-
-// Importing Section
+import React, { useState, useEffect } from "react";
 import Navbar from "../../component/Navbar/NavBar";
-
 import Section from "./Section";
 import Services from "../../component/Services";
-import Pricing from "../../component/Pricing";
+// import Pricing from "../../component/Pricing";
 import Team from "../../component/Team";
 import Clients from "../../component/Clients";
 import Contact from "../../component/Contact";
 import Footer from "../../component/Footer/Footer";
 
-class Layout1 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      navItems: [],
-      pos: document.documentElement.scrollTop,
-      imglight: false,
-      navClass: "",
-      fixTop : true
+const Layout1 = () => {
+  const [navItems] = useState([
+    { id: 1, idnm: "home", navheading: "Home" },
+    { id: 3, idnm: "services", navheading: "Offers" },
+    // { id: 4, idnm: "pricing", navheading: "Pricing" },
+    { id: 5, idnm: "team", navheading: "Team" },
+    { id: 6, idnm: "clients", navheading: "Clients" },
+    { id: 7, idnm: "contact", navheading: "Contact" },
+  ]);
+
+  const [pos, setPos] = useState(document.documentElement.scrollTop);
+  const [imglight, setImgLight] = useState(false);
+  const [navClass, setNavClass] = useState("");
+  const [fixTop] = useState(true);
+
+  useEffect(() => {
+    const scrollNavigation = () => {
+      var scrollup = document.documentElement.scrollTop;
+      if (scrollup > pos) {
+        setNavClass("nav-sticky");
+        setImgLight(false);
+      } else {
+        setNavClass("");
+        setImgLight(false);
+      }
+      setPos(scrollup);
     };
-  }
-  fetchNavItems = async () => {
-    try {
-      const response = await fetch(
-        "https://ayathanapayload.payloadcms.app/api/WebsiteNavbar?locale=undefined&draft=false&depth=1"
-      );
-      const data = await response.json();
-      console.log("nvbardata",data)
-      this.setState({ navItems: data.docs.reverse() });
-    } catch (error) {
-      console.error("Error fetching navigation items:", error);
-    }
-  };
 
+    window.addEventListener("scroll", scrollNavigation, true);
 
-  componentDidMount() {
-    this.fetchNavItems();
-    window.addEventListener("scroll", this.scrollNavigation, true);
-  }
+    return () => {
+      window.removeEventListener("scroll", scrollNavigation, true);
+    };
+  }, [pos]);
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.scrollNavigation, true);
-  }
+  return (
+    <React.Fragment>
+      {/* Importing Navbar */}
+      <Navbar
+        navItems={navItems}
+        navClass={navClass}
+        imglight={imglight}
+        top={fixTop}
+      />
 
-  scrollNavigation = () => {
-    var scrollup = document.documentElement.scrollTop;
-    if (scrollup > this.state.pos) {
-      this.setState({ navClass: "nav-sticky", imglight: false });
-    } else {
-      this.setState({ navClass: "", imglight: false });
-    }
-  };
+      {/* Importing Section */}
+      <Section />
 
-  render() {
-    return (
-      <React.Fragment>
-          {/* Importing Navbar */}
-          <Navbar
-            navItems={this.state.navItems}
-            navClass={this.state.navClass}
-            imglight={this.state.imglight}
-            top={this.state.fixTop}
-          />
+      {/* Importing Service */}
+      <Services />
 
-          {/* Importing Section */}
-          <Section />
+      {/* Importing Pricing */}
+      {/* <Pricing /> */}
 
-           {/* Importing Service */}
-           <Services />
+      {/* Importing Team */}
+      <Team />
 
-          {/* Importing Pricing */}
-          {/* <Pricing /> */}
+      {/* Importing Clients */}
+      <Clients />
 
-          {/* Importing Team */}
-          <Team />
+      {/* Importing Contact Us */}
+      <Contact />
 
-          {/* Importing Clients */}
-          <Clients />
+      {/* Importing Footer */}
+      <Footer />
+    </React.Fragment>
+  );
+};
 
-          {/* Importing Contact Us */}
-          <Contact />
-
-          {/* Importing Footer */}
-          <Footer />
-      </React.Fragment>
-    );
-  }
-}
 export default Layout1;

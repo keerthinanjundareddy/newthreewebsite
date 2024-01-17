@@ -29,6 +29,7 @@ class NavbarPage extends Component {
   fetchData = async () => {
     try {
       const response = await fetch(
+     
         "https://strapi.ayatana.world/api/websiteNavbarLogo?locale=undefined&draft=false&depth=1"
       );
       const data = await response.json();
