@@ -6,6 +6,9 @@ import HomeUrl from '../assets/images/home-border.png';
 const Services = () => {
   const [offers, setOffers] = useState([]);
   const [digitalMarketingOffers, setDigitalMarketingOffers] = useState([]);
+  // Inside your functional component
+const [visiblePoints, setVisiblePoints] = useState(5);
+
 
   const baseUrl = 'https://strapi.ayatana.world';
   // const baseUrltwo='http://localhost:4000'
@@ -32,6 +35,14 @@ const Services = () => {
 
 
   }, []);
+
+  const handleMoreClick = (cardId) => {
+    window.location.href = "http://localhost:3000/Login";
+    // Navigate to another page with additional details based on cardId
+    // You can use a router library like React Router for navigation
+    // Example: history.push(`/details/${cardId}`);
+  };
+  
 
   return (
     <React.Fragment>
@@ -137,12 +148,17 @@ const Services = () => {
 
 {/* Map over the descriptions and render them */}
 <div className="text-muted mt-3">
-  {card.description && card.description.map((descItem) => (
+  {card.description && card.description.slice(0, visiblePoints).map((descItem) => (
     <ul key={descItem.id}>
       <li>{descItem.descriptiontexts}</li>
-      </ul>
+    </ul>
   ))}
+
+  {card.description && card.description.length > visiblePoints && (
+    <button onClick={() => handleMoreClick(card.id)}>More</button>
+  )}
 </div>
+
 
             </div>
           </Col>
