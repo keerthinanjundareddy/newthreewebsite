@@ -11,7 +11,7 @@ import Footer from "../../component/Footer/Footer";
 const Layout1 = () => {
   const [navItems] = useState([
     { id: 1, idnm: "home", navheading: "Home" },
-    { id: 3, idnm: "services", navheading: "our Offer" },
+    { id: 3, idnm: "services", navheading: "Offers" },
     // { id: 4, idnm: "pricing", navheading: "Pricing" },
     { id: 5, idnm: "team", navheading: "Team" },
     { id: 6, idnm: "clients", navheading: "Clients" },
