@@ -9,20 +9,37 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
+import leftArrow from '../assets/Userimages/leftarow.png'
 
 
 function Readmore() {
     const accordionData = [
         { title: "Accordion Demo 1", content: "Greetings of the day 1" },
         { title: "Accordion Demo 2", content: "Greetings of the day 2" },
+         { title: "Accordion Demo 2", content: "Greetings of the day 2" },
         // Add more objects as needed
       ];
+      const dataArray = [
+        {
+          heading: "Text heading 1",
+          text: "Meet Alex Mitchell 1...",
+          image: imageone,
+        },
+        {
+          heading: "Text heading 2",
+          text: "Meet Alex Mitchell 2...",
+          image: imageone,
+        //   image: imagetwo,
+        },
+        // Add more objects as needed
+      ];
+      
     
   return (
     <>
    <div className='header-section'>
     <div style={{width:"100px",height:"40px"}}><img src={isibisilogo} style={{width:"100%",height:"100%",objectFit:"contain"}} /></div>
-    <button className='back-btn'>back</button>
+    <div className='back-btn'><span><img src={leftArrow} style={{width:"20px",height:"20px",objectFit:"contain",paddingRight:"4px"}} /></span>back</div>
    </div>
     <div className='read-more-section'>
 
@@ -34,38 +51,66 @@ function Readmore() {
                     </div>
             {/* <div style={{textAlign:"center"}}>Digital Marketings</div> */}
             </div>
-            <div className='image-flexboxcontainter' >
-            <div className='text-container'>
-                <div className="content-heading" style={{textAlign:"left"}}>Text heading</div>
-                <div className='content-text'  style={{textAlign:"left"}}>Meet Alex Mitchell, a passionate and determined individual with a love for technology and innovation. Born and raised in a small town, Alex's curiosity and drive led them to pursue a career in computer science. With a keen interest in artificial intelligence, Alex has become a respected professional in the field. Outside of work, Alex is known for their adventurous spirit, always seeking new challenges and experiences. Whether it's hiking in the mountains or experimenting with new coding languages, Alex approaches life with a combination of intellect and enthusiasm</div>
+            <div className='image-flexboxcontainter'>
+  {dataArray.map((item, index) => (
+    <div key={index} className='content-container' style={{ marginBottom: '20px' }}>
+      {index % 2 === 0 ? (
+        <>
+        <div className='image-flexboxcontaintertwo'>
+          <div className='text-container' style={{ marginRight: '20px' }}>
+            <div className="content-heading" style={{ textAlign: "left" }}>{item.heading}</div>
+            <div className='content-text' style={{ textAlign: "left" }}>{item.text}</div>
+          </div>
+          <div className='image-container'>
+            <div style={{ width: "100%", height: "500px" }}>
+              <img src={item.image} alt={`img-${index}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             </div>
-            <div className='image-container'>
-                <div style={{width:"100%",height:"500px"}}>
-                <img src={imageone} alt="img" style={{width:"100%",height:"100%",objectFit:"contain"}}/>
-                </div>
+          </div>
+          </div>
+        </>
+      ) : (
+        <>
+         <div className='image-flexboxcontaintertwo'>
+          <div className='image-container'>
+            <div style={{ width: "100%", height: "500px" }}>
+              <img src={item.image} alt={`img-${index}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             </div>
-          
-            </div>
+          </div>
+          <div className='text-container' style={{ marginLeft: '20px' }}>
+            <div className="content-heading" style={{ textAlign: "left" }}>{item.heading}</div>
+            <div className='content-text' style={{ textAlign: "left" }}>{item.text}</div>
+          </div>
+          </div>
+        </>
+      )}
+    </div>
+  ))}
+</div>
+
 
         </div>
         <div>
 
         </div>
       
-        <div style={{marginTop:"20px"}}>
+        <div className='faq-top-section'>
       <h4 style={{textAlign:"center"}}>FAQ</h4>
       <div style={{marginTop:"10px"}}>
         {accordionData.map((item, index) => (
-          <Accordion key={index} style={{ width: "100%" ,marginTop:"10px",border:"none",outline:"none"}}>
+          <Accordion key={index} style={{ width: "100%" ,marginTop:"10px",border:"1px solid black",outline:"none" ,boxShadow:"none",borderRadius:"0px",}}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls={`panel${index + 1}-content`}
-              style={{ backgroundColor: "#D3D3D3",border:"1px solid #D3D3D3" }}
+              style={{ backgroundColor: "#F2F3FA",border:"none",outline:"none",boxShadow:"none" }}
             >
-              <Typography style={{ fontWeight: 10 }}>{item.title}</Typography>
+              <Typography  style={{
+      fontWeight: 10,
+      color: "black",
+      fontFamily: "'Poppins', sans-serif",
+    }}>{item.title}</Typography>
             </AccordionSummary>
-            <AccordionDetails style={{ backgroundColor: "#D3D3D3",border:"1px solid #D3D3D3" }}>
-              <Typography>{item.content}</Typography>
+            <AccordionDetails style={{ backgroundColor: "#F2F3FA",border:"none",outline:"none",boxShadow:"none" }}>
+              <Typography style={{ fontWeight: 10,color:"black",  fontFamily: "'Poppins', sans-serif", }}>{item.content}</Typography>
             </AccordionDetails>
           </Accordion>
         ))}
@@ -73,8 +118,8 @@ function Readmore() {
     </div>
       
     </div>
-    <div style={{padding:"0px"}}>
-    <Footer style={{padding:"0px"}}  />
+    <div className='footer-top-section'>
+    <Footer style={{paddingTop:"0px"}}  />
     </div>
     
     </>
