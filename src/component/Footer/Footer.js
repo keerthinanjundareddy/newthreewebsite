@@ -27,7 +27,7 @@ function Footer() {
   
   return (
     <>
-      <footer className="footersectionbottom bg-footer ">
+      <footer className="footersection bottom bg-footer ">
         <Container>
           <div className='footersection'>
             <div>
@@ -60,7 +60,7 @@ function Footer() {
               ))}
             </div>
           </div>
-          <hr className="my-5" />
+          <hr className="" />
           <div style={{ textAlign: "center" }}>
             {footerData && footerData.footerBottomText}
           </div>

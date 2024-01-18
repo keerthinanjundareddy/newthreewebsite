@@ -22,7 +22,7 @@ const [visiblePoints, setVisiblePoints] = useState(5);
       .catch((error) => {
         console.error("Error:", error);
       });
-
+//https://strapi.ayatana.world/api/WebsiteoffersDigitalMarketingCard/65668b1568348a32f75f8505?locale=undefined&draft=false&depth=2
       axios.get(`${baseUrl}/api/WebsiteoffersDigitalMarketing?locale=undefined&draft=false&depth=2`)
       .then((response) => {
         console.log("Marketingdataresponse",response.data.docs)
@@ -37,7 +37,8 @@ const [visiblePoints, setVisiblePoints] = useState(5);
   }, []);
 
   const handleMoreClick = (cardId) => {
-    window.location.href = "http://localhost:3000/Login";
+    window.location.href = "/readmore";
+    window.alert(cardId)
     // Navigate to another page with additional details based on cardId
     // You can use a router library like React Router for navigation
     // Example: history.push(`/details/${cardId}`);
@@ -130,8 +131,13 @@ const [visiblePoints, setVisiblePoints] = useState(5);
         </Col>
       </Row>
       <Row>
-        {MarketingOffer.WebsiteoffersDigitalMarketingCard && MarketingOffer.WebsiteoffersDigitalMarketingCard.map((card) => (
-          <Col lg={4} key={card.id} style={{ display: "flex", flexWrap: "wrap" }}>
+        {MarketingOffer.WebsiteoffersDigitalMarketingCard && MarketingOffer.WebsiteoffersDigitalMarketingCard.map((card) => 
+        
+       {
+
+        console.log("MarketingOffer: ", MarketingOffer);
+
+         return ( <Col lg={4} key={card.id} style={{ display: "flex", flexWrap: "wrap" }}>
             <div className="services-box p-4 mt-4" style={{ minHeight: "20px", minWidth: "100px", width: "100%" }}>
             
                 {card.images && (
@@ -162,10 +168,16 @@ const [visiblePoints, setVisiblePoints] = useState(5);
 
             </div>
           </Col>
-        ))}
+        )
+        
+        
+  })}
       </Row>
     </div>
-  ))}
+  )
+  
+  
+  )}
 </Container>
 
 

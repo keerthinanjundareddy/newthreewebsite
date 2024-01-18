@@ -7,6 +7,7 @@ import Layout6 from "../src/pages/Layout6/Layout6";
 import Login from "../src/component/Login";
 import SignUp from "../src/component/SignUp";
 import ForgotPassword from "../src/component/ForgotPassword";
+import Readmore from "../src/component/Readmore"
 
 const routes = [
   { path: "/Layout2", component: Layout2 },
@@ -16,8 +17,11 @@ const routes = [
   { path: "/Layout6", component: Layout6 },
   { path: "/Login", component: Login },
   { path: "/SignUp", component: SignUp },
+
   { path: "/ForgotPassword", component: ForgotPassword },
   { path: "/", component: Layout1 },
+  { path: "/readmore", component: Readmore},
+
 ];
 
 export default routes;
