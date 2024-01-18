@@ -22,7 +22,7 @@ function Readmore() {
       const dataArray = [
         {
           heading: "Text heading 1",
-          text: "Meet Alex Mitchell 1...",
+          text: "Meet Alex Mitchell 1.. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1 Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1. Alex Mitchell 1...",
           image: imageone,
         },
         {
@@ -39,7 +39,7 @@ function Readmore() {
     <>
    <div className='header-section'>
     <div style={{width:"100px",height:"40px"}}><img src={isibisilogo} style={{width:"100%",height:"100%",objectFit:"contain"}} /></div>
-    <div className='back-btn'><span><img src={leftArrow} style={{width:"20px",height:"20px",objectFit:"contain",paddingRight:"4px"}} /></span>back</div>
+    <div className='back-btn'><span><img src={leftArrow} style={{width:"20px",height:"20px",objectFit:"contain",paddingRight:"4px"}} /></span>Home</div>
    </div>
     <div className='read-more-section'>
 
@@ -51,6 +51,7 @@ function Readmore() {
                     </div>
             {/* <div style={{textAlign:"center"}}>Digital Marketings</div> */}
             </div>
+            <div className='description-container'>
             <div className='image-flexboxcontainter'>
   {dataArray.map((item, index) => (
     <div key={index} className='content-container' style={{ marginBottom: '20px' }}>
@@ -86,6 +87,7 @@ function Readmore() {
     </div>
   ))}
 </div>
+</div>
 
 
         </div>
@@ -97,7 +99,7 @@ function Readmore() {
       <h4 style={{textAlign:"center"}}>FAQ</h4>
       <div style={{marginTop:"10px"}}>
         {accordionData.map((item, index) => (
-          <Accordion key={index} style={{ width: "100%" ,marginTop:"10px",border:"1px solid black",outline:"none" ,boxShadow:"none",borderRadius:"0px",}}>
+          <Accordion key={index} style={{ width: "100%" ,marginTop:"10px",outline:"none" ,boxShadow:"none",borderRadius:"0px",}}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls={`panel${index + 1}-content`}
