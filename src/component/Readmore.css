@@ -91,14 +91,52 @@ font-size: 50px;
 .footer-top-section{
     margin-top: 20px;
 }
+.shopify-image-section{
+    margin-top: 0px;
+    background-color:white;
+    
+    padding-top: 50px;
+    /* padding-left: 50px; */
+    /* padding-right: 50px; */
+    padding-bottom: 50px;
+
+}
 .faq-top-section{
-    margin-top: 20px;
+    margin-top: 0px;
+    background-color:#f5f5f5;
+    
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    
+  
 }
 .main-div{
-    background-color:#F0F0F9 !important;
+    background-color:#F0F9Fa !important;
 }
 .description-container{
-    background-color:#F0F0F9 !important ;
+    background-color:#F0F9Fa !important ;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Shopify-heading{
+    text-align: center;
+}
+.shopify-image-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.shopify-image-section{
+    flex-basis: 30%;
+    /* border: 1px solid blue; */
+  
+}
+.shopify-content-section{
+    flex-basis: 50%;
+    /* border:1px solid blue; */
 }
 
 @media only screen and (max-width: 600px) {
@@ -121,8 +159,8 @@ font-size: 50px;
     }
     .read-more-section{
         width:100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        /* padding-left: 20px; */
+        /* padding-right: 20px; */
      
         background-color: #F9F8FF !important;
         font-family: 'Poppins', sans-serif;
@@ -147,5 +185,13 @@ font-size: 50px;
         margin-top: 10px;
     }
     
+    .shopify-image-section{
+        flex-basis: 100%;
+        border: 1px solid blue;
+    }
+    .shopify-content-section{
+        flex-basis: 100%;
+        border:1px solid blue;
+    }
     
   }

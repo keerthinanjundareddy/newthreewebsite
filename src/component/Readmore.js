@@ -1,7 +1,7 @@
 import React from 'react'
 import './Readmore.css'
 import imageone from '../assets/images/users/img-1.jpg'
-import logo from '../assets/Userimages/shopifyimage.png'
+import logo from '../assets/Userimages/imagetwo.png'
 import Footer from './Footer/Footer'
 import isibisilogo from '../assets/Userimages/isibisi-removebg-preview.png'
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -10,6 +10,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import leftArrow from '../assets/Userimages/leftarow.png'
+import shopifyimaaage from '../assets/Userimages/Is-it-worth-it-to-hire-a-Shopify-expert.jpg'
 
 
 function Readmore() {
@@ -27,7 +28,7 @@ function Readmore() {
         },
         {
           heading: "Text heading 2",
-          text: "Meet Alex Mitchell 2...",
+          text: "Meet Alex Mitchell 2...Meet Alex Mitchell 2.Meet Alex Mitchell 2.Meet AlexMeet AlexMeet Alex Meet Alex Mitchell 2..Meet Alex Meet Alex Mitchell 2..Mitchell 2..Mitchell 2..Mitchell 2.. Mitchell 2....",
           image: imageone,
         //   image: imagetwo,
         },
@@ -94,16 +95,40 @@ function Readmore() {
         <div>
 
         </div>
+
+
+        <div className='shopify-image-section'>
+          <div className='Shopify-heading'>
+
+          <div>shopify</div>
+          <div>Is it worth to hire a </div>
+          <div>shopify Expert</div>
+
+          </div>
+          <div className='shopify-image-container'>
+  <div className='shopify-image-section' style={{border: "", borderTopRightRadius: "50%", borderBottomRightRadius: "50%"}}>
+    <div className='shopify-image' style={{width:"100%",height:"100%",borderTopRightRadius: "50%", borderBottomRightRadius: "50%" }}>
+      <img src={shopifyimaaage} alt="shopify-image" style={{ width: "100%", height: "100%", objectFit: "contain", borderTopRightRadius: "50%", borderBottomRightRadius: "50%", boxShadow: "2px 4px 8px 3px grey" }} />
+    </div>
+  </div>
+  <div className='shopify-content-section'>
+
+  </div>
+</div>
+
+
+
+        </div>
       
         <div className='faq-top-section'>
-      <h4 style={{textAlign:"center"}}>FAQ</h4>
+      <h4 style={{textAlign:"left"}}>FAQ</h4>
       <div style={{marginTop:"10px"}}>
         {accordionData.map((item, index) => (
-          <Accordion key={index} style={{ width: "100%" ,marginTop:"10px",outline:"none" ,boxShadow:"none",borderRadius:"0px",}}>
+          <Accordion key={index} style={{ width: "100%" ,marginTop:"25px",outline:"none" ,boxShadow:"none",borderRadius:"0px"}}>
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon  style={{color:"black"}} />}
               aria-controls={`panel${index + 1}-content`}
-              style={{ backgroundColor: "#F2F3FA",border:"none",outline:"none",boxShadow:"none" }}
+              style={{ backgroundColor: "#FFFFFF",outline:"none",boxShadow:"none" }}
             >
               <Typography  style={{
       fontWeight: 10,
@@ -111,7 +136,7 @@ function Readmore() {
       fontFamily: "'Poppins', sans-serif",
     }}>{item.title}</Typography>
             </AccordionSummary>
-            <AccordionDetails style={{ backgroundColor: "#F2F3FA",border:"none",outline:"none",boxShadow:"none" }}>
+            <AccordionDetails style={{ backgroundColor: "#FFFFFF",border:"none",outline:"none",boxShadow:"none" }}>
               <Typography style={{ fontWeight: 10,color:"black",  fontFamily: "'Poppins', sans-serif", }}>{item.content}</Typography>
             </AccordionDetails>
           </Accordion>
