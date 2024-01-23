@@ -11,6 +11,8 @@ import Typography from "@material-ui/core/Typography";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import leftArrow from '../assets/Userimages/leftarow.png'
 import shopifyimaaage from '../assets/Userimages/Is-it-worth-it-to-hire-a-Shopify-expert.jpg'
+import shopifyimage from '../assets/Userimages/Mask group.png'
+import shopifylogo from '../assets/Userimages/Shopify-Emblem.png'
 
 
 function Readmore() {
@@ -55,11 +57,11 @@ function Readmore() {
             <div className='description-container'>
             <div className='image-flexboxcontainter'>
   {dataArray.map((item, index) => (
-    <div key={index} className='content-container' style={{ marginBottom: '20px' }}>
+    <div key={index} className='content-container' style={{ marginBottom: "20px" }}>
       {index % 2 === 0 ? (
         <>
         <div className='image-flexboxcontaintertwo'>
-          <div className='text-container' style={{ marginRight: '20px' }}>
+          <div className='text-container' style={{ marginRight: "20px" }}>
             <div className="content-heading" style={{ textAlign: "left" }}>{item.heading}</div>
             <div className='content-text' style={{ textAlign: "left" }}>{item.text}</div>
           </div>
@@ -97,28 +99,44 @@ function Readmore() {
         </div>
 
 
-        <div className='shopify-image-section'>
-          <div className='Shopify-heading'>
-
-          <div>shopify</div>
-          <div>Is it worth to hire a </div>
-          <div>shopify Expert</div>
-
-          </div>
-          <div className='shopify-image-container'>
-  <div className='shopify-image-section' style={{border: "", borderTopRightRadius: "50%", borderBottomRightRadius: "50%"}}>
-    <div className='shopify-image' style={{width:"100%",height:"100%",borderTopRightRadius: "50%", borderBottomRightRadius: "50%" }}>
-      <img src={shopifyimaaage} alt="shopify-image" style={{ width: "100%", height: "100%", objectFit: "contain", borderTopRightRadius: "50%", borderBottomRightRadius: "50%", boxShadow: "2px 4px 8px 3px grey" }} />
-    </div>
-  </div>
-  <div className='shopify-content-section'>
-
-  </div>
-</div>
-
-
+      <div className='shopify-features-section'>
+        <div className='shopify-flexbox-container'>
+        <div className='shopify-feaatures-content-section' >
+          <h1 style={{textAlign:"left"}}>Heading</h1>
+          <div>Migrating data from one system to another system can be 
+cumbersome especially in Shopify. Since Shopify works based 
+on templates, their Product template is limited in terms of 
+properties. They do offer metafields as a solution but that 
+is not even sufficient to migrate the old data structure.
+Migrating data from one system to another system can be 
+cumbersome especially in Shopify. Since Shopify works based 
+on templates, their Product template is limited in terms of 
+properties. They do offer metafields as a solution but that 
+is not even sufficient to migrate the old data structure.</div>
 
         </div>
+        <div className='shopify-fetures-image-section'>
+      <div className="circle-container">
+<ul className="feature-list" >
+    <li className='featureone'>Feature 1 features 2 features 3 </li>
+    <li className='featuretwo'>Feature 2 features 2</li>
+    <li className='feturethree'>Feature 3 features 2</li>
+  
+  </ul>
+  <div className="circle-image">
+    <img src={shopifylogo} alt="shopifylogo" />
+  </div>
+  <ul className="feature-list">
+    <li className='featurefour'>Feature 4</li>
+    <li className='featurefive'>Feature 5</li>
+    <li className='featuresix'>Feature 6</li>
+   
+  </ul>
+</div>
+</div>
+
+      </div>
+      </div>
       
         <div className='faq-top-section'>
       <h4 style={{textAlign:"left"}}>FAQ</h4>
