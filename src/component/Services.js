@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 import axios from "axios";
 import HomeUrl from '../assets/images/home-border.png';
+import { useNavigate } from 'react-router-dom';
+
 
 const Services = () => {
   const [offers, setOffers] = useState([]);
@@ -35,13 +37,16 @@ const [visiblePoints, setVisiblePoints] = useState(5);
 
 
   }, []);
-
+  const navigate = useNavigate();
   const handleMoreClick = (cardId) => {
-    window.location.href = "/readmore";
+    // window.location.href = "/readmore";
+   
     window.alert(cardId)
-    // Navigate to another page with additional details based on cardId
-    // You can use a router library like React Router for navigation
-    // Example: history.push(`/details/${cardId}`);
+  
+  
+    // Navigate to the "/readmore" path with additional details based on cardId
+    navigate(`/readmore`);
+  
   };
   
 

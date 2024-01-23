@@ -10,8 +10,8 @@ import ForgotPassword from "../src/component/ForgotPassword";
 import Readmore from "../src/component/Readmore"
 
 const routes = [
-  { path: "/Layout2", component: Layout2 },
-  { path: "/Layout3", component: Layout3 },
+  { path: "/", component: Layout1 },
+  { path: "/readmore", component:Readmore },
   { path: "/Layout4", component: Layout4 },
   { path: "/Layout5", component: Layout5 },
   { path: "/Layout6", component: Layout6 },
@@ -19,8 +19,8 @@ const routes = [
   { path: "/SignUp", component: SignUp },
 
   { path: "/ForgotPassword", component: ForgotPassword },
-  { path: "/", component: Layout1 },
-  { path: "/readmore", component: Readmore},
+
+  // { path: "/readmore", component: Readmore},
 
 ];
 

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './Readmore.css'
 import imageone from '../assets/images/users/img-1.jpg'
 import logo from '../assets/Userimages/imagetwo.png'
@@ -14,6 +14,8 @@ import shopifyimaaage from '../assets/Userimages/Is-it-worth-it-to-hire-a-Shopif
 import shopifyimage from '../assets/Userimages/Mask group.png'
 import shopifylogo from '../assets/Userimages/Shopify-Emblem.png'
 
+import Navbar from "../../src/component/Navbar/NavBar";
+
 
 // import imageonee from '../../src/assets/Userdummyimages/Useo-search-engine-optimization-2023-05-08-23-44-00-utc.jpg'
 import imagetwo from '../../src/assets/Userdummyimages/social-media-2022-11-14-07-05-26-utc.jpg'
@@ -22,6 +24,8 @@ import imagefour from '../../src/assets/Userdummyimages/social-media-2022-11-14-
 import imagefive from '../../src/assets/Userdummyimages/assessment-analysis-bar-graph-presentation-2022-12-16-00-26-45-utc - Copy.jpg'
 import imagesix from '../../src/assets/Userdummyimages/image-of-start-up-business-people-discussing-over-2023-01-31-03-28-56-utc.JPG'
 import imageseven from '../../src/assets/Userdummyimages/a-man-chats-with-an-artificial-intelligence-chat-b-2023-08-29-05-17-51-utc.jpg'
+// import { Navbar } from 'reactstrap'
+import NavbarPage from './Navbar/NavBar'
 
 
 
@@ -57,14 +61,46 @@ function Readmore() {
         { title: imageseven, heading: 'EMERGING TRENDS AND TECHNOLOGIES', content: 'Ummeed Finance', contenttwo: "Emerging trends and technologies encompass Artificial Intelligence, chatbots, voice search, and automation. These innovations are reshaping the digital landscape, influencing user experiences, and driving the evolution of various industries." },
       ];
       
-      const [hoveredCard, setHoveredCard] = useState(null);  
+      const [hoveredCard, setHoveredCard] = useState(null);
+      
+      const [scrolled, setScrolled] = useState(false);
+
+      useEffect(() => {
+          const handleScroll = () => {
+              const scrollY = window.scrollY;
+              // Set a threshold value based on your design
+              const threshold = 50;
+  
+              // Update the state based on scroll position
+              setScrolled(scrollY > threshold);
+          };
+  
+          // Attach the event listener
+          window.addEventListener('scroll', handleScroll);
+  
+          // Clean up the event listener when the component is unmounted
+          return () => {
+              window.removeEventListener('scroll', handleScroll);
+          };
+      }, []);
     
   return (
     <>
-   <div className='header-section' style={{zIndex:"100"}}>
-    <div style={{width:"100px",height:"40px"}}><img src={isibisilogo} style={{width:"100%",height:"100%",objectFit:"contain"}} /></div>
-    <div className='back-btn'><span><img src={leftArrow} style={{width:"20px",height:"20px",objectFit:"contain",paddingRight:"4px"}} /></span>Home</div>
-   </div>
+    <div className={`header-section ${scrolled ? 'scrolled' : ''}`} style={{ zIndex: '100' }}>
+            <div style={{ width: '100px', height: '40px' }}>
+                <img src={isibisilogo} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </div>
+            <div className='back-btn'>
+                <span>
+                    <img src={leftArrow} style={{ width: '20px', height: '20px', objectFit: 'contain', paddingRight: '4px' }} />
+                </span>
+                Home
+            </div>
+        </div>
+
+ 
+
+
     <div className='read-more-section'>
 
 

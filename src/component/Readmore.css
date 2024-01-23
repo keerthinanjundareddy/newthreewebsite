@@ -401,3 +401,10 @@ margin-bottom: 50px !important;
       /* margin: 10px 0; Adjust the margin for mobile */
     }
   }
+
+
+  /* Add a class for background color change */
+.header-section.scrolled {
+    background-color: red; /* Set the desired background color */
+    transition: red 0.3s ease; /* Add a smooth transition effect */
+}
