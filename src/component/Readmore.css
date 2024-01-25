@@ -558,3 +558,72 @@ margin-bottom: 50px !important;
    box-shadow:  0px 5px 30px -10px rgba(0, 0, 0, 0.1);/* Add a smooth transition effect */
 }
 /* end of cards css */
+
+
+
+
+/*the banner css */
+.banner-main-div{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 250px;
+  align-items: center;
+  background-color: #41612D;
+  border: 1px solid #41612D;
+  border-radius: 24px;
+  height: 420px;
+  margin: 20px 70px;
+  margin-top: 120px;
+ 
+}
+
+.text-card{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+
+line-height: 100px;
+}
+
+
+.Hire-div{
+color: #FFE8AE;
+font-size: 120px;
+font-weight: 900;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+
+.expert-div{
+color: #FFE8AE;
+font-size: 50px;
+font-weight: 900;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.side-image-div{
+
+border: 1px solid #3A5729;
+border-radius: 11.59px;
+background-color: #3A5729;
+padding: 50px;
+
+}
+
+
+.Text-para{
+width: 501px;
+word-break: break-all;
+color: white;
+line-height: 35px;
+font-size: 24px;
+
+}
+
+
+
+
+/* end of banner css */

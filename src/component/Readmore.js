@@ -17,7 +17,7 @@ import shopifylogo from '../assets/Userimages/Shopify-Emblem.png'
 import Navbar from "../../src/component/Navbar/NavBar";
 import arrow from '../../src/assets/Userimages/leftarow.png'
 import { useNavigate } from 'react-router-dom';
-
+import shopify_logo from '../assets/images/Group.png'
 
 // import imageonee from '../../src/assets/Userdummyimages/Useo-search-engine-optimization-2023-05-08-23-44-00-utc.jpg'
 import imagetwo from '../../src/assets/Userdummyimages/social-media-2022-11-14-07-05-26-utc.jpg'
@@ -28,7 +28,7 @@ import imagesix from '../../src/assets/Userdummyimages/image-of-start-up-busines
 import imageseven from '../../src/assets/Userdummyimages/a-man-chats-with-an-artificial-intelligence-chat-b-2023-08-29-05-17-51-utc.jpg'
 // import { Navbar } from 'reactstrap'
 import NavbarPage from './Navbar/NavBar'
-import feedback  from '../../src/assets/Userimages/Group (14).png'
+import feedback from '../../src/assets/Userimages/Group (14).png'
 import videoicon from '../../src/assets/Userimages/videocam 2.png'
 
 
@@ -110,13 +110,13 @@ function Readmore() {
 
     { title: "", heading: 'Social media & market places', contenttwo: `We help you reach more audience and potential customers via social media. We have a team of experts who predominantly work on soical media stragies including market place integrations. Whether you have social media accounts or need a new ones, we handle them all.`, bullets: { one: 'TikTok shop', two: 'Instagram shop', three: 'Facebook', four: 'Zalora' } },
 
-    { title: "", heading: 'Featureful Shopify Apps', contenttwo: `We have developed numerous apps to help you manage and style your shopify webstore. Most of our shopify apps are available with an affordable price. Do check them out in the ` + <a href='https://apps.shopify.com/'>shopify app store</a> + ` Here are some of our awesome apps:`, bullets: { one: 'Notify', two: 'MobyApp Mobile App Builder', three: 'Form Builder', four: 'RateMe Product review App' }},
+    { title: "", heading: 'Featureful Shopify Apps', contenttwo: `We have developed numerous apps to help you manage and style your shopify webstore. Most of our shopify apps are available with an affordable price. Do check them out in the ` + <a href='https://apps.shopify.com/'>shopify app store</a> + ` Here are some of our awesome apps:`, bullets: { one: 'Notify', two: 'MobyApp Mobile App Builder', three: 'Form Builder', four: 'RateMe Product review App' } },
 
     {
       title: "", heading: 'Seo & Tracking', contenttwo: `Our in-house experts can fastrack your webstore performance and fine-tune uisng the best strategy. We would otherwise help you integrate your available pixels on the shopify webstore for event tracking. 
         Shopify provides it's own analytical dashboard to visualize trends. SEO is another essential part of webstore performance. Shopify has a minimalistic stragey in-place for seo but we at RENRGII go beyond shopify and make your webstore more visibile to your customers.`, bullets: { one: 'Pixel tracking', two: 'Analytics', three: 'Seo' }
     },
-    { title: "", heading: 'Additional Offerings', contenttwo: `When you partner with us, why settle for less. Shopify's default notification templates may not be suitable for you and therefore we help design the email notification templates which are modern and aligned with your brand. Below are the additional offerings you can enjoy while we are at your service.`, bullets: { one: 'Server management', two: 'Third party apps installation', three: 'Weekly content import support', four: 'Notification template customizations' }},
+    { title: "", heading: 'Additional Offerings', contenttwo: `When you partner with us, why settle for less. Shopify's default notification templates may not be suitable for you and therefore we help design the email notification templates which are modern and aligned with your brand. Below are the additional offerings you can enjoy while we are at your service.`, bullets: { one: 'Server management', two: 'Third party apps installation', three: 'Weekly content import support', four: 'Notification template customizations' } },
 
     { title: "", heading: '24/5 priority support', contenttwo: "RENERGII is committed to providing full support anytime you require us to step in. We are happy to see you grow and we are here to help you out for every tiny issue you may have on Shopify. You can get in touch with us via the following channels:", bullets: { one: 'Email', two: 'Call', three: 'Whatsapp', four: 'Video meetings' } },
   ];
@@ -150,7 +150,7 @@ function Readmore() {
       howitworks: `This steps includes`,
       iconone: videoicon,
       textone: `video`,
-      icontwo: feedback ,
+      icontwo: feedback,
       textwo: `feedback`
     },
     {
@@ -162,14 +162,14 @@ function Readmore() {
       label: 'Final Design',
       description: `After the store is set up, we carefully review & deliver it for your final feedbacks & approval. Any doable revisions required, we will be happy to help and fix them!`,
       howitworks: `This steps includes`,
-      icontwo: feedback ,
+      icontwo: feedback,
       textwo: `feedback`
     },
     {
       label: 'Final Review',
       description: `When all the changes (if there are any required) are revised, we will deliver the store for your approval.`,
       howitworks: `This steps includes`,
-      icontwo: feedback ,
+      icontwo: feedback,
       textwo: `feedback`
     },
     {
@@ -202,7 +202,7 @@ function Readmore() {
     //         element.classList.remove('no-border-radius');
     //     }
     // });
-};
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -238,74 +238,89 @@ function Readmore() {
 
   return (
     <>
-     <div className='read-more-section' >
-      <div className={`header-section ${scrolled ? 'scrolled' : ''}`} style={{ zIndex: '100' }}>
-        <div style={{ width: '100px', height: '40px' }}>
-          <img src={isibisilogo} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        </div>
-        <div className='back-btn' onClick={handlebackClick}>
-          <span>
-            <img src={leftArrow} style={{ width: '20px', height: '20px', objectFit: 'contain', paddingRight: '4px' }} />
-          </span>
-          Home
-        </div>
-      </div>
-
-
-
-
-     
-
-
-        {/* <div className='main-div'> */}
-          <div className='heading-container' style={{marginTop:"120px",border:"1px solid yellow"}} >
-            <div style={{ width: "100%", height: "700px" }}>
-              <img src={logo} alt="img" style={{ width: "100%", height: "100%", objectFit: "fill" }} />
-            </div>
-            {/* <div style={{textAlign:"center"}}>Digital Marketings</div> */}
+      <div className='read-more-section' >
+        <div className={`header-section ${scrolled ? 'scrolled' : ''}`} style={{ zIndex: '100' }}>
+          <div style={{ width: '100px', height: '40px' }}>
+            <img src={isibisilogo} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
-        
+          <div className='back-btn' onClick={handlebackClick}>
+            <span>
+              <img src={leftArrow} style={{ width: '20px', height: '20px', objectFit: 'contain', paddingRight: '4px' }} />
+            </span>
+            Home
+          </div>
+        </div>
 
 
-        {/* </div> */}
+
+        <div className='banner-main-div'>
+
+          <div className='text-card'>
+            <div className='Hire-div'>
+              Hire
+            </div>
+
+            <div className='expert-div'>
+              Shopify Experts
+            </div>
+
+            <div className='Text-para'>
+              Transform your online store with
+              our Shopify experts. From setup to optimization, we have got your ecommerce covered.
+            </div>
+          </div>
+
+          <div>
+
+            <div className='side-image-div'>
+              <img src={shopify_logo} alt="img" style={{ width: "150px", height: "80px", objectFit: "fill" }} />
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
         <div>
 
         </div>
 
 
         <div className='shopify-features-section'>
-        <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }} className='shopify-services-heading'><b>OUR SERVICES</b></div>
+          <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }} className='shopify-services-heading'><b>OUR SERVICES</b></div>
           <div className="card-container-two">
-          {dummyData.map((data, index) => (
-  <div
-    key={index}
-    className="cardstwo"
-    onMouseEnter={() => setHoveredCard(index)}
-    onMouseLeave={() => setHoveredCard(null)}
-  >
-    <div className='shopifys-image-sections-container'>
-      <img src={data.title} className='imge-sec' />
-    </div>
-    <div className='heading-sections-data' style={{ marginTop: "20px", textAlign: "center", fontSize:"20px", color:"#1E3547" }}>
-      {data.heading}
-    </div>
-    <div className='title-sections-dataa' style={{ opacity: hoveredCard === index ? 1 : 1, marginTop:"30px", textAlign: "left", color:"#828F99", fontSize:"16px" }}>
-      {data.contenttwo}
-      </div>
-      {/* Check if bullets exist and are an object before rendering */}
-      <div >
-      {data.bullets && typeof data.bullets === 'object' && (
-        <ul style={{ marginTop:"20px" }}>
-        {data.bullets.one  &&  <li style={{color:"#828F99"}}>{data.bullets.one}</li> }
-        {data.bullets.two &&  <li style={{color:"#828F99"}}>{data.bullets.two}</li> }
-          {data.bullets.three && <li style={{color:"#828F99"}}>{data.bullets.three}</li> }
-          {data.bullets.four && <li style={{color:"#828F99"}}>{data.bullets.four}</li> }
-        </ul>
-      )}
-      </div>
-   
-  </div>
-))}
+            {dummyData.map((data, index) => (
+              <div
+                key={index}
+                className="cardstwo"
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                <div className='shopifys-image-sections-container'>
+                  <img src={data.title} className='imge-sec' />
+                </div>
+                <div className='heading-sections-data' style={{ marginTop: "20px", textAlign: "center", fontSize: "20px", color: "#1E3547" }}>
+                  {data.heading}
+                </div>
+                <div className='title-sections-dataa' style={{ opacity: hoveredCard === index ? 1 : 1, marginTop: "30px", textAlign: "left", color: "#828F99", fontSize: "16px" }}>
+                  {data.contenttwo}
+                </div>
+                {/* Check if bullets exist and are an object before rendering */}
+                <div >
+                  {data.bullets && typeof data.bullets === 'object' && (
+                    <ul style={{ marginTop: "20px" }}>
+                      {data.bullets.one && <li style={{ color: "#828F99" }}>{data.bullets.one}</li>}
+                      {data.bullets.two && <li style={{ color: "#828F99" }}>{data.bullets.two}</li>}
+                      {data.bullets.three && <li style={{ color: "#828F99" }}>{data.bullets.three}</li>}
+                      {data.bullets.four && <li style={{ color: "#828F99" }}>{data.bullets.four}</li>}
+                    </ul>
+                  )}
+                </div>
+
+              </div>
+            ))}
 
 
           </div>
@@ -319,33 +334,33 @@ function Readmore() {
             {steps.map((step, index) => (
               <div key={step.label} className="step">
                 <div className="step-number">{index + 1}</div>
-                <div className="step-content" style={{ marginLeft: "50px",padding:"20px",marginTop:"0px" }}>
-  <h5>{step.label}</h5>
-  <p>{step.description}</p>
-  <div style={{ color: "black",  }}>
-    <b>{step.howitworks}</b>
-    {step.textone && (
-    <div style={{ paddingLeft: "10px" }}>
-      <img
-        src={step.iconone}
-        alt="icon"
-        style={{ width: "15px", height: "15px", objectFit: "contain" }}
-      />
-      <span style={{ paddingLeft: "5px" }}>{step.textone}</span>
-    </div>
-    )}
-    {step.icontwo && (
-      <div style={{ paddingLeft: "10px" }}>
-        <img
-          src={step.icontwo}
-          alt="icon"
-          style={{ width: "15px", height: "15px", objectFit: "contain" }}
-        />
-        <span style={{ paddingLeft: "5px" }}>{step.textwo}</span>
-      </div>
-    )}
-  </div>
-</div>
+                <div className="step-content" style={{ marginLeft: "50px", padding: "20px", marginTop: "0px" }}>
+                  <h5>{step.label}</h5>
+                  <p>{step.description}</p>
+                  <div style={{ color: "black", }}>
+                    <b>{step.howitworks}</b>
+                    {step.textone && (
+                      <div style={{ paddingLeft: "10px" }}>
+                        <img
+                          src={step.iconone}
+                          alt="icon"
+                          style={{ width: "15px", height: "15px", objectFit: "contain" }}
+                        />
+                        <span style={{ paddingLeft: "5px" }}>{step.textone}</span>
+                      </div>
+                    )}
+                    {step.icontwo && (
+                      <div style={{ paddingLeft: "10px" }}>
+                        <img
+                          src={step.icontwo}
+                          alt="icon"
+                          style={{ width: "15px", height: "15px", objectFit: "contain" }}
+                        />
+                        <span style={{ paddingLeft: "5px" }}>{step.textwo}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
 
                 {index !== steps.length - 1 && <div className="step-line" />}
               </div>
@@ -354,56 +369,56 @@ function Readmore() {
 
         </div>
 
-       
+
         {/* end of stepper section */}
 
 
         {/* start of team section */}
 
         <div className='description-container'>
-        <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>our team</b></div>
-            <div className='image-flexboxcontainters'>
-              {dataArray.map((item, index) => (
-                <div key={index} className='content-container' style={{ marginBottom: "20px" }}>
-                  {index % 2 === 0 ? (
-                    <>
-                      <div className='image-flexboxcontaintertwo'  >
-                        <div className='image-container'   >
-                          <div style={{ width: "100%", height: "300px" }}>
-                            <img src={item.image} alt={`img-${index}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
-                          </div>
-                        </div>
-                        <div className='text-container' >
-                          <div className="content-heading" >{item.heading}</div>
-                          <div className='content-text'>{item.text}</div>
+          <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>our team</b></div>
+          <div className='image-flexboxcontainters'>
+            {dataArray.map((item, index) => (
+              <div key={index} className='content-container' style={{ marginBottom: "20px" }}>
+                {index % 2 === 0 ? (
+                  <>
+                    <div className='image-flexboxcontaintertwo'  >
+                      <div className='image-container'   >
+                        <div style={{ width: "100%", height: "300px" }}>
+                          <img src={item.image} alt={`img-${index}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                         </div>
                       </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className='image-flexboxcontaintertwo' style={{marginTop:"20px",}}   >
-                        <div className='text-container'   >
-                          <div className="content-heading-two" >{item.heading}</div>
-                          <div className='content-text-two' >{item.text}</div>
-                        </div>
-                        <div className='image-container'  >
-                          <div style={{ width: "100%", height: "300px" }}>
-                            <img src={item.image} alt={`img-${index}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
-                          </div>
+                      <div className='text-container' >
+                        <div className="content-heading" >{item.heading}</div>
+                        <div className='content-text'>{item.text}</div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className='image-flexboxcontaintertwo' style={{ marginTop: "20px", }}   >
+                      <div className='text-container'   >
+                        <div className="content-heading-two" >{item.heading}</div>
+                        <div className='content-text-two' >{item.text}</div>
+                      </div>
+                      <div className='image-container'  >
+                        <div style={{ width: "100%", height: "300px" }}>
+                          <img src={item.image} alt={`img-${index}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                         </div>
                       </div>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
+        </div>
 
 
         {/* end of teaam section  */}
 
         <div className='faq-top-section'>
-        <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>faq's</b></div>
+          <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>faq's</b></div>
           <div className="accordions" >
             {data.map((item, index) => (
               <div key={index} className={`accordions-items ${index === openIndex ? 'open' : ''}`}>
