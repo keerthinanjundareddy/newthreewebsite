@@ -113,7 +113,7 @@ const Clients = () => {
           <Row className="mt-10 pt-4 pl-20 pr-20">
           {clientData && clientData.images && clientData.images.length > 0 && clientData.images.map((image, index) => (
   <Col lg={3} key={index} >
-    <div className="client-images mt-1 pt-1 text-center" style={{textAlign:"center",justifyContent:"center",alignItems:"Center", }}>
+    <div className="client-images mt-2 pt-1 text-center" style={{textAlign:"center",justifyContent:"center",alignItems:"Center"}}>
       {image.clientLogos && (
        
         <img
