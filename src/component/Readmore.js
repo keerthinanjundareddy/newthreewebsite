@@ -194,14 +194,14 @@ function Readmore() {
   const handleToggle = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
 
-    const elements = document.querySelectorAll('.accordions-questions');
-    elements.forEach((element, i) => {
-        if (i === index) {
-            element.classList.toggle('no-border-radius');
-        } else {
-            element.classList.remove('no-border-radius');
-        }
-    });
+    // const elements = document.querySelectorAll('.accordions-questions');
+    // elements.forEach((element, i) => {
+    //     if (i === index) {
+    //         element.classList.toggle('no-border-radius');
+    //     } else {
+    //         element.classList.remove('no-border-radius');
+    //     }
+    // });
 };
 
   useEffect(() => {
@@ -274,7 +274,7 @@ function Readmore() {
 
 
         <div className='shopify-features-section'>
-        <div style={{ textAlign: "center", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "10px" }}><b>OUR SERVICES</b></div>
+        <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }} className='shopify-services-heading'><b>OUR SERVICES</b></div>
           <div className="card-container-two">
           {dummyData.map((data, index) => (
   <div
@@ -289,7 +289,7 @@ function Readmore() {
     <div className='heading-sections-data' style={{ marginTop: "20px", textAlign: "center", fontSize:"20px", color:"#1E3547" }}>
       {data.heading}
     </div>
-    <div className='title-sections-dataa' style={{ opacity: hoveredCard === index ? 1 : 1, marginTop:"10px", textAlign: "center", color:"#828F99", fontSize:"16px" }}>
+    <div className='title-sections-dataa' style={{ opacity: hoveredCard === index ? 1 : 1, marginTop:"30px", textAlign: "left", color:"#828F99", fontSize:"16px" }}>
       {data.contenttwo}
       </div>
       {/* Check if bullets exist and are an object before rendering */}
@@ -313,7 +313,7 @@ function Readmore() {
 
         {/* stepper section */}
         <div className='shopify-howitworks-section'>
-          <div style={{ textAlign: "center", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "10px" }}><b>how it works</b></div>
+          <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>how it works</b></div>
           <div className="vertical-stepper">
 
             {steps.map((step, index) => (
@@ -361,7 +361,7 @@ function Readmore() {
         {/* start of team section */}
 
         <div className='description-container'>
-        <div style={{ textAlign: "center", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "10px" }}><b>our team</b></div>
+        <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>our team</b></div>
             <div className='image-flexboxcontainters'>
               {dataArray.map((item, index) => (
                 <div key={index} className='content-container' style={{ marginBottom: "20px" }}>
@@ -403,7 +403,7 @@ function Readmore() {
         {/* end of teaam section  */}
 
         <div className='faq-top-section'>
-        <div style={{ textAlign: "center", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "10px" }}><b>faq's</b></div>
+        <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>faq's</b></div>
           <div className="accordions" >
             {data.map((item, index) => (
               <div key={index} className={`accordions-items ${index === openIndex ? 'open' : ''}`}>
