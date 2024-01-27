@@ -256,8 +256,6 @@ function Readmore() {
           </div>
         </div>
 
-
-
         <div className='banner-main-div'>
 
           <div className='text-card'>
@@ -278,15 +276,12 @@ function Readmore() {
           <div>
 
             <div className='side-image-div'>
-              <img src={shopify_logo} alt="img" style={{ width: "150px", height: "80px", objectFit: "fill" }} />
+              <img src={shopify_logo} alt="img" className='shopify-banner-img' />
             </div>
 
           </div>
 
         </div>
-
-
-
 
         <div>
 
@@ -304,7 +299,7 @@ function Readmore() {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <div className='shopifys-image-sections-container'>
-                  <img src={data.title} className='imge-sec' />
+                  <img src={data.title} className='imge-sec' alt={data.title} />
                 </div>
                 <div className='heading-sections-data' style={{ marginTop: "20px", textAlign: "center", fontSize: "20px", color: "#1E3547" }}>
                   {data.heading}
@@ -463,7 +458,7 @@ function Readmore() {
           <div className="accordions" >
             {data.map((item, index) => (
               <div key={index} className={`accordions-items ${index === openIndex ? 'open' : ''}`}>
-                <div className="accordions-questions" onClick={() => handleToggle(index)} style={{ marginTop: "20px" }}>
+                <div className="accordions-questions" onClick={() => handleToggle(index)}>
                   <span>{item.question}</span>
                   <span className="arrow">{index === openIndex ? '▲' : '▼'}</span>
                 </div>
