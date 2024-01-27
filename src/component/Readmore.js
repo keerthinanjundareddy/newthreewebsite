@@ -9,7 +9,7 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
-import leftArrow from '../assets/Userimages/leftarow.png'
+import home from '../assets/Userimages/home.png'
 import shopifyimaaage from '../assets/Userimages/Is-it-worth-it-to-hire-a-Shopify-expert.jpg'
 import shopifyimage from '../assets/Userimages/Mask group.png'
 import shopifylogo from '../assets/Userimages/Shopify-Emblem.png'
@@ -30,6 +30,7 @@ import imageseven from '../../src/assets/Userdummyimages/a-man-chats-with-an-art
 import NavbarPage from './Navbar/NavBar'
 import feedback from '../../src/assets/Userimages/Group (14).png'
 import videoicon from '../../src/assets/Userimages/videocam 2.png'
+import linkedinicon from '../../src/assets/Userimages/linkedin-square-icon (1).png'
 
 
 
@@ -44,11 +45,13 @@ function Readmore() {
     {
       heading: "TEAM MEMBER NAME",
       text: "Designation ",
+      experience:"2yrs",
       image: imageone,
     },
     {
       heading: "TEAM MEMBER NAME",
       text: "Designation",
+      experience:"2yrs",
       image: imageone,
       //   image: imagetwo,
     },
@@ -244,10 +247,12 @@ function Readmore() {
             <img src={isibisilogo} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
           <div className='back-btn' onClick={handlebackClick}>
-            <span>
-              <img src={leftArrow} style={{ width: '20px', height: '20px', objectFit: 'contain', paddingRight: '4px' }} />
-            </span>
+            <div>
+              <img src={home } style={{ width: '40px', height: '25px', objectFit: 'contain',paddingLeft:"5px",paddingBottom:"4px"}} />
+            </div>
+            <div style={{paddingRight:"20px"}}>
             Home
+            </div>
           </div>
         </div>
 
@@ -289,7 +294,7 @@ function Readmore() {
 
 
         <div className='shopify-features-section'>
-          <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }} className='shopify-services-heading'><b>OUR SERVICES</b></div>
+          <div className='shopify-services-heading'><b>OUR SERVICES</b></div>
           <div className="card-container-two">
             {dummyData.map((data, index) => (
               <div
@@ -328,7 +333,7 @@ function Readmore() {
 
         {/* stepper section */}
         <div className='shopify-howitworks-section'>
-          <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>how it works</b></div>
+          <div className='howitworks-heading'><b>how it works</b></div>
           <div className="vertical-stepper">
 
             {steps.map((step, index) => (
@@ -376,34 +381,70 @@ function Readmore() {
         {/* start of team section */}
 
         <div className='description-container'>
-          <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>our team</b></div>
+          <div className='theteam-heading'><b>the team</b></div>
           <div className='image-flexboxcontainters'>
             {dataArray.map((item, index) => (
               <div key={index} className='content-container' style={{ marginBottom: "20px" }}>
                 {index % 2 === 0 ? (
                   <>
                     <div className='image-flexboxcontaintertwo'  >
-                      <div className='image-container'   >
-                        <div style={{ width: "100%", height: "300px" }}>
-                          <img src={item.image} alt={`img-${index}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
-                        </div>
-                      </div>
-                      <div className='text-container' >
-                        <div className="content-heading" >{item.heading}</div>
+                    <div className='image-container'>
+  <div 
+    // border: "1px solid yellow",
+   className='image-section-cont' // Hide overflow to maintain circle shape
+>
+    <img
+      src={item.image}
+      alt={`img-${index}`}
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "contain",  // Maintain image aspect ratio and cover the circle
+        borderRadius: "50%",  // Apply border-radius to the image for circular shape
+      }}
+    />
+  </div>
+  <div style={{marginTop:"20px"}}>
+  <div className="content-heading" >{item.heading}</div>
                         <div className='content-text'>{item.text}</div>
+                        <div className='experience-text'>{item.experience}</div>
+                        <div style={{width:"20px",height:"20px"}} className='image-text' >
+                          <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} />
+                        </div>
+                        </div>
+</div>
+
+                      <div className='text-container'  >
+                        
                       </div>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className='image-flexboxcontaintertwo' style={{ marginTop: "20px", }}   >
+                    <div className='image-flexboxcontaintertwo' style={{ marginTop: "-120px", }}   >
                       <div className='text-container'   >
+                       
+                      </div>
+                      <div className='image-container'    >
+                  
+                        <div  >
                         <div className="content-heading-two" >{item.heading}</div>
                         <div className='content-text-two' >{item.text}</div>
-                      </div>
-                      <div className='image-container'  >
-                        <div style={{ width: "100%", height: "300px" }}>
-                          <img src={item.image} alt={`img-${index}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+                        <div className='experience-text-two'>{item.experience}</div>
+                        <div style={{width:"20px",height:"20px"}} className='image-text-two' >
+                        <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} />
+                        </div>
+                        </div>
+                        <div 
+    // border: "1px solid yellow",
+   className='image-section-cont-two'  // Hide overflow to maintain circle shape
+>
+                          <img src={item.image} alt={`img-${index}`}    style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "contain",  // Maintain image aspect ratio and cover the circle
+        borderRadius: "50%",  // Apply border-radius to the image for circular shape
+      }}/>
                         </div>
                       </div>
                     </div>
@@ -418,7 +459,7 @@ function Readmore() {
         {/* end of teaam section  */}
 
         <div className='faq-top-section'>
-          <div style={{ textAlign: "left", color: "black", textTransform: "uppercase", fontSize: "20px", marginTop: "10px", marginBottom: "30px" }}><b>faq's</b></div>
+          <div className='faq-heading'><b>Frequently Asked Questions</b></div>
           <div className="accordions" >
             {data.map((item, index) => (
               <div key={index} className={`accordions-items ${index === openIndex ? 'open' : ''}`}>

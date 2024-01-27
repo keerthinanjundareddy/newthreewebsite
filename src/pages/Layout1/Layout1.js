@@ -16,6 +16,7 @@ const Layout1 = () => {
     { id: 5, idnm: "team", navheading: "Team" },
     { id: 6, idnm: "clients", navheading: "Clients" },
     { id: 7, idnm: "contact", navheading: "Contact" },
+  
   ]);
 
   const [pos, setPos] = useState(document.documentElement.scrollTop);

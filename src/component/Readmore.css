@@ -11,6 +11,20 @@
     /* background-color: #F9F8FF !important; */
     font-family: 'Poppins', sans-serif;
 }
+.image-section-cont{
+width: 40%;
+height: 22%;
+border-radius: 50%;  
+overflow: hidden;
+/* margin-left:40%; */
+}
+.image-section-cont-two{
+  width: 40%;
+height: 22%;
+border-radius: 50%;  
+overflow: hidden;
+/* margin-right:40%; */
+} 
 .shopify-heading{
   width:100%;
   height:100px;
@@ -50,7 +64,9 @@
 }
 .image-container{
     flex-basis: 50%;
-    
+    display: flex;
+    flex-direction: row;
+    gap:10px
    
    
   
@@ -74,6 +90,17 @@ padding-left: 50px;
     text-align: left;
     padding-left: 50px;
 }
+.experience-text{
+  color:grey;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 50px;
+}
+.image-text{
+  width:20px;
+  height:20px;
+  margin-left:50px;
+}
 .content-heading-two{
   color:black;
   font-size: 30px;
@@ -86,6 +113,19 @@ padding-left: 50px;
       text-align:right;
       padding-right: 50px;
   }
+  .experience-text-two{
+    color:grey;
+    font-size: 20px;
+    text-align:right;
+    padding-right: 50px;
+}
+.image-text-two{
+
+  text-align:right;
+  margin-left: 80%;
+
+
+}
 .header-section{
     position:fixed !important;
     width:100%;
@@ -101,19 +141,32 @@ padding-left: 50px;
    top:0px;
 }
 .back-btn{
-    margin-top: 10px;
-    width:80px;
-    height:30px;
+    /* margin-top: 10px;
+   
     border:none;
     outline:none;
     background-color: transparent;
     border:1px solid black;
     align-items: center;
-    padding-left: 10px;
-    padding-top: 2px;
-    border-radius: 5px;
-    cursor:pointer;
+    align-items: center;
+    /* padding-left: 10px; */
+    /* padding-top: 2px; */
+    /* border-radius: 5px; */
+    /* cursor:pointer; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* gap:2px; */ 
+    border:1px solid #FEBF35;
+    border-radius: 60px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:#FEBF35 ;
+   
 }
+
 .footer-top-section{
     margin-top: 20px;
 }
@@ -130,7 +183,33 @@ padding-left: 50px;
     
   
 }
+.faq-heading{
+ text-align: left;
+     color: black; 
+     font-size: 20px; 
+     margin-top: 10px;
+     margin-bottom: 20px;
+     text-transform: uppercase;
+     
+}
+.theteam-heading{
+  text-align: center;
+  color: black; 
+  font-size: 20px; 
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 
+}
+.howitworks-heading{
+  text-align: left;
+  color: black; 
+  font-size: 20px; 
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+
+}
 .main-div{
     background-color:#F0F9Fa !important;
 }
@@ -349,6 +428,12 @@ margin-bottom: 50px !important;
   
   .shopify-services-heading{
     padding-left: 50px;
+    text-align: left;
+     color: black;
+      text-transform: uppercase;
+       font-size: 20px;
+        margin-top: 10px;
+         margin-bottom: 20px; 
 
   }
 
@@ -430,6 +515,13 @@ margin-bottom: 50px !important;
           padding-left: 10px;
          
       }
+      .experience-text{
+        color:grey;
+        font-size: 20px;
+        text-align: center;
+        padding-left: 10px;
+
+      }
       .content-heading-two{
         color:black;
         font-size: 30px;
@@ -444,11 +536,40 @@ margin-bottom: 50px !important;
             padding-right: 10px;
             
         }
+        .experience-text-two{
+          color:grey;
+          font-size: 20px;
+          text-align:center;
+          padding-right: 10px;
+
+        }
         .shopify-services-heading{
           padding-left: 20px;
       
         }
-      
+        .image-section-cont{
+          width: 40%;
+          height: 22%;
+          border-radius: 50%;  
+          overflow: hidden;
+          margin-left:30%;
+          }
+          .image-section-cont-two{
+            width: 40%;
+          height: 22%;
+          border-radius: 50%;  
+          overflow: hidden;
+          margin-left:30%;
+          } 
+          .image-container{
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+            gap:10px
+           
+           
+          
+        }
     
   }
 
@@ -622,6 +743,8 @@ line-height: 35px;
 font-size: 24px;
 
 }
+
+
 
 
 

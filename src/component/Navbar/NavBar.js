@@ -118,9 +118,14 @@ const NavbarPage = (props) => {
                   </NavItem>
                 ))}
               </Nav>
+
+
+             
             </ScrollspyNav>
           </Collapse>
+         
         </Container>
+       
       </Navbar>
     </React.Fragment>
   );
