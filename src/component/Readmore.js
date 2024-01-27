@@ -414,17 +414,17 @@ function Readmore() {
       style={{
         width: "100%",
         height: "100%",
-        objectFit: "contain",  // Maintain image aspect ratio and cover the circle
+        objectFit: "fill",  // Maintain image aspect ratio and cover the circle
         borderRadius: "50%",  // Apply border-radius to the image for circular shape
       }}
     />
   </div>
   <div style={{marginTop:"0px" ,flexBasis:"100%",textAlign:"left"}}>
-  <div className="content-heading" style={{fontSize:"30px"}}>{item.heading}</div>
+  <div className="content-heading">{item.heading}</div>
                         <div className='content-text'>{item.text}</div>
                         <div className='experience-text'>{item.experience}</div>
                         {/* <div style={{width:"20px",height:"20px"}} className='image-text' > */}
-                          <div className='linkedinbutton'>LINKEDIN</div>
+                          <div className='linkedintext-img' ><span><img src={linkedinicon} style={{width:"20px",height:"20px"}} /></span></div>
                           {/* <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} /> */}
                         {/* </div> */}
                         </div>
@@ -437,7 +437,7 @@ function Readmore() {
                   </>
                 ) : (
                   <>
-                    <div className='image-flexboxcontaintertwo' style={{marginTop:"-80px"}}  >
+                    <div className='image-flexboxcontainterthree' >
                       <div className='text-container'   >
                        
                       </div>
@@ -448,7 +448,7 @@ function Readmore() {
                         <div className='content-text-two' >{item.text}</div>
                         <div className='experience-text-two'>{item.experience}</div>
                         {/* <div style={{width:"20px",height:"20px"}} className='image-text-two' > */}
-                        <div className='experience-text-two' >LINKEDIN</div>
+                        <div className='linkedintext-img-two' ><span><img src={linkedinicon} style={{width:"20px",height:"20px"}} /></span></div>
                         {/* <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} /> */}
                         {/* </div> */}
                         </div>
@@ -460,7 +460,7 @@ function Readmore() {
                           <img src={item.image} alt={`img-${index}`}    style={{
         width: "100%",
         height: "100%",
-        objectFit: "contain",  // Maintain image aspect ratio and cover the circle
+        objectFit: "cover",  // Maintain image aspect ratio and cover the circle
         borderRadius: "50%",  // Apply border-radius to the image for circular shape
       }}/>
                         </div>
