@@ -32,6 +32,13 @@ import feedback from '../../src/assets/Userimages/Group (14).png'
 import videoicon from '../../src/assets/Userimages/videocam 2.png'
 import linkedinicon from '../../src/assets/Userimages/linkedin-square-icon (1).png'
 
+import datamigration from '../../src/assets/Userimages/Icon_architecture,-structure,-database,-database-structure,-database-architecture.png'
+import uiux from '../../src/assets/Userimages/9860 - Photo-App.png'
+import socialmedia from  '../../src/assets/Userimages/CHAT.png'
+import shopifyapps from  '../../src/assets/Userimages/DATING APPS.png'
+import seo from  '../../src/assets/Userimages/Icon_search-analysis-seo.png'
+import additionalofferings from '../../src/assets/Userimages/Immersive Product experience.png'
+import support from '../../src/assets/Userimages/icon_chatbot,-chat-bot,-assistant,-chat,-laptop-07.png'
 
 
 function Readmore() {
@@ -47,6 +54,20 @@ function Readmore() {
       text: "Designation ",
       experience:"2yrs",
       image: imageone,
+    },
+    {
+      heading: "TEAM MEMBER NAME",
+      text: "Designation",
+      experience:"2yrs",
+      image: imageone,
+      //   image: imagetwo,
+    },
+    {
+      heading: "TEAM MEMBER NAME",
+      text: "Designation",
+      experience:"2yrs",
+      image: imageone,
+      //   image: imagetwo,
     },
     {
       heading: "TEAM MEMBER NAME",
@@ -97,12 +118,12 @@ function Readmore() {
   // ];
   const dummyData = [
     {
-      title: arrow, heading: 'Data Migration', contenttwo: `Migrating data on Shopify can be challenging due to the limitations of the Product template, which is constrained in terms of properties.
+      title: datamigration, heading: 'Data Migration', contenttwo: `Migrating data on Shopify can be challenging due to the limitations of the Product template, which is constrained in terms of properties.
          While Shopify provides metafields as a solution, they may not be sufficient for migrating older data structures.`, bullets: { one: 'Product and inventory data', two: 'Complete Customer data', three: 'Data verification', four: 'Inventory push on weekly basis' }
     },
 
     {
-      title: "", heading: 'Customized UI/UX', contenttwo: `User experience design can be challenging with Shopify's
+      title: uiux, heading: 'Customized UI/UX', contenttwo: `User experience design can be challenging with Shopify's
         liquid-based theme templates due to their limited
         customization options. Striking the right balance between
         enhancing user experience and template constraints requires
@@ -111,17 +132,17 @@ function Readmore() {
         effortless, resulting in an exceptional user journey.`, bullets: { one: 'Custom user login experience', two: 'Customized Product page and listings', three: 'Revamped checkout page', four: 'Localization' }
     },
 
-    { title: "", heading: 'Social media & market places', contenttwo: `We help you reach more audience and potential customers via social media. We have a team of experts who predominantly work on soical media stragies including market place integrations. Whether you have social media accounts or need a new ones, we handle them all.`, bullets: { one: 'TikTok shop', two: 'Instagram shop', three: 'Facebook', four: 'Zalora' } },
+    { title: socialmedia, heading: 'Social media & market places', contenttwo: `We help you reach more audience and potential customers via social media. We have a team of experts who predominantly work on soical media stragies including market place integrations. Whether you have social media accounts or need a new ones, we handle them all.`, bullets: { one: 'TikTok shop', two: 'Instagram shop', three: 'Facebook', four: 'Zalora' } },
 
-    { title: "", heading: 'Featureful Shopify Apps', contenttwo: `We have developed numerous apps to help you manage and style your shopify webstore. Most of our shopify apps are available with an affordable price. Do check them out in the ` + <a href='https://apps.shopify.com/'>shopify app store</a> + ` Here are some of our awesome apps:`, bullets: { one: 'Notify', two: 'MobyApp Mobile App Builder', three: 'Form Builder', four: 'RateMe Product review App' } },
+    { title: shopifyapps, heading: 'Featureful Shopify Apps', contenttwo: `We have developed numerous apps to help you manage and style your shopify webstore. Most of our shopify apps are available with an affordable price. Do check them out in the ` + <a href='https://apps.shopify.com/'>shopify app store</a> + ` Here are some of our awesome apps:`, bullets: { one: 'Notify', two: 'MobyApp Mobile App Builder', three: 'Form Builder', four: 'RateMe Product review App' } },
 
     {
-      title: "", heading: 'Seo & Tracking', contenttwo: `Our in-house experts can fastrack your webstore performance and fine-tune uisng the best strategy. We would otherwise help you integrate your available pixels on the shopify webstore for event tracking. 
+      title: seo, heading: 'Seo & Tracking', contenttwo: `Our in-house experts can fastrack your webstore performance and fine-tune uisng the best strategy. We would otherwise help you integrate your available pixels on the shopify webstore for event tracking. 
         Shopify provides it's own analytical dashboard to visualize trends. SEO is another essential part of webstore performance. Shopify has a minimalistic stragey in-place for seo but we at RENRGII go beyond shopify and make your webstore more visibile to your customers.`, bullets: { one: 'Pixel tracking', two: 'Analytics', three: 'Seo' }
     },
-    { title: "", heading: 'Additional Offerings', contenttwo: `When you partner with us, why settle for less. Shopify's default notification templates may not be suitable for you and therefore we help design the email notification templates which are modern and aligned with your brand. Below are the additional offerings you can enjoy while we are at your service.`, bullets: { one: 'Server management', two: 'Third party apps installation', three: 'Weekly content import support', four: 'Notification template customizations' } },
+    { title: additionalofferings, heading: 'Additional Offerings', contenttwo: `When you partner with us, why settle for less. Shopify's default notification templates may not be suitable for you and therefore we help design the email notification templates which are modern and aligned with your brand. Below are the additional offerings you can enjoy while we are at your service.`, bullets: { one: 'Server management', two: 'Third party apps installation', three: 'Weekly content import support', four: 'Notification template customizations' } },
 
-    { title: "", heading: '24/5 priority support', contenttwo: "RENERGII is committed to providing full support anytime you require us to step in. We are happy to see you grow and we are here to help you out for every tiny issue you may have on Shopify. You can get in touch with us via the following channels:", bullets: { one: 'Email', two: 'Call', three: 'Whatsapp', four: 'Video meetings' } },
+    { title: support, heading: '24/5 priority support', contenttwo: "RENERGII is committed to providing full support anytime you require us to step in. We are happy to see you grow and we are here to help you out for every tiny issue you may have on Shopify. You can get in touch with us via the following channels:", bullets: { one: 'Email', two: 'Call', three: 'Whatsapp', four: 'Video meetings' } },
   ];
   const [hoveredCard, setHoveredCard] = useState(null);
 
@@ -216,7 +237,6 @@ function Readmore() {
       // Update the state based on scroll position
       setScrolled(scrollY > threshold);
     };
-
     // Attach the event listener
     window.addEventListener('scroll', handleScroll);
 
@@ -250,7 +270,7 @@ function Readmore() {
             <div>
               <img src={home } style={{ width: '40px', height: '25px', objectFit: 'contain',paddingLeft:"5px",paddingBottom:"4px"}} />
             </div>
-            <div style={{paddingRight:"20px"}}>
+            <div style={{paddingRight:"20px"}} className='home-heading'>
             Home
             </div>
           </div>
@@ -373,20 +393,20 @@ function Readmore() {
         {/* end of stepper section */}
 
 
-        {/* start of team section */}
+      {/* start of team section */}
 
-        <div className='description-container'>
+      <div className='description-container'>
           <div className='theteam-heading'><b>the team</b></div>
-          <div className='image-flexboxcontainters'>
+          <div className='image-flexboxcontainters' >
             {dataArray.map((item, index) => (
-              <div key={index} className='content-container' style={{ marginBottom: "20px" }}>
+              <div key={index} className='content-container' style={{ marginBottom: "20px" ,}}>
                 {index % 2 === 0 ? (
                   <>
-                    <div className='image-flexboxcontaintertwo'  >
-                    <div className='image-container'>
+                    <div className='image-flexboxcontaintertwo' >
+                    <div className='image-container' >
   <div 
     // border: "1px solid yellow",
-   className='image-section-cont' // Hide overflow to maintain circle shape
+   className='image-section-cont' style={{flexBasis:"25%"}} // Hide overflow to maintain circle shape
 >
     <img
       src={item.image}
@@ -399,13 +419,14 @@ function Readmore() {
       }}
     />
   </div>
-  <div style={{marginTop:"20px"}}>
-  <div className="content-heading" >{item.heading}</div>
+  <div style={{marginTop:"0px" ,flexBasis:"100%",textAlign:"left"}}>
+  <div className="content-heading" style={{fontSize:"30px"}}>{item.heading}</div>
                         <div className='content-text'>{item.text}</div>
                         <div className='experience-text'>{item.experience}</div>
-                        <div style={{width:"20px",height:"20px"}} className='image-text' >
-                          <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} />
-                        </div>
+                        {/* <div style={{width:"20px",height:"20px"}} className='image-text' > */}
+                          <div className='linkedinbutton'>LINKEDIN</div>
+                          {/* <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} /> */}
+                        {/* </div> */}
                         </div>
 </div>
 
@@ -416,23 +437,25 @@ function Readmore() {
                   </>
                 ) : (
                   <>
-                    <div className='image-flexboxcontaintertwo' style={{ marginTop: "-120px", }}   >
+                    <div className='image-flexboxcontaintertwo' style={{marginTop:"-80px"}}  >
                       <div className='text-container'   >
                        
                       </div>
                       <div className='image-container'    >
                   
-                        <div  >
+                        <div style={{flexBasis:"100%"}}  >
                         <div className="content-heading-two" >{item.heading}</div>
                         <div className='content-text-two' >{item.text}</div>
                         <div className='experience-text-two'>{item.experience}</div>
-                        <div style={{width:"20px",height:"20px"}} className='image-text-two' >
-                        <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} />
-                        </div>
+                        {/* <div style={{width:"20px",height:"20px"}} className='image-text-two' > */}
+                        <div className='experience-text-two' >LINKEDIN</div>
+                        {/* <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} /> */}
+                        {/* </div> */}
                         </div>
                         <div 
     // border: "1px solid yellow",
-   className='image-section-cont-two'  // Hide overflow to maintain circle shape
+   className='image-section-cont-two' 
+   style={{flexBasis:"25%"}} // Hide overflow to maintain circle shape
 >
                           <img src={item.image} alt={`img-${index}`}    style={{
         width: "100%",
@@ -449,7 +472,6 @@ function Readmore() {
             ))}
           </div>
         </div>
-
 
         {/* end of teaam section  */}
 

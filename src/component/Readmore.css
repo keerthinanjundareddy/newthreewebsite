@@ -11,16 +11,19 @@
     /* background-color: #F9F8FF !important; */
     font-family: 'Poppins', sans-serif;
 }
+.home-heading{
+  cursor: pointer;
+}
 .image-section-cont{
-width: 40%;
-height: 22%;
+width: 25%;
+height: 18%;
 border-radius: 50%;  
 overflow: hidden;
 /* margin-left:40%; */
 }
 .image-section-cont-two{
-  width: 40%;
-height: 22%;
+  width: 25%;
+height: 18%;
 border-radius: 50%;  
 overflow: hidden;
 /* margin-right:40%; */
@@ -66,7 +69,8 @@ overflow: hidden;
     flex-basis: 50%;
     display: flex;
     flex-direction: row;
-    gap:10px
+    gap:10px;
+
    
    
   
@@ -82,25 +86,33 @@ overflow: hidden;
 color:black;
 font-size: 30px;
 text-align: left;
-padding-left: 50px;
+padding-left: 30px;
 }
 .content-text{
     color:grey;
     font-size: 20px;
     text-align: left;
-    padding-left: 50px;
+    padding-left: 30px;
 }
 .experience-text{
   color:grey;
   font-size: 20px;
   text-align: left;
-  padding-left: 50px;
+  padding-left: 30px;
+}
+.linkedinbutton{
+  color:grey;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 30px;
+ 
 }
 .image-text{
   width:20px;
   height:20px;
-  margin-left:50px;
+  margin-left:30px;
 }
+
 .content-heading-two{
   color:black;
   font-size: 30px;
@@ -193,7 +205,7 @@ padding-left: 50px;
      
 }
 .theteam-heading{
-  text-align: center;
+  text-align:left;
   color: black; 
   font-size: 20px; 
   margin-top: 10px;
@@ -627,11 +639,12 @@ margin-bottom: 50px !important;
     left:50%;
   transform: translateX(-50%);
     position: relative;
-    width:50px;
-      height:50px;
+    width:90px;
+      height:90px;
       border:1px solid  #F0F9FA;;
       border-radius:50%;
       align-items: center;
+      padding: 8px;
     
   }
   .imge-sec{
@@ -648,6 +661,9 @@ margin-bottom: 50px !important;
     .cardstwo {
         flex-basis: calc(50% - 20px)  !important;
         margin: 20px 10px 20px 10px  !important; /* Show 2 cards in a row */
+    }
+    .home-heading{
+      cursor: none;
     }
   }
   
