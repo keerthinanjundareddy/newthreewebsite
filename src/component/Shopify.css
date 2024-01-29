@@ -1026,3 +1026,144 @@ font-size: 24px;
 
 /* end of banner css */
 
+/* start of team css */
+
+.team-flexbox-div{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+}
+.first-team-div{
+  flex-basis: 50%;
+
+}
+.second-teaam-div{
+  flex-basis: 50%;
+
+}
+.first-team-flex-div{
+  display: flex;
+  flex-direction: row;
+ gap:20px;
+}
+.second-team-flex-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap:20px;
+ 
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .team-flexbox-div{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  }
+  .first-team-div{
+    flex-basis: 100%;
+    border:1px solid green;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .second-teaam-div{
+    flex-basis: 100%;
+    border:1px solid yellow;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+}
+
+
+
+.card-containers-team{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* max-width: 600px; Adjust the width as needed */
+  margin: 30px 0px;
+
+}
+
+.card-team-div{
+  /* adjust flex-basis and margin for the cards for gap between cards */
+  flex-basis: calc(50% - 20px); /* Adjust the width and margin as needed */
+  margin: 5px 10px 5px 10px;
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  box-sizing: border-box;
+}
+/* adjust max heightto 3.9 for 3 and set lineclamp to 3 */
+/* .title-section { */
+  /* width: 100%; */
+  /* max-height: 2.6em; Adjust the maximum height for two lines */
+  /* line-height: 1.3em; Set line height to control the line break */
+ 
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+/* 
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit the text to 2 lines */
+  /* -webkit-box-orient: vertical; */
+  /* cursor: pointer; */ 
+/* } */
+.teamdiv-section-flexbox{
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+}
+.team-images-container-div{
+  width:150px;
+  height:150px;
+}
+.team-linkedin-images{
+  width:20px;
+  height:20px;
+  cursor: pointer;
+}
+.team-div-data-heading{
+  color:black;
+}
+.team-div-data-text{
+  color:grey;
+}
+.team-div-data-experince{
+  color:grey;
+}
+@media (max-width: 768px) {
+  .card-team-div{
+      flex-basis: calc(50% - 20px); /* Show 2 cards in a row */
+  }
+  .teamdiv-section-flexbox{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+  }
+  .team-detail-section{
+    text-align: center;
+  }
+  .team-linkedin-images{
+    width:20px;
+    height:20px;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: 45%;
+    cursor: none;
+  }
+}
+
+/* For mobile */
+@media (max-width: 480px) {
+  .card-team-div{
+      flex-basis: calc(100% - 20px); /* Show 1 card in a row */
+    /* margin: 10px 0; Adjust the margin for mobile */
+  }
+}
