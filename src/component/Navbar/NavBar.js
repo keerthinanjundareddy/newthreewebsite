@@ -24,10 +24,10 @@ const NavbarPage = (props) => {
 
     
   const navigate = useNavigate();
-  const handleMoreClick = (cardId) => {
+  const handleMoreClick = () => {
     // window.location.href = "/readmore";
    
-    window.alert(cardId)
+ 
   
   
     // Navigate to the "/readmore" path with additional details based on cardId
