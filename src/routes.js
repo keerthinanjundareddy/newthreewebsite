@@ -7,11 +7,11 @@ import Layout6 from "../src/pages/Layout6/Layout6";
 import Login from "../src/component/Login";
 import SignUp from "../src/component/SignUp";
 import ForgotPassword from "../src/component/ForgotPassword";
-import Readmore from "../src/component/Readmore"
+import Shopify from "../src/component/Shopify"
 
 const routes = [
   { path: "/", component: Layout1 },
-  { path: "/readmore", component:Readmore },
+  { path: "/shopify", component:Shopify },
   { path: "/Layout4", component: Layout4 },
   { path: "/Layout5", component: Layout5 },
   { path: "/Layout6", component: Layout6 },
