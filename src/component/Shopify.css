@@ -198,6 +198,7 @@ padding-left: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color:#FEBF35 ;
+    cursor:pointer;
    
 }
 
@@ -618,6 +619,9 @@ margin-bottom: 50px !important;
            
            
           
+        }
+        .back-btn{
+          cursor: none;
         }
     
   }

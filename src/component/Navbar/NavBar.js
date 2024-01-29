@@ -31,7 +31,7 @@ const NavbarPage = (props) => {
   
   
     // Navigate to the "/readmore" path with additional details based on cardId
-    navigate(`/readmore`);
+    navigate(`/shopify`);
   
   };
 
