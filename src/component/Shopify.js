@@ -397,79 +397,36 @@ function Readmore() {
 
       <div className='description-container'>
           <div className='theteam-heading'><b>the team</b></div>
-          <div className='image-flexboxcontainters' >
-            {dataArray.map((item, index) => (
-              <div key={index} className='content-container' style={{ marginBottom: "20px" ,}}>
-                {index % 2 === 0 ? (
-                  <>
-                    <div className='image-flexboxcontaintertwo' >
-                    <div className='image-container' >
-  <div 
-    // border: "1px solid yellow",
-   className='image-section-cont' style={{flexBasis:"25%"}} // Hide overflow to maintain circle shape
->
-    <img
-      src={item.image}
-      alt={`img-${index}`}
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "fill",  // Maintain image aspect ratio and cover the circle
-        borderRadius: "50%",  // Apply border-radius to the image for circular shape
-      }}
-    />
-  </div>
-  <div style={{marginTop:"0px" ,flexBasis:"100%",textAlign:"left"}}>
-  <div className="content-heading">{item.heading}</div>
-                        <div className='content-text'>{item.text}</div>
-                        <div className='experience-text'>{item.experience}</div>
-                        {/* <div style={{width:"20px",height:"20px"}} className='image-text' > */}
-                          <div className='linkedintext-img' ><span><img src={linkedinicon} style={{width:"20px",height:"20px"}} /></span></div>
-                          {/* <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} /> */}
-                        {/* </div> */}
-                        </div>
-</div>
-
-                      <div className='text-container'  >
-                        
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className='image-flexboxcontainterthree' >
-                      <div className='text-container'   >
-                       
-                      </div>
-                      <div className='image-container'    >
-                  
-                        <div style={{flexBasis:"100%"}}  >
-                        <div className="content-heading-two" >{item.heading}</div>
-                        <div className='content-text-two' >{item.text}</div>
-                        <div className='experience-text-two'>{item.experience}</div>
-                        {/* <div style={{width:"20px",height:"20px"}} className='image-text-two' > */}
-                        <div className='linkedintext-img-two' ><span><img src={linkedinicon} style={{width:"20px",height:"20px"}} /></span></div>
-                        {/* <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} /> */}
-                        {/* </div> */}
-                        </div>
-                        <div 
-    // border: "1px solid yellow",
-   className='image-section-cont-two' 
-   style={{flexBasis:"25%"}} // Hide overflow to maintain circle shape
->
-                          <img src={item.image} alt={`img-${index}`}    style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",  // Maintain image aspect ratio and cover the circle
-        borderRadius: "50%",  // Apply border-radius to the image for circular shape
-      }}/>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
+          <div className='team-flexbox-div'>
+            <div className='first-team-div'>
+              <div className='first-team-flex-div'>
+              <div style={{width:"200px",height:"200px"}}>
+                <img src={imageone}  style={{borderRadius:"50%",width:"100%",height:"100%",objectFit:"cover"}}/>
               </div>
-            ))}
+              <div>
+                <div>Name</div>
+                <div>Designation</div>
+                <div>experience</div>
+                <div>linkedin</div>
+              </div>
+              </div>
+
+            </div>
+            <div className='second-teaam-div'>
+            <div className='second-team-flex-div'>
+            <div>
+            <div>Name</div>
+                <div>Designation</div>
+                <div>experience</div>
+                <div>linkedin</div>
+              </div>
+              <div style={{width:"200px",height:"200px"}}>
+                <img src={imageone} style={{borderRadius:"50%",width:"100%",height:"100%",objectFit:"cover"}} />
+              </div>
+              
+</div>
+            </div>
+
           </div>
         </div>
 
