@@ -14,7 +14,7 @@ import home from '../assets/Userimages/home.png'
 // import shopifyimage from '../assets/Userimages/Mask group.png'
 // import shopifylogo from '../assets/Userimages/Shopify-Emblem.png'
 
-import Navbar from "./Navbar/NavBar";
+import Navbar from "../../src/component/Navbar/NavBar";
 import arrow from '../../src/assets/Userimages/leftarow.png'
 import { useNavigate } from 'react-router-dom';
 import shopify_logo from '../assets/images/Group.png'
@@ -34,14 +34,12 @@ import linkedinicon from '../../src/assets/Userimages/linkedin-square-icon (1).p
 
 import datamigration from '../../src/assets/Userimages/Icon_architecture,-structure,-database,-database-structure,-database-architecture.png'
 import uiux from '../../src/assets/Userimages/9860 - Photo-App.png'
-import socialmedia from '../../src/assets/Userimages/CHAT.png'
-import shopifyapps from '../../src/assets/Userimages/DATING APPS.png'
-import seo from '../../src/assets/Userimages/Icon_search-analysis-seo.png'
+import socialmedia from  '../../src/assets/Userimages/CHAT.png'
+import shopifyapps from  '../../src/assets/Userimages/DATING APPS.png'
+import seo from  '../../src/assets/Userimages/Icon_search-analysis-seo.png'
 import additionalofferings from '../../src/assets/Userimages/Immersive Product experience.png'
 import support from '../../src/assets/Userimages/icon_chatbot,-chat-bot,-assistant,-chat,-laptop-07.png'
 
-
-import TickMark from "../assets/images/tickMarkRounded.svg"
 
 function Readmore() {
   const accordionData = [
@@ -54,27 +52,27 @@ function Readmore() {
     {
       heading: "TEAM MEMBER NAME",
       text: "Designation ",
-      experience: "2yrs",
+      experience:"2yrs",
       image: imageone,
     },
     {
       heading: "TEAM MEMBER NAME",
       text: "Designation",
-      experience: "2yrs",
-      image: imageone,
-      //   image: imagetwo,
-    },
-    {
-      heading: "TEAM MEMBER NAME",
-      text: "Designation",
-      experience: "2yrs",
+      experience:"2yrs",
       image: imageone,
       //   image: imagetwo,
     },
     {
       heading: "TEAM MEMBER NAME",
       text: "Designation",
-      experience: "2yrs",
+      experience:"2yrs",
+      image: imageone,
+      //   image: imagetwo,
+    },
+    {
+      heading: "TEAM MEMBER NAME",
+      text: "Designation",
+      experience:"2yrs",
       image: imageone,
       //   image: imagetwo,
     },
@@ -172,68 +170,47 @@ function Readmore() {
   const steps = [
     {
       label: 'Website Consultation',
-      description: `We will discuss the details of the selected niche, products & brand ideas. After niche discussion, we will find a suitable Shopify store template to start with.`,
-      howitworks: `This step includes`,
+      description: `We will discuss the details of the selected niche, products & brand ideas. After niche discussion, we will find a suitable and creative store name/domain.`,
+      howitworks: `This steps includes`,
       iconone: videoicon,
-      textone: `video meeting`,
+      textone: `video`,
       icontwo: feedback,
       textwo: `feedback`
     },
     {
       label: 'Brand Design',
       description:
-        `In this step, we shall discuss about the store design that will be aligned to your brand. We have dedicated designers to help you choose or suggest the best design for your brand.`,
+        `We deeply research all the winners in your selected niche- import & ensure they're edited properly - SEO organized titles, powerful descriptions, edited images, prices, variants, etc..!`,
     },
     {
       label: 'Final Design',
-      description: `After taking the design requirements, we will come up with a design prototype to discuss with you and await for your feedback.`,
-      howitworks: `This step includes`,
+      description: `After the store is set up, we carefully review & deliver it for your final feedbacks & approval. Any doable revisions required, we will be happy to help and fix them!`,
+      howitworks: `This steps includes`,
       icontwo: feedback,
       textwo: `feedback`
     },
     {
       label: 'Final Review',
-      description: `When all the changes (if there are any required) are revised, we will deliver the final design for your approval to start the development process.`,
-      howitworks: `This step includes`,
+      description: `When all the changes (if there are any required) are revised, we will deliver the store for your approval.`,
+      howitworks: `This steps includes`,
       icontwo: feedback,
       textwo: `feedback`
     },
     {
       label: 'Store Development',
-      description: `When the back-end is finished, we move on to start designing the front-end. We always ensure it's responsive & suits your requirements. This step mostly includes the overall webstore site development based on the design.`,
+      description: `When the back-end is finished, we move on to start designing the front-end. We always ensure it's responsive & suits your requirements.`,
     },
     {
       label: 'Content Upload',
-      description: `Our team will begin with uploading pages, plugins, images, products, videos & more onto the shopify admin panel.`,
-    },
-    {
-      label: 'Milestone',
-      description: `All the stakeholders will have a meeting with you to discuss about the development and you will get a chance to see your store development and the first milestone.`,
-      howitworks: `This step includes`,
-      iconone: videoicon,
-      textone: `video meeting`,
-      icontwo: feedback,
-      textwo: `feedback`
-    },
-
-    {
-      label: 'Final Revision',
-      description: `The team will work on the feedback provided in the previous step and will work towards the changes.`,
-    },
-    {
-      label: 'Product Delivery',
-      description: `After the final revision, we should be ready with the product. You will get your fully-working shopify webstore that is ready to go live for the public.`,
-      howitworks: `This step includes`,
-      iconone: videoicon,
-      textone: `video meeting`
+      description: `Our team will begin with uploading pages, plugins, images, videos & more..!`,
     },
     {
       label: 'Ownership Transfer',
       description: `At the last stage, we transfer over the ownership to you, from where you can start your e-commerce journey! :)`,
     },
     {
-      label: 'Maintenance support',
-      description: `We at renergii will always be happy to help you should you need help with anything while operating the shopify webstore. We have a dedicated support team to work with you on a daily basis whenever you need us to step in.`,
+      label: 'Maintanance support',
+      description: `At the last stage, we transfer over the ownership to you, from where you can start your e-commerce journey! :)`,
     },
   ];
 
@@ -271,9 +248,13 @@ function Readmore() {
 
 
   const navigate = useNavigate();
-
   const handlebackClick = () => {
+    // window.location.href = "/readmore";
 
+    // window.alert("clciked")
+
+
+    // Navigate to the "/readmore" path with additional details based on cardId
     navigate(`/`);
 
   };
@@ -287,10 +268,10 @@ function Readmore() {
           </div>
           <div className='back-btn' onClick={handlebackClick}>
             <div>
-              <img src={home} style={{ width: '40px', height: '25px', objectFit: 'contain', paddingLeft: "5px", paddingBottom: "4px" }} />
+              <img src={home } style={{ width: '40px', height: '25px', objectFit: 'contain',paddingLeft:"5px",paddingBottom:"4px"}} />
             </div>
-            <div style={{ paddingRight: "20px" }} className='home-heading'>
-              Home
+            <div style={{paddingRight:"20px"}} className='home-heading'>
+            Home
             </div>
           </div>
         </div>
@@ -374,7 +355,7 @@ function Readmore() {
 
             {steps.map((step, index) => (
               <div key={step.label} className="step">
-                <div className="step-number">{index === steps.length - 1 ? <img src={TickMark} alt="TickMark" style={{ fill: 'white' }} /> : index + 1}</div>
+                <div className="step-number">{index + 1}</div>
                 <div className="step-content" style={{ marginLeft: "50px", padding: "20px", marginTop: "0px" }}>
                   <h5>{step.label}</h5>
                   <p>{step.description}</p>
@@ -405,9 +386,7 @@ function Readmore() {
 
                 {index !== steps.length - 1 && <div className="step-line" />}
               </div>
-            )
-
-            )}
+            ))}
           </div>
 
         </div>
@@ -416,42 +395,86 @@ function Readmore() {
         {/* end of stepper section */}
 
 
-        {/* start of team section */}
+      {/* start of team section */}
 
-        <div className='description-container'>
+      <div className='description-container'>
           <div className='theteam-heading'><b>the team</b></div>
-          <div className='team-flexbox-div'>
-            <div className='first-team-div'>
-              <div className='first-team-flex-div'>
-              <div style={{width:"200px",height:"200px"}}>
-                <img src={imageone}  style={{borderRadius:"50%",width:"100%",height:"100%",objectFit:"cover"}}/>
-              </div>
-              <div>
-                <div>Name</div>
-                <div>Designation</div>
-                <div>experience</div>
-                <div>linkedin</div>
-              </div>
-              </div>
-
-            </div>
-            <div className='second-teaam-div'>
-            <div className='second-team-flex-div'>
-            <div>
-            <div>Name</div>
-                <div>Designation</div>
-                <div>experience</div>
-                <div>linkedin</div>
-              </div>
-              <div style={{width:"200px",height:"200px"}}>
-                <img src={imageone} style={{borderRadius:"50%",width:"100%",height:"100%",objectFit:"cover"}} />
-              </div>
-              
+          <div className='image-flexboxcontainters' >
+            {dataArray.map((item, index) => (
+              <div key={index} className='content-container' style={{ marginBottom: "20px" ,}}>
+                {index % 2 === 0 ? (
+                  <>
+                    <div className='image-flexboxcontaintertwo' >
+                    <div className='image-container' >
+  <div 
+    // border: "1px solid yellow",
+   className='image-section-cont' style={{flexBasis:"25%"}} // Hide overflow to maintain circle shape
+>
+    <img
+      src={item.image}
+      alt={`img-${index}`}
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "fill",  // Maintain image aspect ratio and cover the circle
+        borderRadius: "50%",  // Apply border-radius to the image for circular shape
+      }}
+    />
+  </div>
+  <div style={{marginTop:"0px" ,flexBasis:"100%",textAlign:"left"}}>
+  <div className="content-heading">{item.heading}</div>
+                        <div className='content-text'>{item.text}</div>
+                        <div className='experience-text'>{item.experience}</div>
+                        {/* <div style={{width:"20px",height:"20px"}} className='image-text' > */}
+                          <div className='linkedintext-img' ><span><img src={linkedinicon} style={{width:"20px",height:"20px"}} /></span></div>
+                          {/* <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} /> */}
+                        {/* </div> */}
+                        </div>
 </div>
-            </div>
 
+                      <div className='text-container'  >
+                        
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className='image-flexboxcontainterthree' >
+                      <div className='text-container'   >
+                       
+                      </div>
+                      <div className='image-container'    >
+                  
+                        <div style={{flexBasis:"100%"}}  >
+                        <div className="content-heading-two" >{item.heading}</div>
+                        <div className='content-text-two' >{item.text}</div>
+                        <div className='experience-text-two'>{item.experience}</div>
+                        {/* <div style={{width:"20px",height:"20px"}} className='image-text-two' > */}
+                        <div className='linkedintext-img-two' ><span><img src={linkedinicon} style={{width:"20px",height:"20px"}} /></span></div>
+                        {/* <img src={ linkedinicon} style={{width:"100%",height:"100%",objectFit:"contain"}} /> */}
+                        {/* </div> */}
+                        </div>
+                        <div 
+    // border: "1px solid yellow",
+   className='image-section-cont-two' 
+   style={{flexBasis:"25%"}} // Hide overflow to maintain circle shape
+>
+                          <img src={item.image} alt={`img-${index}`}    style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",  // Maintain image aspect ratio and cover the circle
+        borderRadius: "50%",  // Apply border-radius to the image for circular shape
+      }}/>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
+
 
         {/* end of teaam section  */}
 
