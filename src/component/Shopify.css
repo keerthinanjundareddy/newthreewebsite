@@ -1072,4 +1072,59 @@ font-size: 24px;
 
 }
 
-/* staart of team section css */
+/* staart of team section css */.team-flexbox-div{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+}
+.first-team-div{
+  flex-basis: 50%;
+
+}
+.second-teaam-div{
+  flex-basis: 50%;
+
+}
+.first-team-flex-div{
+  display: flex;
+  flex-direction: row;
+ gap:20px;
+}
+.second-team-flex-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap:20px;
+ 
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .team-flexbox-div{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  }
+  .first-team-div{
+    flex-basis: 100%;
+    border:1px solid green;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .second-teaam-div{
+    flex-basis: 100%;
+    border:1px solid yellow;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+}
+
+
+
+
+
+
