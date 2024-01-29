@@ -39,6 +39,7 @@ import shopifyapps from  '../../src/assets/Userimages/DATING APPS.png'
 import seo from  '../../src/assets/Userimages/Icon_search-analysis-seo.png'
 import additionalofferings from '../../src/assets/Userimages/Immersive Product experience.png'
 import support from '../../src/assets/Userimages/icon_chatbot,-chat-bot,-assistant,-chat,-laptop-07.png'
+import tickMarkWhite from '../assets/images/tickMarkWhite.png'
 
 
 function Readmore() {
@@ -152,18 +153,35 @@ function Readmore() {
 
   const [openIndex, setOpenIndex] = useState(null);
 
-  const data = [
+  const faq = [
     {
-      question: 'What is React?',
-      answer: 'React is a JavaScript library for building user interfaces.',
+      question: 'How do I get started with Shopify?',
+      answer: 'You just need to get in touch with us to kickstart your ecommerce business',
     },
     {
-      question: 'How does React handle state?',
-      answer: 'React uses a virtual DOM and a process called "reconciliation" to efficiently update the UI based on changes in state.',
+      question: 'How long does it take to complete the store development?',
+      answer: 'The store development may take around 20-25 days based on the business requirements. We will update you should we need more time to complete the development.',
     },
     {
-      question: 'What are React hooks?',
-      answer: 'React hooks are functions that let you use state and other React features in functional components.',
+      question: 'What are your charges?',
+      answer: 'Get in touch with us to discuss about your need and we would suggest you the best plan to get started with.',
+    },
+    
+    {
+      question: 'How do I get a domain for my Shopify website?',
+      answer: 'We would just need an account created on your name or you can share the access to your existing domain registry and we will take care the rest.',
+    },
+    {
+      question: 'How do I upload or add products to my Shopify website?',
+      answer: 'Product upload onto the Shopify website can be done manually using the Shopify admin panel. Otherwise, you can get in touch with us to help you push large product data with an additional charge.',
+    },
+    {
+      question: 'I want mobile apps along with the Shopify website?',
+      answer: 'Sure thing. We are not limited to Shopify, we at renergii provide complete software solutions. ',
+    },
+    {
+      question: 'What are the Shopify subscription plans?',
+      answer: `Shopify offers various subscription plans for all types of business requirements. Please checkout the website to learn more about their plans and pricing.`,
     },
     // Add more questions and answers as needed
   ];
@@ -172,47 +190,68 @@ function Readmore() {
   const steps = [
     {
       label: 'Website Consultation',
-      description: `We will discuss the details of the selected niche, products & brand ideas. After niche discussion, we will find a suitable and creative store name/domain.`,
-      howitworks: `This steps includes`,
+      description: `We will discuss the details of the selected niche, products & brand ideas. After niche discussion, we will find a suitable Shopify store template to start with.`,
+      howitworks: `This step includes`,
       iconone: videoicon,
-      textone: `video`,
+      textone: `video meeting`,
       icontwo: feedback,
       textwo: `feedback`
     },
     {
       label: 'Brand Design',
       description:
-        `We deeply research all the winners in your selected niche- import & ensure they're edited properly - SEO organized titles, powerful descriptions, edited images, prices, variants, etc..!`,
+        `In this step, we shall discuss about the store design that will be aligned to your brand. We have dedicated designers to help you choose or suggest the best design for your brand.`,
     },
     {
       label: 'Final Design',
-      description: `After the store is set up, we carefully review & deliver it for your final feedbacks & approval. Any doable revisions required, we will be happy to help and fix them!`,
-      howitworks: `This steps includes`,
+      description: `After taking the design requirements, we will come up with a design prototype to discuss with you and await for your feedback.`,
+      howitworks: `This step includes`,
       icontwo: feedback,
       textwo: `feedback`
     },
     {
       label: 'Final Review',
-      description: `When all the changes (if there are any required) are revised, we will deliver the store for your approval.`,
-      howitworks: `This steps includes`,
+      description: `When all the changes (if there are any required) are revised, we will deliver the final design for your approval to start the development process.`,
+      howitworks: `This step includes`,
       icontwo: feedback,
       textwo: `feedback`
     },
     {
       label: 'Store Development',
-      description: `When the back-end is finished, we move on to start designing the front-end. We always ensure it's responsive & suits your requirements.`,
+      description: `When the back-end is finished, we move on to start designing the front-end. We always ensure it's responsive & suits your requirements. This step mostly includes the overall webstore site development based on the design.`,
     },
     {
       label: 'Content Upload',
-      description: `Our team will begin with uploading pages, plugins, images, videos & more..!`,
+      description: `Our team will begin with uploading pages, plugins, images, products, videos & more onto the shopify admin panel.`,
+    },
+    {
+      label: 'Milestone',
+      description: `All the stakeholders will have a meeting with you to discuss about the development and you will get a chance to see your store development and the first milestone.`,
+      howitworks: `This step includes`,
+      iconone: videoicon,
+      textone: `video meeting`,
+      icontwo: feedback,
+      textwo: `feedback`
+    },
+
+    {
+      label: 'Final Revision',
+      description: `The team will work on the feedback provided in the previous step and will work towards the changes.`,
+    },
+    {
+      label: 'Product Delivery',
+      description: `After the final revision, we should be ready with the product. You will get your fully-working shopify webstore that is ready to go live for the public.`,
+      howitworks: `This step includes`,
+      iconone: videoicon,
+      textone: `video meeting`
     },
     {
       label: 'Ownership Transfer',
       description: `At the last stage, we transfer over the ownership to you, from where you can start your e-commerce journey! :)`,
     },
     {
-      label: 'Maintanance support',
-      description: `At the last stage, we transfer over the ownership to you, from where you can start your e-commerce journey! :)`,
+      label: 'Maintenance support',
+      description: `We at renergii will always be happy to help you should you need help with anything while operating the shopify webstore. We have a dedicated support team to work with you on a daily basis whenever you need us to step in.`,
     },
   ];
 
@@ -265,7 +304,7 @@ function Readmore() {
     <>
       <div className='read-more-section' >
         <div className={`header-section ${scrolled ? 'scrolled' : ''}`} style={{ zIndex: '100' }}>
-          <div style={{ width: '100px', height: '40px' }}>
+          <div style={{ width: '100px', height: '40px', cursor: 'pointer' }} onClick={handlebackClick}>
             <img src={isibisilogo} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
           <div className='back-btn' onClick={handlebackClick}>
@@ -357,7 +396,7 @@ function Readmore() {
 
             {steps.map((step, index) => (
               <div key={step.label} className="step">
-                <div className="step-number">{index + 1}</div>
+                <div className="step-number">{index === steps.length -1 ? <img src={tickMarkWhite} height={23} width={23} alt="completed"/> : index + 1}</div>
                 <div className="step-content" style={{ marginLeft: "50px", padding: "20px", marginTop: "0px" }}>
                   <h5>{step.label}</h5>
                   <p>{step.description}</p>
@@ -427,7 +466,7 @@ function Readmore() {
         <div className='faq-top-section'>
           <div className='faq-heading'><b>Frequently Asked Questions</b></div>
           <div className="accordions" >
-            {data.map((item, index) => (
+            {faq.map((item, index) => (
               <div key={index} className={`accordions-items ${index === openIndex ? 'open' : ''}`}>
                 <div className="accordions-questions" onClick={() => handleToggle(index)}>
                   <span>{item.question}</span>
