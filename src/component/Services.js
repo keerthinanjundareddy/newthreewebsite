@@ -2,15 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 import axios from "axios";
 import HomeUrl from '../assets/images/home-border.png';
-import { useNavigate } from 'react-router-dom';
-
 
 const Services = () => {
   const [offers, setOffers] = useState([]);
   const [digitalMarketingOffers, setDigitalMarketingOffers] = useState([]);
-  // Inside your functional component
-const [visiblePoints, setVisiblePoints] = useState(5);
-
 
   const baseUrl = 'https://strapi.ayatana.world';
   // const baseUrltwo='http://localhost:4000'
@@ -24,7 +19,7 @@ const [visiblePoints, setVisiblePoints] = useState(5);
       .catch((error) => {
         console.error("Error:", error);
       });
-//https://strapi.ayatana.world/api/WebsiteoffersDigitalMarketingCard/65668b1568348a32f75f8505?locale=undefined&draft=false&depth=2
+
       axios.get(`${baseUrl}/api/WebsiteoffersDigitalMarketing?locale=undefined&draft=false&depth=2`)
       .then((response) => {
         console.log("Marketingdataresponse",response.data.docs)
@@ -37,18 +32,6 @@ const [visiblePoints, setVisiblePoints] = useState(5);
 
 
   }, []);
-  const navigate = useNavigate();
-  const handleMoreClick = (cardId) => {
-    // window.location.href = "/readmore";
-   
-    window.alert(cardId)
-  
-  
-    // Navigate to the "/readmore" path with additional details based on cardId
-    navigate(`/readmore`);
-  
-  };
-  
 
   return (
     <React.Fragment>
@@ -136,13 +119,8 @@ const [visiblePoints, setVisiblePoints] = useState(5);
         </Col>
       </Row>
       <Row>
-        {MarketingOffer.WebsiteoffersDigitalMarketingCard && MarketingOffer.WebsiteoffersDigitalMarketingCard.map((card) => 
-        
-       {
-
-        console.log("MarketingOffer: ", MarketingOffer);
-
-         return ( <Col lg={4} key={card.id} style={{ display: "flex", flexWrap: "wrap" }}>
+        {MarketingOffer.WebsiteoffersDigitalMarketingCard && MarketingOffer.WebsiteoffersDigitalMarketingCard.map((card) => (
+          <Col lg={4} key={card.id} style={{ display: "flex", flexWrap: "wrap" }}>
             <div className="services-box p-4 mt-4" style={{ minHeight: "20px", minWidth: "100px", width: "100%" }}>
             
                 {card.images && (
@@ -159,30 +137,19 @@ const [visiblePoints, setVisiblePoints] = useState(5);
 
 {/* Map over the descriptions and render them */}
 <div className="text-muted mt-3">
-  {card.description && card.description.slice(0, visiblePoints).map((descItem) => (
+  {card.description && card.description.map((descItem) => (
     <ul key={descItem.id}>
       <li>{descItem.descriptiontexts}</li>
-    </ul>
+      </ul>
   ))}
-
-  {card.description && card.description.length > visiblePoints && (
-    <button onClick={() => handleMoreClick(card.id)}>More</button>
-  )}
 </div>
-
 
             </div>
           </Col>
-        )
-        
-        
-  })}
+        ))}
       </Row>
     </div>
-  )
-  
-  
-  )}
+  ))}
 </Container>
 
 

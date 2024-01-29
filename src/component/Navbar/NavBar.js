@@ -14,11 +14,26 @@ import ScrollspyNav from "./Scrollspy";
 
 import logodark from "../../assets/images/logo-dark.png";
 import logolight from "../../assets/images/logo-light.png";
+import { useNavigate } from 'react-router-dom';
 
 const NavbarPage = (props) => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [logoData, setLogoData] = useState(null);
+
+
+    
+  const navigate = useNavigate();
+  const handleMoreClick = (cardId) => {
+    // window.location.href = "/readmore";
+   
+    window.alert(cardId)
+  
+  
+    // Navigate to the "/readmore" path with additional details based on cardId
+    navigate(`/readmore`);
+  
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,6 +79,8 @@ const NavbarPage = (props) => {
 
     const { filename, url } = logoData;
     const logoSource = `${url}`;
+  
+
     return (
       <NavbarBrand className="navbar-brand logo text-uppercase" href="/">
         <div style={{ width: "200px", height: "100px" }}>
@@ -114,9 +131,13 @@ const NavbarPage = (props) => {
                       onClick={(e) => handleNavLinkClick(e, item.idnm)}
                     >
                       {item.navheading}
+                     
                     </NavLink>
+                   
                   </NavItem>
+                  
                 ))}
+                 <div className="shopify-text-heading" onClick={handleMoreClick}>Shopify</div>
               </Nav>
 
 

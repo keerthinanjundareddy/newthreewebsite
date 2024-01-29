@@ -714,6 +714,13 @@ margin-bottom: 50px !important;
     .home-heading{
       cursor: none;
     }
+    
+.shopify-text-heading{
+  color:grey;
+  padding-left: 0px !important;
+  padding-top: 0px !important;
+  cursor: none;
+}
   }
   
   /* For mobile */
@@ -1001,6 +1008,13 @@ font-size: 24px;
   width: 180px;
   height: 80px;
   object-fit: fill;
+}
+
+.shopify-text-heading{
+  color:grey;
+  padding-left: 20px;
+  padding-top: 25px;
+  cursor: pointer;
 }
 
 
