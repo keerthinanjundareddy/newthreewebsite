@@ -67,7 +67,7 @@ overflow: hidden;
   align-items: center;
   justify-content: center;
 
-  margin-top: -150px;
+  margin-top: -100px;
  
 
 }
@@ -688,12 +688,12 @@ margin-bottom: 50px !important;
     left:50%;
   transform: translateX(-50%);
     position: relative;
-    width:130px;
+    width:140px;
       height:15\30px;
       border:1px solid  #F0F9FA;;
       border-radius:50%;
       align-items: center;
-      padding: 8px;
+      padding: 15px;
     
   }
   .imge-sec{
@@ -1021,55 +1021,4 @@ font-size: 24px;
 
 
 /* end of banner css */
-.team-flexbox-div{
-  display: flex;
-  flex-direction: row;
-  gap:10px;
-}
-.first-team-div{
-  flex-basis: 50%;
 
-}
-.second-teaam-div{
-  flex-basis: 50%;
-
-}
-.first-team-flex-div{
-  display: flex;
-  flex-direction: row;
- gap:20px;
-}
-.second-team-flex-div{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap:20px;
- 
-}
-
-
-
-@media only screen and (max-width: 600px) {
-  .team-flexbox-div{
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-  }
-  .first-team-div{
-    flex-basis: 100%;
-    border:1px solid green;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .second-teaam-div{
-    flex-basis: 100%;
-    border:1px solid yellow;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-}
-
-/* staart of team section css */
