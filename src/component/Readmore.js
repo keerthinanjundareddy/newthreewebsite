@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Readmore.css'
 import imageone from '../assets/images/users/img-1.jpg'
-import logo from '../assets/Userimages/shopifyimage.png'
+// import logo from '../assets/Userimages/shopifyimage.png'
 import Footer from './Footer/Footer'
 import isibisilogo from '../assets/Userimages/isibisi-removebg-preview.png'
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -10,9 +10,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import home from '../assets/Userimages/home.png'
-import shopifyimaaage from '../assets/Userimages/Is-it-worth-it-to-hire-a-Shopify-expert.jpg'
-import shopifyimage from '../assets/Userimages/Mask group.png'
-import shopifylogo from '../assets/Userimages/Shopify-Emblem.png'
+// import shopifyimaaage from '../assets/Userimages/Is-it-worth-it-to-hire-a-Shopify-expert.jpg'
+// import shopifyimage from '../assets/Userimages/Mask group.png'
+// import shopifylogo from '../assets/Userimages/Shopify-Emblem.png'
 
 import Navbar from "../../src/component/Navbar/NavBar";
 import arrow from '../../src/assets/Userimages/leftarow.png'
@@ -20,12 +20,12 @@ import { useNavigate } from 'react-router-dom';
 import shopify_logo from '../assets/images/Group.png'
 
 // import imageonee from '../../src/assets/Userdummyimages/Useo-search-engine-optimization-2023-05-08-23-44-00-utc.jpg'
-import imagetwo from '../../src/assets/Userdummyimages/social-media-2022-11-14-07-05-26-utc.jpg'
-import imagethree from '../../src/assets/Userdummyimages/image-of-two-friendly-business-partner-working-on-2023-04-18-02-34-32-utc.JPG'
-import imagefour from '../../src/assets/Userdummyimages/social-media-2022-11-14-07-05-26-utc.jpg'
-import imagefive from '../../src/assets/Userdummyimages/assessment-analysis-bar-graph-presentation-2022-12-16-00-26-45-utc - Copy.jpg'
-import imagesix from '../../src/assets/Userdummyimages/image-of-start-up-business-people-discussing-over-2023-01-31-03-28-56-utc.JPG'
-import imageseven from '../../src/assets/Userdummyimages/a-man-chats-with-an-artificial-intelligence-chat-b-2023-08-29-05-17-51-utc.jpg'
+// import imagetwo from '../../src/assets/Userdummyimages/social-media-2022-11-14-07-05-26-utc.jpg'
+// import imagethree from '../../src/assets/Userdummyimages/image-of-two-friendly-business-partner-working-on-2023-04-18-02-34-32-utc.JPG'
+// import imagefour from '../../src/assets/Userdummyimages/social-media-2022-11-14-07-05-26-utc.jpg'
+// import imagefive from '../../src/assets/Userdummyimages/assessment-analysis-bar-graph-presentation-2022-12-16-00-26-45-utc - Copy.jpg'
+// import imagesix from '../../src/assets/Userdummyimages/image-of-start-up-business-people-discussing-over-2023-01-31-03-28-56-utc.JPG'
+// import imageseven from '../../src/assets/Userdummyimages/a-man-chats-with-an-artificial-intelligence-chat-b-2023-08-29-05-17-51-utc.jpg'
 // import { Navbar } from 'reactstrap'
 import NavbarPage from './Navbar/NavBar'
 import feedback from '../../src/assets/Userimages/Group (14).png'
