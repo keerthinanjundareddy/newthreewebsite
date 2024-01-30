@@ -43,7 +43,7 @@ function Footer() {
                 </div>
               )}
             </div>
-            <div style={{width:"100px",height:"100px"}} className='footersocialMediaicons'>
+            <div style={{width:"120px",height:"120px"}} className='footersocialMediaicons'>
               {footerData && footerData.socilMediaIcons.map(icon => (
                 <div >
                    {icon.socialMediaIcon && (
@@ -61,7 +61,7 @@ function Footer() {
             </div>
           </div>
           <hr className="" />
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center" ,marginBottom:"20px",marginTop:"20px"}}>
             {footerData && footerData.footerBottomText}
           </div>
         </Container>

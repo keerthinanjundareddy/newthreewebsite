@@ -344,6 +344,7 @@ margin-bottom: 50px !important;
     padding: 10px;
     cursor: pointer;
     background-color: #f5f8f8;
+
     color:black;
    
     font-weight: 600;
@@ -1118,6 +1119,7 @@ font-size: 24px;
   gap:20px;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 .team-images-container-div{
   width:150px;

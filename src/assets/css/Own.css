@@ -142,7 +142,7 @@ transform: translateX(-50%);
 .footersocialMediaicons{
   display:flex;
   flex-direction: row;
-  gap:5px;
+  gap:15px;
 }
 
 .footersectionbottom {
